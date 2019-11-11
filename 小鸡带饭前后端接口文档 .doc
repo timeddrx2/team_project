@@ -1,0 +1,1337 @@
+
+        <html xmlns:v="urn:schemas-microsoft-com:vml"
+        xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta http-equiv=Content-Type content="text/html;  
+        charset=utf-8">
+        <style type="text/css">
+            table  
+            {  
+                border-collapse: collapse;
+                border: none;  
+                width: 100%;  
+            }  
+            td  
+            {  
+                border: solid #CCC 1px;  
+            }  
+            .codestyle{
+                word-break: break-all;
+                background:silver;mso-highlight:silver;
+            }
+        </style>
+        <meta name=ProgId content=Word.Document>
+        <meta name=Generator content="Microsoft Word 11">
+        <meta name=Originator content="Microsoft Word 11">
+        <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+        <body><h1>1、我的订单（点单）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>我的订单（点单）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/find</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": [
+        {
+            "uid": "1",
+            "canteen": "丁香园",
+            "state": "配送中",
+            "money": "0.5",
+            "shop_name": "",
+            "comment": "评价",
+            "reg_time": "1436864169",
+       },
+       {
+            "uid": "1",
+            "canteen": "玫瑰园二楼",
+            "state": "已送达",
+            "money": "1.0",
+            "shop_name": "自选卤味",
+            "comment": "已评价",
+            "reg_time": "1436864169",
+       },
+    ]
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户点击我的订单（点击此按钮后默认显示点单订单）或者在我的订单详情页面点击“点单”。</li>
+<li>功能：筛选出用户的所有点单订单，然后将其详细信息全部发送给前端。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>2、订单详情（点单）（正在配送）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>订单详情（正在配送）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "canteen": "紫荆二楼",
+      "money": "2.0",
+      "address": "32#301",
+      "estimated_delivery_time": "12:30",
+      "order_time": "12:20",
+      "requirement": "紫荆水煮，水煮鱼片，微辣，少放油，不要香菜",
+      "telephone": "13209695642",
+      "groupid": 2 ,
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">estimated_delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>预计配送时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">order_time</td>
+<td style="text-align: left;">string</td>
+<td>接单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在广场点击某一个订单或者在“我的订单”中点击某一个订单。</li>
+<li>功能：将该订单的相关数据发送给前端用于显示订单详细内容。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>3、订单详情（配送）（正在配送）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>订单详情（正在配送）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "canteen": "紫荆二楼",
+      "money": "2.0",
+      "Delivery Range": "32#",
+      "estimated_delivery_time": "12:30",
+      "order_time": "12:20",
+      "requirement": "限紫荆水煮，限五楼以下",
+      "telephone": "13209695642",
+      "groupid": 2 ,
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">estimated_delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>预计配送时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">order_time</td>
+<td style="text-align: left;">string</td>
+<td>接单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在广场点击某一个订单或者在“我的订单”中点击某一个订单。</li>
+<li>功能：将该订单的相关数据发送给前端用于显示订单详细内容。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>4、订单详情（配送）（已经送达）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>订单详情（配送）（已经送达）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "canteen": "紫荆二楼",
+      "money": "2.0",
+      "address": "32#301",
+      "estimated_delivery_time": "12:30",
+      "order_time": "12:20",
+      "delivery_time": "12:31",
+      "requirement": "紫荆水煮，水煮鱼片，微辣，少放油，不要香菜",
+      "telephone": "13209695642",
+      "groupid": 2 ,
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">estimated_delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>预计送达时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">order_time</td>
+<td style="text-align: left;">string</td>
+<td>接单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>送达时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在广场点击某一个订单或者在“我的订单”中点击某一个订单。</li>
+<li>功能：将该订单的相关数据发送给前端用于显示订单详细内容。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>5、绑定微信</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>绑定微信接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/register</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">wechat_number</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>微信号</td>
+</tr>
+<tr>
+<td style="text-align: left;">wechat_name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>微信昵称</td>
+</tr>
+<tr>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>性别</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "wechat_number": "12154545",
+      "wechat_name": "吴系挂",
+      "sex": "男",
+      "reg_time": "1436864169",
+      "last_login_time": "0",
+    }
+  }</code></pre></table>
+<p><strong>示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>填写时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_login_time</td>
+<td style="text-align: left;">string</td>
+<td>上次登录时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户第一次使用小程序时前端调用这个函数。</li>
+<li>功能：获取用户的微信号、微信昵称、性别并为对应属性赋值</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>6、订单详情（点单）（已经送达）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>订单详情（已经送达）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "canteen": "紫荆二楼",
+      "money": "2.0",
+      "address": "32#301",
+      "estimated_delivery_time": "12:30",
+      "order_time": "12:20",
+      "delivery_time": "12:31",
+      "requirement": "紫荆水煮，水煮鱼片，微辣，少放油，不要香菜",
+      "telephone": "13209695642",
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">estimated_delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>预计配送时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">order_time</td>
+<td style="text-align: left;">string</td>
+<td>接单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">delivery_time</td>
+<td style="text-align: left;">string</td>
+<td>送达时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在广场点击某一个订单或者在“我的订单”中点击某一个订单。</li>
+<li>功能：将该订单的相关数据发送给前端用于显示订单详细内容。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>7、发布订单（点单，修改）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>点单接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">money</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">float</td>
+<td>配送费</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduled_delivery_time</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>预定送达时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">cancellation_time</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>取消订单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">shop_name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>店名</td>
+</tr>
+<tr>
+<td style="text-align: left;">canteen</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>食堂</td>
+</tr>
+<tr>
+<td style="text-align: left;">requirement</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>要求</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "money": "2.0",
+      "scheduled_delivery_time": "12：00",
+      "cancellation_time": "12：10",
+      "shop_name": "水煮",
+      "canteen": "紫荆园二楼",
+      "requirement": "不加香菜",
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>填写时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户先点击“修改”按钮（点击“修改”时调用的是“取消订单”函数），见上图，然后填写修改信息后点击“确认修改”后调用“修改并发布订单”函数，（这一功能原型图中没有，建议添加）。</li>
+<li>功能：根据用户填写的信息对订单属性进行修改，然后将订单状态修改为“发布状态”，</li>
+<li>然后调用广场的“接受订单”函数将该订单的引用添加到广场的“订单”属性中。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>8、发布订单（配送，修改）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>配送接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/release</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">money</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">float</td>
+<td>配送费</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduled_delivery_time</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>预定送达时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">cancellation_time</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>取消订单时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shop_name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>店名</td>
+</tr>
+<tr>
+<td style="text-align: left;">canteen</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>食堂</td>
+</tr>
+<tr>
+<td style="text-align: left;">requirement</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>要求</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "money": "2.0",
+      "Scheduled delivery time": "12：00",
+      "Cancellation time": "12：10",
+      "Shop name": "水煮",
+      "canteen": "紫荆园二楼",
+      "requirement": "不加香菜",
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>填写时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户先点击“修改”按钮（点击“修改”时调用的是“取消订单”函数），见上图，然后填写修改信息后点击“确认修改”后调用“修改并发布订单”函数，（这一功能原型图中没有，建议添加）。</li>
+<li>功能：根据用户填写的信息对订单属性进行修改，然后将订单状态修改为“发布状态”，</li>
+<li>然后调用广场的“接受订单”函数将该订单的引用添加到广场的“订单”属性中。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>9、评价接口</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>评价接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/evaluate</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">comment</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>评价</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "comment": "配送很快，吃得很开心",
+      "reg_time": "1436864169"
+    }
+  }</code></pre></table>
+<p><strong>请求参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>提交时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>提交评价详情</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>10、我的订单（配送）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>我的订单（配送）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/find</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": [
+        {
+            "uid": "1",
+            "canteen": "丁香园",
+            "state": "配送中",
+            "money": "0.5",
+            "shop_name": "拌面扁肉",
+            "comment": "评价",
+            "reg_time": "1436864169",
+       },
+       {
+            "uid": "1",
+            "canteen": "玫瑰园二楼",
+            "state": "已送达",
+            "money": "1.0",
+            "shop_name": "自选卤味",
+            "comment": "已评价",
+            "reg_time": "1436864169",
+       },
+    ]
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在我的订单详情页面点击“配送单”。</li>
+<li>功能：筛选出用户的所有配送订单，然后将其详细信息全部发送给前端。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>11、查看个人信息</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查看个人信息接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "name": "吴所谓",
+      "sex": "男",
+      "academy": "经济与管理学院",
+      "student_id": "233323333" ,
+      "dormitory": "41#211" ,
+      "telephone": "131-1551-1551" ,
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户点击我的信息。</li>
+<li>功能：将用户的个人信息发送给前端。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>12、完善个人信息</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>完善个人信息接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/release</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>姓名</td>
+</tr>
+<tr>
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>性别</td>
+</tr>
+<tr>
+<td style="text-align: left;">academy</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>学院</td>
+</tr>
+<tr>
+<td style="text-align: left;">student_id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>学号</td>
+</tr>
+<tr>
+<td style="text-align: left;">dormitory</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>宿舍</td>
+</tr>
+<tr>
+<td style="text-align: left;">telephone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>电话</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "name": "吴所谓",
+      "sex": "男",
+      "academy": "经济与管理学院",
+      "student_id": "233323333" ,
+      "dormitory": "41#211" ,
+      "telephone": "131-1551-1551" ,
+      "reg_time": "1436864169",
+      "last_login_time": "0",
+    }
+  }</code></pre></table>
+<p><strong>示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>填写时间</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_login_time</td>
+<td style="text-align: left;">string</td>
+<td>上次登录时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户点击“完善个人信息”按钮，输入相关信息后点击“确认”按钮 。</li>
+<li>功能：前端将相关信息发送给后端，后端完善或修改用户对象的相关属性。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>13、我收到的（评价）</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>我收到的（评价）接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/p</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "content": "这个同学选的菜很合我胃口👍",
+      "time": "2019-10-22",
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">string</td>
+<td>评论内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">time</td>
+<td style="text-align: left;">string</td>
+<td>评论日期</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<p>欢迎使用ShowDoc！</p></div><h1>14、取消订单</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>取消订单接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/find</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>DELETE </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+            "uid": "1",
+            "result": "1",
+            "reg_time": "1436864169",
+       },
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">result</td>
+<td style="text-align: left;">int</td>
+<td>修改订单结果，1：删除成功；2：删除失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户在我的订单页面点击“取消订单”或者点击“修改”后调用，点击“修改”便取消订单的理由是防止修改期间被接单。</li>
+<li>功能：调用广场的“移除订单”函数将该订单从广场移除，然后修改“订单状态”的值。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>15、确认送达</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>确认送达接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/find</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>DELETE </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+            "uid": "1",
+            "result": "1",
+            "reg_time": "1436864169",
+       },
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">result</td>
+<td style="text-align: left;">int</td>
+<td>确认送达结果，1：成功送达；2：送达失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：用户点击“确认送达”按钮。</li>
+<li>功能：将订单状态修改为“已完成状态”。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>16、接受（移除）订单</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>接受（移除）订单接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/find</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>PUT</li>
+<li>DELETE </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+            "uid": "1",
+            "result": "1",
+            "reg_time": "1436864169",
+       },
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">result</td>
+<td style="text-align: left;">int</td>
+<td>确认送达结果，1：成功接受（删除）；2：接受（删除）失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合：由其他函数调用，详见上面的函数说明。</li>
+<li>接受功能：将订单的引用添加到“订单”列表中，订单数量++。</li>
+<li>删除功能：将订单的引用从“订单”列表中移除，订单数量--。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>17、刷新订单</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>刷新接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/order</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": [
+        {
+            "uid": "1",
+            "canteen": "丁香园",
+            "money": "0.5",
+            "shop_name": "拌面扁肉",
+            "time": "10:00",
+            "address": "32#3F",
+            "reg_time": "1436864169",
+       },
+       {
+            "uid": "1",
+            "canteen": "玫瑰园二楼",
+            "money": "1.0",
+            "shop_name": "自选卤味",
+            "time": "12:00",
+            "address": "32#5F",
+            "reg_time": "1436864169",
+       },
+       ...
+    ]
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<ul>
+<li>调用场合:用户在广场页面点击“点单”按钮。</li>
+<li>功能：将“点单广场”对象中所有订单的信息发送给前端用于显示。</li>
+<li>调用场合:用户在广场页面点击“配送”按钮。</li>
+<li>功能：将“配送广场”对象中所有订单的信息发送给前端用于显示。</li>
+</ul>
+<p>欢迎使用ShowDoc！</p></div><h1>18、我评价的</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>我评价的接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://xx.com/api/user/p</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>请求参数：</strong> </p>
+<p>无</p>
+<p><strong>请求示例</strong></p>
+<p>无</p>
+<p><strong>示例参数说明</strong>
+无
+<strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+    "error_code": 0,
+    "data": {
+      "uid": "1",
+      "content": "能顺路赚钱很开心！",
+      "time": "2019-10-22",
+      "reg_time": "1436864169",
+    }
+  }</code></pre></table>
+<p><strong>返回示例参数说明</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">string</td>
+<td>用户身份证明</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">string</td>
+<td>评论内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">time</td>
+<td style="text-align: left;">string</td>
+<td>评论日期</td>
+</tr>
+<tr>
+<td style="text-align: left;">reg_time</td>
+<td style="text-align: left;">string</td>
+<td>发送时间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong> </p>
+<p>欢迎使用ShowDoc！</p></div></body></html>

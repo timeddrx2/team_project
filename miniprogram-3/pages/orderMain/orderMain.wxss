@@ -1,0 +1,61 @@
+/* pages/orderMain/orderMain.wxss */
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 3px;
+}
+.weui-icon-clear_in-box {
+  position: absolute;
+  left: 280px;
+  top: 3px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 15px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+  height: 20px;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 1px;
+  line-height: 10px;
+  font-size: 14px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color:#FFD700;
+  white-space: nowrap;
+}
+.order{
+position: absolute;
+left: 10px;
+border-radius: 15px;
+background-color:green;
+}
+.express{
+position: absolute;
+left: 150px;
+border-radius: 15px;
+background-color: #FFD700;
+}

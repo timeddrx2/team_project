@@ -1,0 +1,16 @@
+/* pages/myInformation/myInformation.wxss */
+.information{
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  text-decoration:underline;
+}
+.head{
+  position: absolute;
+  left: 40%;
+  top: 5%;
+  width: 120rpx;
+  height: 120rpx;
+}
+/* 横着的分割View样式 #E0E3DA; */
+/*分割线样式*/

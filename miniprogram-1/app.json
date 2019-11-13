@@ -1,0 +1,16 @@
+{
+  "pages": [
+   "pages/order_order/order_order",
+    "pages/order_detail/order_detail",
+    "pages/order_detail_ing/order_detail_ing",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

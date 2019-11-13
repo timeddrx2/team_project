@@ -1,0 +1,74 @@
+.daxuxian1{
+  border-top:solid 2px;
+  border-color: rgba(248, 248, 106, 0.664);
+  border-style: dashed;
+  margin-left: 20%;
+  width:450rpx;
+}
+.daxuxian2{
+  border-top:solid 2px;
+  border-color: rgba(248, 248, 106, 0.664);
+  border-style: dashed;
+  margin-left: 20%;
+  width:450rpx;
+  margin-top: 500rpx;
+}
+.xiaoxuxian{
+  border-top:solid 0.1px;
+  border-color:rgb(221, 216, 216);
+  left:0rpx;
+  width:275rpx;
+  padding-bottom: 30rpx;
+}
+.view_detail{
+  margin-left: 30%;
+  text-align:left;
+  font-style: bold;
+  font-size:11px;
+  line-height:21px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  text-decoration:none;
+  margin-top: 50rpx;
+}
+.view_remarks{
+ margin-left: 30%;
+  text-align: left;
+  font-style: bold;
+  border-width:0px;
+  position:absolute;
+  font-size:11px;
+  line-height:21px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  text-decoration:none;
+  margin-top:95rpx;
+}
+.view_number{
+ margin-left: 30%;
+  text-align:left;
+  font-style:bolder;
+  border-width:0px;
+  position:absolute;
+  font-size:11px;
+  line-height:21px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  text-decoration:none;
+  margin-top:300rpx;
+}
+.button_copy{
+  border-width:0px;
+  position:absolute;
+  width:60px;
+  height:20px;
+  text-align: center;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:10px;
+  margin-top:350rpx;
+  margin-left:450rpx;
+  
+}
+

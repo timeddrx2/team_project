@@ -1,0 +1,12 @@
+<!--order_order.wxml-->
+<view class="cotainer">
+  <button type="default" class="button_jump" bindtap="jump"> 配送单</button>
+  <button class="button_self"> 点单</button>
+  <view class="dingdan" bindtap="detail">
+    <text class="text1">食堂名</text>
+    <text class="text2">状态</text>
+    <text class="text3">￥</text>
+    <text class="text4">食物名</text>
+    <button class="button_evalute">评价</button>
+  </view>
+</view>

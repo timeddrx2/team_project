@@ -1,0 +1,31 @@
+<!--order_detail.wxml-->
+<view>
+  <view class="daxuxian1"></view>
+  <view class="view_detail">
+    <text>地点：</text>
+    <text>\n</text>
+    <text>配送费：</text>
+    <text>\n</text>
+    <text>配送地址：</text>
+    <text>\n</text>
+    <text>预计配送时间：</text>
+    <text>\n</text>
+    <text>接单时间：</text>
+    <text>\n</text>
+    <view class="xiaoxuxian"></view>
+  </view>
+  <view class="view_remarks">
+    <text>我的备注：\n</text>
+    <text>我不要香菜\n</text>
+    <view class="xiaoxuxian"></view>
+  </view>
+
+
+  <view class="view_number">
+    <text>联系电话：\n</text>
+    <text>1325902060</text>
+    <view class="xiaoxuxian"></view>
+  </view>
+  <button class="button_copy">复制</button>
+  <view class="daxuxian2"></view>
+</view>

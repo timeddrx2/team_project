@@ -1,12 +1,19 @@
 <!--pages/myInformation/myInformation.wxml-->
-<!-- 我的信息 -->
-
-<view><image id="touxiang" src="../../img/头像.png" class="head"></image></view>
+<!-- 黄色头部 -->
+<view class="yellowhead"></view>
+<!-- 头像 -->
+<view><image id="touxiang" src="../../img/chicken/开心.png" class="head"></image></view>
+<!-- 五项信息 -->
 <view class="information">
-<text space="emsp">姓名  <text id="name" space="ensp">无所谓         </text>\n\n</text>
-<text space="emsp">性别  <text id="sex" space="ensp">男             </text>\n\n</text>
-<text space="emsp">学院  <text id="college" space="ensp">数计学院       </text>\n\n</text>
-<text space="emsp">学号  <text id="num" space="ensp">23332333      </text>\n\n</text>
-<text space="emsp">宿舍号 <text id="dorm" space="ensp">11#110        </text>\n\n</text>
-<text space="emsp">电话  <text id="tel"space="ensp">13223332333  </text>\n\n</text>
+<text space="emsp">姓名  <text id="name" space="ensp">无所谓</text>\n</text>
+<view class="line"></view>
+<text space="emsp">\n性别  <text id="sex" space="ensp">男</text>\n</text>
+<view class="line"></view>
+<text space="emsp">\n学院  <text id="college" space="ensp">数计学院</text>\n</text>
+<view class="line"></view>
+<text space="emsp">\n学号  <text id="num" space="ensp">23332333</text>\n</text>
+<view class="line"></view>
+<text space="emsp">\n电话  <text id="tel"space="ensp">13223332333</text>\n</text>
+<view class="line"></view>
 </view>
+

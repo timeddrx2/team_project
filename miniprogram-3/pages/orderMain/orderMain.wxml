@@ -1,26 +1,66 @@
 <!--pages/orderMain/orderMain.wxml-->
 <!-- 点单主页 -->
-<view>
-<view>
-     <view>
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
-            <!-- 搜索框 -->
-                <view class="weui-search-bar__box">
-                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容"/>
-                     <icon class="weui-icon-clear_in-box" type="clear" size="14"></icon>
-                </view>
-            </view>
-            <!-- 搜索按钮,调用搜索查询方法 -->
-            <!-- <view class="weui-search-bar__cancel-btn" bindtap='方法名a'>搜索</view> -->
+<view style="position:fixed;">
+  <view>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <!-- 搜索框 -->
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="22"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" />
         </view>
+      </view>
     </view>
+  </view>
 </view>
+<!-- 顶部菜单栏 -->
 
-<view>
-<button class="order" style="width:360rpx;height:2%;">点单</button>
-<button class="express" style="width:360rpx;height:2%;">配送</button>
+<!-- <view>
+<button class="order" style="width:380rpx;height:2%;" bindtap="toOrder">点单</button>
+<button class="express" style="width:380rpx;height:2%;" bindtap="toSend">配送</button>
+</view> -->
+<!-- 详情框 -->
+<view class="diandan" bindtap="toXiangQing">
+  <!-- 头像 -->
+  <view>
+    <image class="touxiang" id="head" src="../../img/chicken/开心.png"></image>
+  </view>
+  <!-- 宿舍楼号 -->
+  <view class="dorm">
+    <text id="louhao"></text>
+  </view>
+  <!-- 食堂地址 -->
+  <view class="add">
+    <text id="dizhi"></text>
+  </view>
+  <!-- 配送费 -->
+  <view class="fee">
+    <text id="peisongfei"></text>
+  </view>
+  <!-- 倒计时 -->
+  <view class="time">
+    <text id="daojishi"></text>
+  </view>
 </view>
-
+<view class="diandan" bindtap="toXiangQing">
+  <!-- 头像 -->
+  <view>
+    <image class="touxiang" id="head" src="../../img/chicken/开心.png"></image>
+  </view>
+  <!-- 宿舍楼号 -->
+  <view class="dorm">
+    <text id="louhao"></text>
+  </view>
+  <!-- 食堂地址 -->
+  <view class="add">
+    <text id="dizhi"></text>
+  </view>
+  <!-- 配送费 -->
+  <view class="fee">
+    <text id="peisongfei"></text>
+  </view>
+  <!-- 倒计时 -->
+  <view class="time">
+    <text id="daojishi"></text>
+  </view>
 </view>

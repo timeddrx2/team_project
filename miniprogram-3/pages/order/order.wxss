@@ -1,1 +1,55 @@
 /* pages/order/order.wxss */
+
+.order {
+  position: absolute;
+  width: 424rpx;
+  left: 20%;
+  top: 10%;
+}
+
+/* 分割线 */
+
+.line {
+  border: solid #e0e3da 2rpx;
+}
+
+.culine {
+  width: 560rpx;
+  position: absolute;
+  left: 80rpx;
+  border: solid #e0e3da 5rpx;
+}
+
+/* 按钮 */
+
+.btn::after {
+  border: 0;
+}
+
+.btn {
+  left: 10rpx;
+  border-radius: 30px;
+  background: #fdd51e;
+  color: white;
+}
+
+.btn_hover {
+  background-color: #f0ca00;
+}
+
+/* input */
+
+#addlou {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 200rpx;
+  text-align: center;
+  margin-left: 100rpx;
+}
+#addmen {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 200rpx;
+  text-align: center;
+   margin-left: 100rpx;
+}

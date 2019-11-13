@@ -1,3 +1,7 @@
-{
-  
-}
+  {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "点单详情",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  }

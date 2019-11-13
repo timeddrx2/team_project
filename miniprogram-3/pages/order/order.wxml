@@ -1,19 +1,32 @@
 <!--pages/order/order.wxml-->
+<text space="emsp">\n</text>
+<view class="culine"></view>
 <!-- 点单详情 -->
+<view class="order">
 <view>
+<text>地点：<text id="place">\n\n</text></text>
+<view class="line"></view>
+</view >
 <view>
-<text>地点：<text id="place">\n</text></text>
-<text>档口：<text id="place">\n</text></text>
+<text>\n配送范围：<text id="sendplace">\n\n</text></text>
+<text>配送费：<text id="fee">\n\n</text></text>
+<text>预计送达时间：<text id="sendtime">\n\n</text></text>
+<view class="line"></view>
 </view>
 <view>
-<text>配送费：<text id="place">\n</text></text>
-<text>配送时间：<text id="place">\n</text></text>
-<text>配送地点：<text id="place">\n</text></text>
+<text>\n备注：\n<text id="beizhu">\n\n</text></text>
+<text>配送地址:\n\n</text>
 </view>
 <view>
-<text>要求：<text id="place">\n</text></text>
+<text space="emsp">  楼号:</text><input id="addlou" type="text" />
+
+<text space="emsp">  门号:</text><input id="addmen" type="text" />
+
 </view>
+
 </view>
-<view>
-<button id="checkRecieve" bindtap="Recieve">确认接单</button>
-</view>
+<text >\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n</text>
+<view class="culine"></view>
+<text >\n\n\n\n</text>
+<button class="btn" bindtap="sumbit" hover-class="btn_hover" >确定下单</button>
+<text >\n\n</text>

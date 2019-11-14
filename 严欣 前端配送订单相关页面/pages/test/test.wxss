@@ -1,0 +1,97 @@
+.a {
+  border-radius:25px;
+  width:10%;
+  left: 10%;
+  position: absolute;
+  margin-top: 30rpx;
+  background-color: #FFCC00;
+  color: #FFF;
+  font-size:10px;
+}
+.b {
+  border-radius:25px;
+  width: 20rpx;
+  left: 70%;
+  position: absolute;
+  margin-top: 30rpx;
+  background-color: #FFCC00;
+  color: #FFF;
+  font-size:10px;
+}
+
+
+button::after{
+  border: 0;
+  background-color:rgb(250, 248, 36);
+}
+
+button[disabled] {
+  background-color: #fff;
+  color: #666;
+}
+
+.button-hover {
+color:rgba(0, 0, 0, 0.6);
+background-color:rgb(250, 253, 36);
+}
+
+.d1{
+  width:90%;
+  border-radius:25px;
+  position: absolute;
+  left:5%;
+  margin-top:20%;
+  background-color: rgb(255, 239, 174);
+}
+.add{
+  margin-top:8%;
+  margin-left:5%;
+  font-size:15px;
+  position: absolute;
+}
+.price{
+  margin-top:8%;
+  margin-left:80%;
+  font-size:15px;
+  position: absolute;
+}
+.load{
+  margin-top:14%;
+  margin-left:5%;
+  font-size:15px;
+  position: absolute;
+}
+.time{
+  margin-top:14%;
+  margin-left:50%;
+  font-size:15px;
+  position: absolute;
+}
+.delete{
+   border-width:0px;
+  position:absolute;
+  margin-left:170px;
+  margin-top:40px;
+  width:46px;
+  height:18px;
+  display:flex;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:8px;
+}
+
+.change{
+   border-width:0px;
+  position:absolute;
+  margin-left:170px;
+  margin-top:40px;
+  width:46px;
+  height:18px;
+  display:flex;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:8px;
+}
+

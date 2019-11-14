@@ -1,0 +1,27 @@
+<view class="line1">
+  <view class="line1_text">
+    <text>\n</text>
+    <text>地点：紫荆二楼</text><text>\n</text>
+    <text>配送费：2元</text><text>\n</text>
+    <text>配送范围：32#</text><text>\n</text>
+    <text>配送时间：12：30</text><text>\n</text>
+    <text>接单时间：12：20</text><text>\n</text>
+  </view>
+</view>
+<view class="line2">
+  <view class="line2_text1">
+    <text>我的备注:</text><text>\n</text>
+    <text>限紫荆水煮</text><text>\n</text>
+    <text>限五楼以下</text>
+  </view>
+</view>
+<view class="line3">
+  <view class="line3_text1">
+    <text>\n</text>
+    <text>联系电话：</text><text>\n</text>
+    <text>13209695642</text><text>\n</text>
+    
+  </view>
+  
+</view>
+<button class="copy">复制</button><text>\n</text>

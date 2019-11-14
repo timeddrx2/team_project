@@ -1,0 +1,12 @@
+<view>
+  <button class="a" bintap="ad" style="flex">点单</button>
+  <button class="b" bintap="bd">配送</button>
+</view>
+<view>
+  <label class="d1">
+    <text class="add">丁香二楼</text><text class="price">0.5元</text>
+    <text>\n</text>
+    <text class="load">等待接单中...</text><text class="time">10:00</text>
+    <button class="delete">取消订单</button><button class="change">修改</button>
+</label>
+</view>

@@ -1,0 +1,39 @@
+/* pages/test/test1.wxss */
+
+.line1{
+display:flex;
+flex-flow: wrap;
+justify-content: center;
+margin: 5% auto;
+width: 50%;
+height: 285rpx;
+border-top: 10rpx dotted rgba(248, 248, 106, 0.664);
+border-bottom: 3rpx solid rgba(107, 107, 106, 0.322);
+}
+.line2{
+display:flex;
+flex-flow: wrap;
+justify-content: center;
+margin:  auto;
+width: 50%;
+height: 160rpx;
+border-bottom: 3rpx solid rgba(107, 107, 106, 0.322);
+}
+.line3{
+display:flex;
+flex-flow: wrap;
+justify-content: center;
+margin: auto;
+width: 50%;
+height: 280rpx;
+border-bottom:10rpx dotted rgba(248, 248, 106, 0.664);
+}
+.copy{
+
+  width: 20rpx;
+  position: absolute;
+  left: 300rpx;
+  background-color:  rgba(107, 107, 106, 0.322);
+  color: black;
+  font-size:10px;
+}

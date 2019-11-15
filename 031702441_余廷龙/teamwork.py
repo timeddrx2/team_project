@@ -9,45 +9,62 @@ def issue_order():
     json_data = {
         "error_code": 0,
         "data": {
-            "order_number": "1",
-            "order_type": "0",
+            "canteen": "sss",
+            "delivery_time": "null",
+            "money": 1.0,
+            "order_delivery_time": "null",
+            "order_number": "10023278",
             "order_status": "0",
-            "canteen": "紫荆园二楼",
+            "order_type": "0",
+            "requirement_customer": "ada",
+            "requirement_delivery": "fasd",
+            "result_time": "12:10",
+            "scheduled_delivery_time": "12:00",
             "s_dormitory_1": "32",
             "s_dormitory_2": "316",
-            "money": 1.0,
-            "requirement_order": "水煮肉片，不加香菜",
-            "requirement_delivery": "走路，可能会有点慢",
-            "pair_time": "null",
-            "scheduled_delivery_time": "12:00",
-            "delivery_time": "null",
-            "result_time": "12:10",
-            "wechat_number_customer": "15143255",
-            "wechat_number_delivery": "521512145",
+            "telephone_delivery": "13223332333",
+            "telephone_customer": "13223332333"
         }
     }
+
+    canteen = json_data["data"]["canteen"]
+    delivery_time = json_data["data"]["delivery_time"]
+    money = json_data["data"]["money"]
+    order_delivery_time = json_data["data"]["order_delivery_time"]
+    order_number = json_data["data"]["order_number"]
+    order_status = json_data["data"]["order_status"]
+    order_type = json_data["data"]["order_type"]
+    requirement_customer = json_data["data"]["requirement_customer"]
+    requirement_delivery = json_data["data"]["requirement_delivery"]
+    result_time = json_data["data"]["result_time"]
+    scheduled_delivery_time = json_data["data"]["scheduled_delivery_time"]
+    s_dormitory_1 = json_data["data"]["s_dormitory_1"]
+    s_dormitory_2 = json_data["data"]["s_dormitory_2"]
+    telephone_delivery = json_data["data"]["telephone_delivery"]
+    telephone_customer = json_data["data"]["telephone_customer"]
+
     db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
     cursor = db.cursor()
-    sql = """insert into order(order_number,order_type,order_status,canteen,s_dormitory_1,
-          s_dormitory_2,money,requirement_order,requirement_delivery,pair_time,
-          scheduled_delivery_time,delivery_time,result_time,wechat_number_customer,
-          wechat_number_delivery)
-          values(%s,%s,%s,%s,%s,%s,%f,%s,%s,%s,%s,%s,%s,%s,%s)"""
+    sql = """INSERT INTO order2 (order_number, order_type, order_status, canteen,s_dormitory_1, 
+            s_dormitory_2, money, requirement_customer, requirement_delivery, 
+            order_delivery_time, scheduled_delivery_time, delivery_time, result_time, telephone_delivery, 
+            telephone_customer)
+          values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+
     try:
-        cursor.execute(
-            sql % (
-                json_data["data"]["order_number"], json_data["data"]["order_type"], json_data["data"]["order_status"],
-                json_data["data"]["canteen"], json_data["data"]["s_dormitory_1"], json_data["data"]["s_dormitory_2"],
-                json_data["data"]["money"], json_data["data"]["requirement_order"],
-                json_data["data"]["requirement_delivery"],
-                json_data["data"]["pair_time"], json_data["data"]["scheduled_delivery_time"],
-                json_data["data"]["delivery_time"],
-                json_data["data"]["result_time"], json_data["data"]["wechat_number_customer"],
-                json_data["data"]["wechat_number_delivery"]))
+        # 执行sql语句
+        cursor.execute(sql, (order_number, order_type, order_status, canteen, s_dormitory_1,
+                             s_dormitory_2, money, requirement_customer, requirement_delivery,
+                             order_delivery_time, scheduled_delivery_time, delivery_time,
+                             result_time, telephone_delivery, telephone_customer))
+        # 提交到数据库执行
         db.commit()
     except:
+        # Rollback in case there is any error
         db.rollback()
+        print ("error")
 
+    # 关闭数据库连接
     db.close()
     res = {
         "error_code": 0,
@@ -63,33 +80,33 @@ def get_order():
     json_data = {
         "error_code": 0,
         "data": {
-            "order_number": "1",
+            "order_number": "13124329",
             "s_dormitory_2": "316",
-            "requirement_order": "水煮肉片，不加香菜",
-            "requirement_delivery": "走路，可能会有点慢",
+            "requirement_customer": "dfs",
+            "requirement_delivery": "asd",
             "scheduled_delivery_time": "12:00",
-            "delivery_time": "null",
-            "wechat_number_customer": "15143255",
-            "wechat_number_delivery": "521512145",
+            "delivery_time": "1234",
         }
     }
+    order_number = json_data["data"]["order_number"]
+    s_dormitory_2 = json_data["data"]["s_dormitory_2"]
+    requirement_customer = json_data["data"]["requirement_customer"]
+    requirement_delivery = json_data["data"]["requirement_delivery"]
+    scheduled_delivery_time = json_data["data"]["scheduled_delivery_time"]
+    delivery_time = json_data["data"]["delivery_time"]
+
     db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
     cursor = db.cursor()
-    sql = """insert into order(order_number,s_dormitory_2,requirement_order,requirement_delivery,
-                            scheduled_delivery_time,delivery_time,wechat_number_customer,wechat_number_delivery)
-                            values(%s,%s,%s,%s,%s,%s,%s,%s)"""
+    sql = """INSERT INTO order2 (order_number, s_dormitory_2, requirement_customer, requirement_delivery,
+                            scheduled_delivery_time, delivery_time)
+                        values(%s,%s,%s,%s,%s,%s)"""
     try:
-        cursor.execute(
-            sql % (
-                json_data["data"]["order_number"], json_data["data"]["s_dormitory_2"],
-                json_data["data"]["requirement_order"],
-                json_data["data"]["requirement_delivery"], json_data["data"]["scheduled_delivery_time"],
-                json_data["data"]["delivery_time"],
-                json_data["data"]["wechat_number_customer"],
-                json_data["data"]["wechat_number_delivery"]))
+        cursor.execute(sql, (order_number, s_dormitory_2, requirement_customer, requirement_delivery,
+        scheduled_delivery_time, delivery_time))
         db.commit()
     except:
         db.rollback()
+        print "error"
 
     db.close()
     res = {
@@ -106,20 +123,21 @@ def show_historical_business_orders():
     json_data = {
         "error_code": 0,
         "data": {
-            "wechat_number": "11152514",
+            "telephone": "13223332333",
         }
     }
     res = {
         "error_code": 0,
         "data": []
     }
+    telephone = json_data["data"]["telephone"]
     db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
     sql = """select * 
-            from order 
-            where wechat_number_delivery= %s"""
+            from order2 
+            where telephone_delivery= %s """
     try:
-        cursor.execute(sql) % (json_data["data"]["wechat_number"])
+        cursor.execute(sql % telephone)
         results = cursor.fetchall()
         for row in results:
             res["data"].append(row)
@@ -127,6 +145,7 @@ def show_historical_business_orders():
         print("Error: unable to fecth data")
 
     db.close()
+    print (res)
     return json.dumps(res, ensure_ascii=False)
 
 
@@ -135,20 +154,21 @@ def show_historical_customer_orders():
     json_data = {
         "error_code": 0,
         "data": {
-            "wechat_number": "11152514",
+            "telephone": "13223332333",
         }
     }
     res = {
         "error_code": 0,
         "data": []
     }
+    telephone = json_data["data"]["telephone"]
     db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
     sql = """select * 
-                from order 
-                where wechat_number_customer= %s"""
+            from order2 
+            where telephone_customer= %s """
     try:
-        cursor.execute(sql) % (json_data["data"]["wechat_number"])
+        cursor.execute(sql % telephone)
         results = cursor.fetchall()
         for row in results:
             res["data"].append(row)
@@ -156,5 +176,5 @@ def show_historical_customer_orders():
         print("Error: unable to fecth data")
 
     db.close()
+    print (res)
     return json.dumps(res, ensure_ascii=False)
-    pass

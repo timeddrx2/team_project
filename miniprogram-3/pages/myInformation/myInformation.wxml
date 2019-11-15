@@ -2,18 +2,27 @@
 <!-- 黄色头部 -->
 <view class="yellowhead"></view>
 <!-- 头像 -->
-<view><image id="touxiang" src="../../img/chicken/开心.png" class="head"></image></view>
-<!-- 五项信息 -->
-<view class="information">
-<text space="emsp">姓名  <text id="name" space="ensp">无所谓</text>\n</text>
-<view class="line"></view>
-<text space="emsp">\n性别  <text id="sex" space="ensp">男</text>\n</text>
-<view class="line"></view>
-<text space="emsp">\n学院  <text id="college" space="ensp">数计学院</text>\n</text>
-<view class="line"></view>
-<text space="emsp">\n学号  <text id="num" space="ensp">23332333</text>\n</text>
-<view class="line"></view>
-<text space="emsp">\n电话  <text id="tel"space="ensp">13223332333</text>\n</text>
-<view class="line"></view>
+<view>
+  <text>\n</text>
+  <image id="touxiang" src="/img/chicken/happy.png" class="head"></image>
 </view>
-
+<!-- 边框 -->
+<image src="/img/fenge3.png"  class="fenge" style=" height:30rpx;"></image>
+<!-- 五项信息 -->
+<view>
+  <view class="information">
+  <text space="ensp">\n</text>
+    <text space="emsp">姓名： <text id="name" space="ensp">无所谓</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n性别： <text id="sex" space="ensp">男</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n学院： <text id="college" space="ensp">数计学院</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n学号： <text id="num" space="ensp">23332333</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n电话： <text id="tel"space="ensp">13223332333</text>\n</text>
+    <view class="line"></view>
+  </view>
+</view>
+<text>\n\n</text>
+<image src="/img/fenge3dao.png"  class="fenge" style="height:30rpx;"></image>

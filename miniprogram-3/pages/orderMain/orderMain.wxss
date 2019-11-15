@@ -43,37 +43,20 @@
   font-size: 17px;
 }
 
-/* 两个按钮 */
-
-.order {
-  position: absolute;
-  left: 12rpx;
-  border-radius: 15px;
-  background-color: #ffd700;
-}
-
-.express {
-  position: absolute;
-  left: 350rpx;
-  border-radius: 15px;
-  border-color: #808080;
-}
-
 /* 点单框 */
 
 .diandan {
-  position: absolute;
-  left: 5%;
-  top:10%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-top:20rpx; 
   width: 90%;
   height: 220rpx;
   border-radius: 40rpx;
   border: solid #808080 5rpx;
-  
 }
 
 .touxiang {
-  position: absolute;
   margin: 20rpx 20rpx;
   width: 120rpx;
   height: 120rpx;
@@ -92,36 +75,42 @@
   text-align: center;
 }
 
+.con2 {
+  display: flex;
+  flex-direction: column;
+}
+
 .add {
   border: solid #808080 3rpx;
-  position: absolute;
-  margin: 70rpx 260rpx;
   width: 180rpx;
   height: 50rpx;
   border-radius: 40rpx;
   background-color: #e0e3da;
-text-align: center;
+  text-align: center;
+  margin: 50rpx 40rpx;
 }
 
 .fee {
   border: solid #808080 3rpx;
-  position: absolute;
-  margin: 150rpx 260rpx;
   width: 180rpx;
   height: 50rpx;
   border-radius: 40rpx;
   background-color: #e0e3da;
   text-align: center;
+  margin: 0rpx 40rpx;
 }
-
 .time {
   border: solid #808080 3rpx;
-  position: absolute;
-  margin: 110rpx 520rpx;
-  width: 110rpx;
+  width: 150rpx;
   height: 50rpx;
   border-radius: 40rpx;
   background-color: #e0e3da;
   text-align: center;
+  margin:80rpx 18rpx; 
 }
-/* 顶部菜单栏 */
+.next{
+  margin-top: 80rpx;
+  margin-left:20rpx; 
+  width:40rpx;
+  height:60rpx;
+}

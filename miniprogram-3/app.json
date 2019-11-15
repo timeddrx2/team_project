@@ -1,9 +1,9 @@
 {
   "pages": [
-    
+   "pages/order/order",
     "pages/orderMain/orderMain",
+    
     "pages/myInformation/myInformation",
-    "pages/order/order",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -21,19 +21,19 @@
       {
         "pagePath": "pages/orderMain/orderMain",
         "iconPath": "img/icon/square.png",
-        "selectedIconPath": "img/icon/square点亮.png",
+        "selectedIconPath": "img/icon/squareL.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/order/order",
-        "iconPath":"img/icon/发布.png",
-        "selectedIconPath": "img/icon/发布点亮.png",
+        "iconPath": "img/icon/submit.png",
+        "selectedIconPath": "img/icon/submitL.png",
         "text": "发布"
       },
       {
         "pagePath": "pages/myInformation/myInformation",
-        "iconPath": "img/icon/我的.png",
-        "selectedIconPath": "img/icon/我的点亮.png",
+        "iconPath": "img/icon/my.png",
+        "selectedIconPath": "img/icon/myL.png",
         "text": "我的"
       }
     ]

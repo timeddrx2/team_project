@@ -5,16 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: [{ lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" },]
   },
   toXiangQing: function() {
-
+wx.navigateTo({
+  url: '',
+})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
 
+  },
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    this.onLoad()
+    setTimeout(() => {
+      wx.hideNavigationBarLoading()
+      wx.stopPullDownRefresh()
+    }, 2000);
   },
 
   /**

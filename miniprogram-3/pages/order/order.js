@@ -7,6 +7,7 @@ Page({
   data: {
 
   },
+  
   submit: function() {
     console.log("接单成功！")
     wx.navigateTo({

@@ -1,32 +1,45 @@
 <!--pages/order/order.wxml-->
-<text space="emsp">\n</text>
-<view class="culine"></view>
+<!-- <text>\n</text>
+<image src="/img/fenge.png" mode='widthFix;' class="fenge" style="height:50rpx;"></image> -->
 <!-- 点单详情 -->
 <view class="order">
-<view>
-<text>地点：<text id="place">\n\n</text></text>
-<view class="line"></view>
-</view >
-<view>
-<text>\n配送范围：<text id="sendplace">\n\n</text></text>
-<text>配送费：<text id="fee">\n\n</text></text>
-<text>预计送达时间：<text id="sendtime">\n\n</text></text>
-<view class="line"></view>
-</view>
-<view>
-<text>\n备注：\n<text id="beizhu">\n\n</text></text>
-<text>配送地址:\n\n</text>
-</view>
-<view>
-<text space="emsp">  楼号:</text><input id="addlou" type="text" />
+  <!-- <text>\n</text> -->
+  <view>
+    <text space="emsp">\n 地点：<text>\n</text></text>
+    <view class="line"></view>
+    <!-- <image src="/img/fenge4.png" mode='widthFix;' class="fenge" style="height:20rpx;"></image> -->
+  </view>
 
-<text space="emsp">  门号:</text><input id="addmen" type="text" />
+  <view>
+    <text space="emsp">\n 配送范围：<text >\n\n</text></text>
+    <text space="emsp"> 配送费：<text >\n\n</text></text>
+    <text space="emsp"> 预计送达时间：<text >\n\n</text></text>
+    <view class="line"></view>
+    <!-- <image src="/img/fenge4.png" mode='widthFix;' class="fenge" style="height:20rpx;"></image> -->
+  </view>
+
+  <view>
+    <text space="emsp"> 备注：\n<text space="emsp">   \n\n</text></text>
+  </view>
+
+  <view>
+    <text space="emsp"> 配送地址:\n\n</text>
+    <view class="con1">
+      <text space="emsp">   楼号:</text>
+      <input class="addlou" name="lou" type="text" />
+    </view>
+    <text>\n</text>
+    <view class="con1">
+      <text space="emsp">   门号:</text>
+      <input class="addmen" name="men" type="text" />
+    </view>
+    <text>\n</text>
+  </view>
 
 </view>
-
+<view class="con2">
+  <image src="/img/fenge2.png" mode='widthFix' class="fenge"></image>
+  <text>\n</text>
+  <button class="btn" bindtap="sumbit" hover-class="btn_hover">确定下单</button>
+  <text>\n</text>
 </view>
-<text >\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n</text>
-<view class="culine"></view>
-<text >\n\n\n\n</text>
-<button class="btn" bindtap="sumbit" hover-class="btn_hover" >确定下单</button>
-<text >\n\n</text>

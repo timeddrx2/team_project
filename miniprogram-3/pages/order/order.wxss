@@ -1,23 +1,51 @@
 /* pages/order/order.wxss */
 
 .order {
-  position: absolute;
-  width: 424rpx;
-  left: 20%;
-  top: 10%;
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 148rpx;
+  font-size: 35rpx;
+  background-color: rgba(0, 0, 0, 0.0397);
+  /* opacity:0.01; */
+  border-radius: 40rpx;
+}
+
+/* 让楼号和输入框并排 */
+
+.con1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.con2 {
+  display: flex;
+  flex-direction: column;
 }
 
 /* 分割线 */
 
-.line {
-  border: solid #e0e3da 2rpx;
+.fenge {
+  width: 100%;
 }
 
-.culine {
-  width: 560rpx;
-  position: absolute;
-  left: 80rpx;
-  border: solid #e0e3da 5rpx;
+/* input */
+
+.addlou {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+
+.addmen {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
 }
 
 /* 按钮 */
@@ -37,19 +65,14 @@
   background-color: #f0ca00;
 }
 
-/* input */
+/* 
+.line {
+  border: solid #e0e3da 2rpx;
+}
 
-#addlou {
-  border: solid #000 1rpx;
-  border-radius: 15rpx;
-  width: 200rpx;
-  text-align: center;
-  margin-left: 100rpx;
-}
-#addmen {
-  border: solid #000 1rpx;
-  border-radius: 15rpx;
-  width: 200rpx;
-  text-align: center;
-   margin-left: 100rpx;
-}
+.culine {
+  width: 560rpx;
+  position: absolute;
+  left: 80rpx;
+  border: solid #e0e3da 5rpx;
+} */

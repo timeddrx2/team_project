@@ -1,6 +1,6 @@
 <!--pages/orderMain/orderMain.wxml-->
 <!-- 点单主页 -->
-<view style="position:fixed;">
+<view>
   <view>
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
@@ -20,47 +20,33 @@
 <button class="express" style="width:380rpx;height:2%;" bindtap="toSend">配送</button>
 </view> -->
 <!-- 详情框 -->
-<view class="diandan" bindtap="toXiangQing">
-  <!-- 头像 -->
-  <view>
-    <image class="touxiang" id="head" src="../../img/chicken/开心.png"></image>
+
+<view wx:for="{{list}}" wx:key="{{index}}" bindtap="toXiangQing">
+  <view class="diandan" bindtap="toXiangQing">
+
+    <view class="con2">
+      <!-- 头像 -->
+      <image class="touxiang"  src="/img/chicken/happy.png"></image>
+      <!-- 宿舍楼号 -->
+      <text class="dorm" >{{item.lou}}</text>
+    </view>
+
+    <view class="con2">
+      <!-- 食堂地址 -->
+      <text class="add">{{item.add}}</text>
+      <!-- 配送费 -->
+      <text class="fee " >{{item.fee}}</text>
+    </view>
+
+    <!-- 倒计时 -->
+    <view class="con2">
+      <text class="time" >{{item.time}}</text>
+    </view>
+
+    <view class="con2">
+      <image src="../../img/icon/next.png" class="next"></image>
+    </view>
+
   </view>
-  <!-- 宿舍楼号 -->
-  <view class="dorm">
-    <text id="louhao"></text>
-  </view>
-  <!-- 食堂地址 -->
-  <view class="add">
-    <text id="dizhi"></text>
-  </view>
-  <!-- 配送费 -->
-  <view class="fee">
-    <text id="peisongfei"></text>
-  </view>
-  <!-- 倒计时 -->
-  <view class="time">
-    <text id="daojishi"></text>
-  </view>
-</view>
-<view class="diandan" bindtap="toXiangQing">
-  <!-- 头像 -->
-  <view>
-    <image class="touxiang" id="head" src="../../img/chicken/开心.png"></image>
-  </view>
-  <!-- 宿舍楼号 -->
-  <view class="dorm">
-    <text id="louhao"></text>
-  </view>
-  <!-- 食堂地址 -->
-  <view class="add">
-    <text id="dizhi"></text>
-  </view>
-  <!-- 配送费 -->
-  <view class="fee">
-    <text id="peisongfei"></text>
-  </view>
-  <!-- 倒计时 -->
-  <view class="time">
-    <text id="daojishi"></text>
-  </view>
+
 </view>

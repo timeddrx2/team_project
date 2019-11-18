@@ -67,3 +67,33 @@ def refresh_business():
     print (res)
     return json.dumps(res, ensure_ascii=False)
 refresh_business()
+#查看个人信息
+def show_personal_information():
+    json_data = {
+        "error_code": 0,
+        "data": {
+            "telephone": "10000000000",
+        }
+    }
+    res = {
+        "error_code": 0,
+        "data": []
+    }
+    telephone = json_data["data"]["telephone"]
+    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    sql = """select * 
+            from user 
+            where telephone= %s """
+    try:
+        cursor.execute(sql % telephone)
+        results = cursor.fetchall()
+        for row in results:
+            res["data"].append(row)
+    except:
+        print("Error: unable to fecth data")
+
+    db.close()
+    print (res)
+    return json.dumps(res, ensure_ascii=False)
+show_personal_information()

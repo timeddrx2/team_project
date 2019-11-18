@@ -1,0 +1,100 @@
+
+import MySQLdb
+import json
+
+#刷新点单广场
+def show_historical_business_orders():
+    json_data = {
+        "error_code": 0,
+        "data": {
+            "order_type": "0",
+        }
+    }
+    res = {
+        "error_code": 0,
+        "data": []
+    }
+    ordertype = json_data["data"]["order_type"]
+    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    sql = """select * 
+            from order2 
+            where order_type= %s """
+    try:
+        cursor.execute(sql % ordertype)
+        results = cursor.fetchall()
+        for row in results:
+            res["data"].append(row)
+    except:
+        print("Error: unable to fecth data")
+
+    db.close()
+    print (res)
+    return json.dumps(res, ensure_ascii=False)
+show_historical_business_orders()
+
+import MySQLdb
+import json
+def show_historical_business_orders():
+    json_data = {
+        "error_code": 0,
+        "data": {
+            "order_type": "1",
+        }
+    }
+    res = {
+        "error_code": 0,
+        "data": []
+    }
+    ordertype = json_data["data"]["order_type"]
+    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    sql = """select * 
+            from order2 
+            where order_type= %s """
+    try:
+        cursor.execute(sql % ordertype)
+        results = cursor.fetchall()
+        for row in results:
+            res["data"].append(row)
+    except:
+        print("Error: unable to fecth data")
+
+    db.close()
+    print (res)
+    return json.dumps(res, ensure_ascii=False)
+show_historical_business_orders()
+
+#刷新配送广场
+
+import MySQLdb
+import json
+def show_historical_business_orders():
+    json_data = {
+        "error_code": 0,
+        "data": {
+            "order_type": "1",
+        }
+    }
+    res = {
+        "error_code": 0,
+        "data": []
+    }
+    ordertype = json_data["data"]["order_type"]
+    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    sql = """select * 
+            from order2 
+            where order_type= %s """
+    try:
+        cursor.execute(sql % ordertype)
+        results = cursor.fetchall()
+        for row in results:
+            res["data"].append(row)
+    except:
+        print("Error: unable to fecth data")
+
+    db.close()
+    print (res)
+    return json.dumps(res, ensure_ascii=False)
+show_historical_business_orders()

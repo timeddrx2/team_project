@@ -5,21 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dialogShow: false,
+    showOneButtonDialog: false,
+    buttons: [{
+      text: '取消'
+    }, {
+      text: '确定'
+    }],
   },
-  
+
   submit: function() {
+    this.setData({
+      dialogShow: true
+    })
     console.log("接单成功！")
     wx.navigateTo({
       url: '../index/index',
     })
     console.log("111")
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+
   },
 
   /**

@@ -1,0 +1,50 @@
+<!--内容主体-->
+<view class="swiper-tab">
+      <!-- 定义了两个类名，越后面优先级越高 -->
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">配送</view>
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">点单</view>
+
+    </view>
+<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+  <swiper-item>
+    <view>
+      <!-- 详情框 -->
+      <view wx:for="{{list1}}" wx:key="{{index}}">
+        <view class="dingdan1" >
+          <view class="con1" bindtap="detail1">
+            <text class="status1">{{item.status}}</text>
+          </view>
+          <view class="con1" bindtap="detail1">
+            <text class="hall_name1">{{item.hall_name}}</text>
+            <text class="time1">{{item.time}}</text>
+          </view>
+
+          <view class="con1">
+            <text class="price1">￥{{item.price}}</text>
+            <text class="button_evalute1" bindtap="comment">评价</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view>
+      <view wx:for="{{list2}}" wx:key="{{index}}">
+        <view class="dingdan" >
+          <view class="con2">
+            <text class="status" bindtap="detail2">{{item.status}}</text>
+
+            <view class="con1" bindtap="detail2">
+              <text class="hall_name">{{item.hall_name}}</text>
+              <text class="foodname">{{item.foodname}}</text>
+            </view>
+            <view class="con1">
+              <text class="price">￥{{item.price}}</text>
+              <text class="button_evalute"  bindtap="comment">评价</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,117 @@
+<!--pages/fabu-diandan/fabu-diandan.wxml-->
+<!-- <image class="image" mode="aspectFit" src="../../img/chicken/fenge.png"></image> -->
+<view class="fabu-diandan">
+  <view class="page"></view>
+  <!--顶部导航栏-->
+  <view class="swiper-tab">
+    <!-- 定义了两个类名，越后面优先级越高 -->
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">点单</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">配送</view>
+
+  </view>
+
+  <!--内容主体-->
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <view>
+        <view class="name-top">设置配送费：</view>
+        <view class="input">
+          <input class="fee" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">预计送达时间：</view>
+        <view class="input">
+          <input class="time" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">取消订单时间：</view>
+        <view class="input">
+          <input class="time" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">食堂：</view>
+        <view class="input">
+          <input class="shitang" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view>
+          <text space="emsp" id="peisong-address">配送地址：</text>
+          <view class="address">
+            <text space="emsp" class="lou-men"> 楼号：</text>
+            <input id="add-lou" type="text" name="lou" />
+          </view>
+          <view class="address">
+            <text space="emsp" class="lou-men"> 门号：</text>
+            <input id="add-hao" type="text" nam="men" />
+          </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="name">要求：</view>
+        <view class="ask">
+          <textarea id="require" placeholder=" " />
+        </view>
+
+        <view>
+          <button class="btn" bindtap="submit" hover-class="btn_hover">确认订单</button>
+          <text>\n\n</text>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view>
+        <!-- 详情框 -->
+        <view class="name-top">设置配送费：</view>
+        <view class="input">
+          <input class="fee" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">预计送达时间：</view>
+        <view class="input">
+          <input class="time" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">取消订单时间：</view>
+        <view class="input">
+          <input class="time" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view class="name">食堂：</view>
+        <view class="input">
+          <input class="shitang" placeholder=" " />
+        </view>
+        <view class="line"></view>
+
+        <view>
+          <text space="emsp" id="peisong-address">配送范围：</text>
+          <view class="address">
+            <text space="emsp" class="lou-men"> 楼号：</text>
+            <input id="add-lou" type="text" name="lou" />
+          </view>
+          <view class="address">
+            <text space="emsp" class="lou-men"> 门号：</text>
+            <input id="add-hao" type="text" nam="men" />
+          </view>
+        </view>
+        <view class="line"></view>
+
+        <view class="name">备注：</view>
+        <view class="beizhu">
+          <textarea id="remarks" placeholder=" " />
+        </view>
+
+        <view>
+          <button class="btn" bindtap="submit" hover-class="btn_hover">确认订单</button>
+          <text>\n\n</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

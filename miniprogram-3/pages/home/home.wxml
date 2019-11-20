@@ -1,0 +1,102 @@
+<view id="zong">
+
+
+  <view>
+    <view>
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <!-- 搜索框 -->
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="22"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="page">
+
+    <!--顶部导航栏-->
+    <view class="swiper-tab">
+      <!-- 定义了两个类名，越后面优先级越高 -->
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">点单</view>
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">配送</view>
+
+    </view>
+
+    <!--内容主体-->
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <swiper-item>
+        <view>
+          <!-- 详情框 -->
+          <view wx:for="{{list2}}" wx:key="{{index}}" bindtap="toXiangQing">
+            <view class="diandan" bindtap="toDXiangQing">
+
+              <view class="con2">
+                <!-- 头像 -->
+                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <!-- 宿舍楼号 -->
+                <text class="dorm">{{item.lou}}</text>
+              </view>
+
+              <view class="con2">
+                <!-- 食堂地址 -->
+                <text class="add">{{item.add}}</text>
+                <!-- 配送费 -->
+                <text class="fee ">{{item.fee}}</text>
+              </view>
+
+              <!-- 倒计时 -->
+              <view class="con2">
+                <text class="time">{{item.time}}</text>
+              </view>
+
+              <view class="con2">
+                <image src="../../img/icon/next.png" class="next"></image>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view>
+          <!-- 详情框 -->
+          <view wx:for="{{list3}}" wx:key="{{index}}" bindtap="toPXiangQing">
+            <view class="diandan" bindtap="toXiangQing">
+
+              <view class="con2">
+                <!-- 头像 -->
+                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <!-- 宿舍楼号楼层 -->
+                <text class="dorm">{{item.lou}}</text>
+              </view>
+
+              <view class="con2">
+                <!-- 食堂地址 -->
+                <text class="add">{{item.add}}</text>
+                <!-- 配送费 -->
+                <text class="fee ">{{item.fee}}</text>
+              </view>
+
+              <!-- 倒计时 -->
+              <view class="con2">
+                <text class="time">{{item.time}}</text>
+              </view>
+
+              <view class="con2">
+                <image src="../../img/icon/next.png" class="next"></image>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>

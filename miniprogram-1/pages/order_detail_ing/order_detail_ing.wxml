@@ -1,21 +1,42 @@
-<!--order_detail_ing.wxml-->
-<view>
-<view class="view_detail">
-  <text>地点：</text><text>\n</text>
-  <text>配送费：</text><text>\n</text>
-  <text>配送地址：</text><text>\n</text>
-  <text>预计配送时间：</text><text>\n</text>
-  <text>接单时间：</text> <text>\n</text>
+<view class="background">
+<view class="line1">
+  <view class="line1_text">
+    
+    <view class="addr">
+      <text>地点：</text><text>\n</text>
+    </view>
+    <view class="pprice">
+      <text>配送费：</text><text>\n</text>
+    </view>
+    <view class="wise">
+      <text>配送范围：</text><text>\n</text>
+    </view>
+    <view class="ptime">
+      <text>配送时间：</text><text>\n</text>
+    </view>
+    <view class="gettime">
+      <text>接单时间：</text><text>\n</text>
+    </view>
   </view>
-
-  <view class="view_remarks"> 
-  <text>我的备注：\n</text>
-  <text></text>
   </view>
-
-  <view  class="view_number">
-  <text>联系电话：\n</text>
-  <text></text>
-   </view>
-  <button class="button_copy">复制</button>
+  <view class="line2">
+  <view class="line2_text">
+    <view class="beizhu">
+      <text>我的备注:</text>
+    </view>
+    <view class="bpaper">
+    <text></text><text>\n</text>
+    <text>\n</text>
+    </view>
+  </view>
 </view>
+<view class="line3">
+  <view class="line3_text">
+    <text>\n</text>
+    <text>联系电话：</text><text>\n</text>
+    <text></text><text>\n</text>
+    <button class="copy">复制</button>
+  </view>
+  </view>
+</view>
+

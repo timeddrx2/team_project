@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   data: {
-    list: [{ hall_name: "玫瑰", status: "配送中", price: "2", foodname: "水饺" }, { hall_name: "玫瑰", status: "已完成", price: "2", foodname: "水饺" }, { hall_name: "玫瑰", status: "已完成", price: "2", foodname: "水饺" }, { hall_name: "玫瑰", status: "已完成", price: "2", foodname: "水饺" }]
+    list: [{ hall_name: "丁香二楼", status: "等待接单中...", price: "0.5",time:"10:00"}, { hall_name: "玫瑰", status: "已完成", price: "2", time: "水饺" }, { hall_name: "玫瑰", status: "已完成", price: "2", time: "水饺" }, { hall_name: "玫瑰", status: "已完成", price: "2", time: "水饺" }]
   },
   // onLoad: function (options) {
   //   // 页面初始化 options为页面跳转所带来的参数
@@ -25,7 +25,7 @@ Page({
   },
   detail: function () {
     wx.navigateTo({
-      url: '/pages/order_detail/order_detail',
+      url: '/pages/order_detail_ing/order_detail_ing',
     })
   }
 })

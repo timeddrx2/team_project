@@ -11,9 +11,9 @@
 .head{
   position: absolute;
   left: 300rpx;
-  top: 5%;
-  width: 120rpx;
-  height: 120rpx;
+  top: 8%;
+  width: 150rpx;
+  height: 150rpx;
   border:solid 3rpx;
   border-radius: 200rpx;
 }
@@ -28,7 +28,7 @@ margin-left: 10%;
 .yellowhead{
  background:#fde073;
  width: 100%;
- height: 220rpx;
+ height: 300rpx;
  border-bottom-left-radius:100rpx;
  border-bottom-right-radius:100rpx;
 }

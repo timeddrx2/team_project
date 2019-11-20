@@ -43,3 +43,6 @@
   <button class="btn" bindtap="sumbit" hover-class="btn_hover">确定下单</button>
   <text>\n</text>
 </view>
+<mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+  <view>test content</view>
+</mp-dialog>

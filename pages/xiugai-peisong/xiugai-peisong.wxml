@@ -1,0 +1,49 @@
+<!--pages/xiugai-peisong/xiugai-peisong.wxml-->
+<view class="xiugai-peisong">
+  <view class="name-top">设置配送费：</view>
+  <view class="input">
+    <input class="fee" placeholder=" " />
+  </view>
+  <view class="line"></view>
+  
+  <view class="name">预计送达时间：</view>
+  <view class="input">
+    <input class="time" placeholder=" " />
+  </view>
+  <view class="line"></view>
+  
+  <view class="name">取消订单时间：</view>
+  <view class="input">
+    <input class="time" placeholder=" " />
+  </view>
+  <view class="line"></view>
+
+  <view class="name">食堂：</view>
+  <view class="input">
+    <input class="shitang"  placeholder=" " />
+  </view>
+  <view class="line"></view>
+
+  <view>
+    <text space="emsp" id="peisong-address">配送范围：</text>
+    <view class="address">
+      <text space="emsp" class="lou-men"> 楼号：</text>
+      <input id="add-lou" type="text" name="lou" />
+    </view>
+    <view class="address">
+      <text space="emsp" class="lou-men"> 门号：</text>
+      <input id="add-hao" type="text" nam="men" />
+    </view>
+  </view>
+  <view class="line"></view>
+
+  <view class="name">备注：</view>
+  <view class="beizhu">
+    <textarea id="remarks" placeholder=" " />
+  </view>
+
+  <view>
+    <button class="btn" bindtap="submit" hover-class="btn_hover">确认订单</button>
+    <text>\n\n</text>
+  </view>
+</view>

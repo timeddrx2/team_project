@@ -1,0 +1,22 @@
+<!--pages/order/order.wxml-->
+<!-- 点单详情 -->
+<view id="box">
+  <view class="order">
+    <view class="line1"></view>
+    <view>
+      <text space="emsp">\n  地点：<text>\n\n</text></text>
+    </view>
+    <view class="line2"></view>
+    <view>
+      <text space="emsp">\n  配送费：<text >\n\n</text></text>
+      <text space="emsp">  配送时间：<text >\n\n</text></text>
+      <text space="emsp">  配送地点：<text >\n\n</text></text>
+    </view>
+    <view class="line2"></view>
+    <view>
+      <text space="emsp">\n\n  要求：\n\n<text space="emsp">{{command}}\n\n</text></text>
+    </view>
+    <view class="line1"></view>
+    <button class="btn" bindtap="sumbit" hover-class="btn_hover">确定下单</button>
+  </view>
+  </view>

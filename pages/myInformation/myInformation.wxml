@@ -1,0 +1,28 @@
+<!--pages/myInformation/myInformation.wxml-->
+<!-- 黄色头部 -->
+<view class="yellowhead"></view>
+<!-- 头像 -->
+<view>
+  <text>\n</text>
+  <image id="touxiang" src="/img/chicken/happy.png" class="head"></image>
+</view>
+<!-- 边框 -->
+<image src="/img/fenge3.png"  class="fenge" style=" height:30rpx;"></image>
+<!-- 五项信息 -->
+<view>
+  <view class="information">
+  <text space="ensp">\n</text>
+    <text space="emsp">姓名： <text space="ensp">{{name}}</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n性别： <text space="ensp">{{sex}}</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n学院： <text  space="ensp">{{academy}}</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n学号： <text space="ensp">{{student_id}}</text>\n</text>
+    <view class="line"></view>
+    <text space="emsp">\n电话： <text space="ensp">{{tel}}</text>\n</text>
+    <view class="line"></view>
+  </view>
+</view>
+<text>\n\n</text>
+<image src="/img/fenge3dao.png"  class="fenge" style="height:30rpx;"></image>

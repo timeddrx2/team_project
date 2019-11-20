@@ -1,0 +1,71 @@
+<!--pages/xinxitianxie/xinxitianxie.wxml-->
+
+<view class="xinxitianxie">
+  
+  <view class="point-out">
+    <text>\n提交之后无法修改，请谨慎填写</text>
+  </view>
+
+  <image class="image" mode="aspectFit" src="../../img/chicken/renzhen.png"></image>
+  
+  <!-- 填写订单信息 -->
+  <view class="page-xinxi">
+    <view class="page-section">
+      <text>\n\n\n</text>
+      <view class="xinxi__title">姓名：</view>
+        <view class="xinxi xinxi_input">
+          <input class="xinxi-input" placeholder=" " />
+          <view class="line"></view>
+        </view>
+    </view>
+  </view>
+  
+  <view class="page-xinxi">
+    <view class="page-section">
+      <text>\n</text>
+      <view class="xinxi__title">性别：</view>
+        <view class="xinxi xinxi_input">
+          <input class="xinxi-input" placeholder=" " />
+          <view class="line"></view>
+        </view>
+    </view>
+  </view>
+  
+  <view class="page-xinxi">
+    <view class="page-section">
+      <text>\n</text>
+      <view class="xinxi__title">学院：</view>
+        <view class="xinxi xinxi_input">
+          <input class="xinxi-input" placeholder=" " />
+          <view class="line"></view>
+        </view>
+    </view>
+  </view>
+  
+  <view class="page-xinxi">
+    <view class="page-section">
+      <text>\n</text>
+      <view class="xinxi__title">学号：</view>
+        <view class="xinxi xinxi_input">
+          <input class="xinxi-input" type="text" placeholder=" " />
+          <view class="line"></view>
+        </view>
+    </view>
+  </view>
+  
+  <view class="page-xinxi">
+    <view class="page-section">
+      <text>\n</text>
+      <view class="xinxi__title">电话：</view>
+        <view class="xinxi xinxi_input">
+          <input class="xinxi-input" type="number" placeholder=" " />
+        </view>
+    </view>
+  </view>
+
+  <view>
+    <text>\n</text>
+    <button class="btn" bindtap="submit" hover-class="btn_hover">提交</button>
+    <text>\n</text>
+  </view>
+</view>

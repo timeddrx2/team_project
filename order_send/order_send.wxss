@@ -1,0 +1,73 @@
+.dingdan{
+ display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  width: 90%;
+  height: 220rpx;
+  border-radius: 40rpx;
+  border: solid #808080 5rpx;
+}
+.con2 {
+  display: flex;
+  flex-direction: row;
+}
+.con1 {
+  display: flex;
+  flex-direction: column;
+}
+.hall_name{
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+  margin: 30rpx 30rpx;
+}
+.status{
+  width: 250rpx;
+  height: 50rpx;
+  text-align: center;
+  margin: 20px 0rpx;
+  font-size:38rpx; 
+}
+.price{
+  border-width:0px;
+  margin:30rpx 20rpx;
+  width:180rpx;
+  height:50rpx;
+  font-size:38rpx;
+}
+.time{
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 130rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+  margin:30rpx 30rpx;
+}
+.button_evalute{
+  border-radius:10rpx;
+  border-width:0px;
+  margin-top: 40rpx;
+  width:46px;
+  height:18px;
+  background-color: yellow;
+  text-align: center;
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx;  
+}
+
+
+

@@ -1,12 +1,21 @@
 <!--order_order.wxml-->
-<view class="cotainer">
-  <button type="default" class="button_jump" bindtap="jump"> 配送单</button>
-  <button class="button_self"> 点单</button>
-  <view class="dingdan" bindtap="detail">
-    <text class="text1">食堂名</text>
-    <text class="text2">状态</text>
-    <text class="text3">￥</text>
-    <text class="text4">食物名</text>
-    <button class="button_evalute">评价</button>
+<view class="button">
+  <view style="height:80rpx;border:solid 3rpx;width:100%;"></view>
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view class="dingdan" bindtap="detail">
+      <view class="con2">
+        <text class="status">{{item.status}}</text>
+        
+        <view class="con1">
+          <text class="hall_name">{{item.hall_name}}</text>
+          <text class="foodname">{{item.foodname}}</text>
+        </view>
+        <view class="con1">
+          <text class="price">￥{{item.price}}</text>
+          <text class="button_evalute">评价</text>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
+

@@ -1,0 +1,20 @@
+<!--order_order.wxml-->
+<view class="button">
+  <view style="height:80rpx;border:solid 3rpx;width:100%;"></view>
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view class="dingdan" bindtap="detail">
+     <view class="con1">
+        <text class="status">{{item.status}}</text>
+      </view>
+      <view class="con1">
+        <text class="hall_name">{{item.hall_name}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
+  
+      <view class="con1"> 
+        <text class="price">￥{{item.price}}</text>
+        <text class="button_evalute">评价</text>
+      </view>
+    </view>
+  </view>
+</view>

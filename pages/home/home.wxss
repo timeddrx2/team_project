@@ -1,0 +1,164 @@
+.zong{
+  display: flex;
+}
+
+/* 搜索 */
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 4px;
+}
+
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  flex: auto;
+  border-radius: 15px;
+  background: #fff;
+  border: 1rpx solid #e6e6ea;
+  height: 30px;
+}
+
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.weui-search-bar__input {
+  height: 1px;
+  line-height: 10px;
+  font-size: 17px;
+}
+
+/* 滑块导航 */
+.page {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+  
+.swiper-tab {
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  /* border-bottom: 2rpx solid #777; */
+  border-bottom-style: none;
+  justify-content: center;
+}
+  
+.tab-item {
+  /* margin-top: 60rpx; */
+  width: 35%;
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+  
+.swiper {
+  height: 1200rpx; 
+  background: #fff;
+}
+
+  
+.on {
+  color: #FBD300;
+  border-bottom: 8rpx solid #FBD300;
+  
+}
+
+
+/* 点单框 */
+
+.diandan {
+  font-size: 38rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+   margin-top: 10rpx; 
+  width: 90%;
+  height: 220rpx;
+ border-radius: 40rpx;
+   border: solid #CCC8BD 1rpx;
+   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+}
+
+.yemianyi{
+    margin-top: 2200rpx; 
+}
+.touxiang {
+  margin-left:  35rpx ;
+  margin-top:  30rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 200rpx;
+  border: solid #CCC8BD 3rpx;
+}
+
+.dorm {
+
+ margin-left:  40rpx ;
+  margin-top:  10rpx;
+  
+  width: 120rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  /* background-color: #e0e3da; */
+  color: #8C8282;
+  text-align: center;
+}
+
+.con2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.add {
+
+  width: 160rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: #CCC8BD;
+  text-align: center;
+  margin: 50rpx 70rpx;
+}
+
+.fee {
+
+  width: 160rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: #CCC8BD;
+  text-align: center;
+  margin: 0rpx 70rpx;
+}
+.time {
+  color: #8C8282;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  background-color: rgb(223, 223, 223);
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 17rpx;
+  margin-top:90rpx ;
+  margin-left:  10rpx; 
+}
+.next{
+  margin-top: 90rpx;
+  margin-left:50rpx; 
+  width:50rpx;
+  height:50rpx;
+}

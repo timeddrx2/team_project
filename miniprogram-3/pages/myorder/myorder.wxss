@@ -1,0 +1,183 @@
+.page {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+  
+.swiper-tab {
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  border-bottom-style: none;
+  justify-content: center;
+}
+  
+.tab-item {
+  width: 35%;
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+  
+.swiper {
+  height: 1200rpx; 
+  background: #fff;
+}
+
+  
+.on {
+  color: #FBD300;
+  border-bottom: 8rpx solid #FBD300;
+  
+}
+/* 配送 */
+.dingdan1{
+ display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  width: 90%;
+  height: 220rpx;
+  border-radius: 40rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+}
+.con2 {
+  display: flex;
+  flex-direction: row;
+}
+.con1 {
+  display: flex;
+  flex-direction: column;
+}
+.hall_name1{
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+  margin: 30rpx 30rpx;
+}
+.status1{
+  width: 250rpx;
+  height: 50rpx;
+  text-align: center;
+  margin: 20px 0rpx;
+  font-size:38rpx; 
+}
+.price1{
+  border-width:0px;
+  margin:30rpx 20rpx;
+  width:180rpx;
+  height:50rpx;
+  font-size:38rpx;
+}
+.time1{
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 130rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+  margin:30rpx 30rpx;
+}
+.button_evalute1{
+   border: solid #808080 3rpx;
+  border-radius:10rpx;
+  border-width:0px;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  width:100rpx;
+  height:40rpx;
+  background-color: #fde073;
+  font-weight:400;
+  font-style:normal;
+  font-size:30rpx;
+  text-align: center;
+}
+/* 点单 */
+.dingdan{
+ display: flex;
+  flex-direction: row;
+  margin-left: 5%; 
+   margin-top: 20rpx;
+  width: 90%;
+  height: 220rpx;
+  border-radius: 40rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+}
+.con2 {
+  display: flex;
+  flex-direction: row;
+}
+.con1 {
+  display: flex;
+  flex-direction: column;
+}
+.hall_name{
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+   margin:30rpx 30rpx; 
+}
+.status{
+  /* border: solid #808080 3rpx; */
+  width: 180rpx;
+  height: 50rpx;
+  /* border-radius: 40rpx; */
+  /* background-color: #e0e3da; */
+  text-align: center;
+  margin: 20px 0rpx;
+  font-size:38rpx; 
+}
+.price{
+  border-width:0px;
+   margin:30rpx 60rpx;
+  width:180rpx;
+  height:50rpx;
+  font-size:38rpx;
+}
+.foodname{
+  
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:38rpx; 
+  border: solid #808080 3rpx;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: white;
+  text-align: center;
+ margin:30rpx 30rpx;
+}
+.button_evalute{
+  border: solid #808080 3rpx;
+  border-radius:10rpx;
+  border-width:0px;
+  margin-top: 40rpx;
+  margin-left: 60rpx;
+  width:100rpx;
+  height:40rpx;
+  background-color: #fde073;
+  font-weight:400;
+  font-style:normal;
+  font-size:30rpx;
+  text-align: center;
+}

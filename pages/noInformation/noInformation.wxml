@@ -1,0 +1,21 @@
+<!--pages/myInformation/myInformation.wxml-->
+<!-- 黄色头部 -->
+<view id="xinxiweitian">
+  <view class="yellowhead"></view>
+  <!-- 头像 -->
+  <view>
+    <image id="touxiang" src="../../img/chicken/开心.png" class="head"></image>
+  </view>
+
+  <view class="information">
+    <text space="emsp">这里还空空如也 </text>
+  </view>
+
+  <view class="container-fuild">
+    <!-- 分割线 -->
+    <view class="line"></view>
+  </view>
+
+  <button class="btn" bindtap="sumbit" hover-class="btn_hover">马上去填写</button>
+
+</view>

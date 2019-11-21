@@ -1,0 +1,74 @@
+/* pages/order/order.wxss */
+.order {
+  display: flex;
+  flex-direction: column;
+  font-size: 38rpx;
+  margin-top: 60rpx;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+}
+
+/* 让楼号和输入框并排 */
+
+.con1 {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* 分割线 */
+
+.line1 {
+  background: #e0e3da;
+  width: 550rpx;
+  height: 7rpx;  
+}
+.line2 {
+  background: #e0e3da;
+  width: 430rpx;
+  height: 2rpx;
+  margin-right:60rpx; 
+  margin-left: 60rpx;
+}
+
+/* input */
+
+.addlou {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+
+.addmen {
+  border: solid #000 1rpx;
+  border-radius: 15rpx;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+
+/* 按钮 */
+
+.btn::after {
+  border: 0;
+}
+
+.btn {
+  left: 10rpx;
+  border-radius: 30px;
+  background: #fdd51e;
+  color: white;
+}
+
+.btn_hover {
+  background-color: #f0ca00;
+}
+
+/* 弹窗内部组件 */
+.textColor{
+  color: #fde073
+}

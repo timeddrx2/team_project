@@ -1,44 +1,37 @@
-// pages/myInformation/myInformation.js
+// pages/fabu-diandan/fabu-diandan.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    // tab切换 
+    list: [1, 2, 3, 4, 5],
+    currentTab: 0,
   },
-  toorderMain: function () {
-    console.log("返回主页")
-    wx.navigateTo({
-      url: "../orderMain/orderMain"
+  swichNav: function (e) {
+    console.log(e);
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
+  },
+  swiperChange: function (e) {
+    console.log(e);
+    this.setData({
+      currentTab: e.detail.current,
     })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    wx.request({
-      url: 'https://www.sssxfd.top:8080/show_personal_information',
-      method: "POST",
-      header:{
-        'content-type':' application/json'
-      },
-      data: {
-        "error_code": 0,
-        "data": {
-          "telephone": "13252142852",
-        }
-      },
-      success(res) {
-        var name = res.data.name
-        var sex = res.data.sex
-        var academy = res.data.academy
-        var student_id = res.data.student_id
-        var tel = res.data.telephone
-      }
-    })
+
   },
 
   /**
@@ -88,5 +81,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  jump: function () {
+    wx.navigateTo({
+      url: '/pages/fabu-peisong/fabu-peisong',
+    })
+  },
+  submit: function () {
+    wx.navigateTo({
+      url: '/susu/order_detail/order_detail',
+    })
   }
 })

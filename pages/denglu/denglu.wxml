@@ -1,0 +1,14 @@
+<!--pages/denglu/denglu.wxml-->
+<view class="denglu">
+  <view>
+    <text class="user-entry">用户登录</text>
+    <view class="input">
+      <input class="telephone" type="number" placeholder="请输入手机号码" />
+      <input class="password" password="ture" placeholder="请输入您的密码" />
+    </view>
+    <button class="entry" bindtap="myMessage">登录</button>
+    <text class="register" bindtap="toRegister">我要注册</text>
+    <text class="separate">|</text>
+    <text class="forget-password">忘记密码</text>
+  </view>
+</view>

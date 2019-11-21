@@ -1,0 +1,54 @@
+<!-- 点单详情 -->
+<view class="order">
+  <view class="line1"></view>
+  <view>
+    <text space="emsp">\n 地点：<text>\n\n</text></text>
+    <view class="line"></view>
+  </view>
+<view class="line2"></view>
+  <view>
+    <text space="emsp">\n 配送范围：<text >\n\n</text></text>
+    <text space="emsp"> 配送费：<text >\n\n</text></text>
+    <text space="emsp"> 预计送达时间：<text >\n\n</text></text>
+    <view class="line"></view>
+<view class="line2"></view>
+  </view>
+
+  <view>
+    <text space="emsp">\n 备注：\n<text space="emsp">\n{{ps}}\n\n</text></text>
+  </view>
+
+  <view>
+    <text space="emsp"> 配送地址:\n\n</text>
+    <view class="con1">
+      <text space="emsp">   楼号:</text>
+      <input class="addlou" name="lou" type="text" />
+    </view>
+    <text>\n</text>
+    <view class="con1">
+      <text space="emsp">   门号:</text>
+      <input class="addmen" name="men" type="text" />
+    </view>
+    <text>\n</text>
+  </view>
+<view class="line1"></view>
+</view>
+<text>\n\n</text>
+
+
+<button class="btn" bindtap="submit" hover-class="btn_hover">\n确定下单\n</button>
+
+
+<mp-dialog title="Sorry" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+  <view>你还没有填写信息！</view>
+</mp-dialog>
+
+
+<mp-dialog title="下单成功！"show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+</mp-dialog>
+
+<mp-dialog title="接单成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">  
+</mp-dialog>
+
+<mp-dialog title="发布成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+</mp-dialog>

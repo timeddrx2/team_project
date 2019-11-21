@@ -1,0 +1,34 @@
+/* pages/myInformation/myInformation.wxss */
+.information{
+  /* border: solid #FDD51E 3rpx; */
+  display: flex;
+  flex-direction: column;
+  font-size:40rpx; 
+  width: 56%;
+  margin-left:22%; 
+  }
+/* 头像 */
+.head{
+  position: absolute;
+  left: 300rpx;
+  top: 8%;
+  width: 150rpx;
+  height: 150rpx;
+  border:solid 3rpx;
+  border-radius: 200rpx;
+}
+/* 横着的分割View样式 #E0E3DA; */
+/*分割线样式*/
+.fenge{
+width: 80%;
+height: 60rpx;
+margin-left: 10%;
+}
+/* 黄色头部 */
+.yellowhead{
+ background:#fde073;
+ width: 100%;
+ height: 300rpx;
+ border-bottom-left-radius:100rpx;
+ border-bottom-right-radius:100rpx;
+}

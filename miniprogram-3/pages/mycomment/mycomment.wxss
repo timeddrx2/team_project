@@ -1,0 +1,118 @@
+/* pages/orderMain/orderMain.wxss */
+.zong{
+  display: flex;
+}
+/* 滑块导航 */
+.page {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+  
+.swiper-tab {
+  display: flex;
+  flex-direction: row;
+  line-height: 80rpx;
+  /* border-bottom: 2rpx solid #777; */
+  border-bottom-style: none;
+  justify-content: center;
+}
+  
+.tab-item {
+  /* margin-top: 60rpx; */
+  width: 35%;
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+  
+.swiper {
+  height: 1200rpx; 
+  background: #fff;
+}
+
+  
+.on {
+  color: #FBD300;
+  border-bottom: 8rpx solid #FBD300;
+  
+}
+/* 点单框 */
+
+.diandan {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-top:20rpx; 
+  width: 90%;
+  height: 220rpx;
+  border-radius: 40rpx;
+   border: solid #CCC8BD 1rpx;
+   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+}
+
+.touxiang {
+  margin: 20rpx 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 20%;
+  border-radius: 200rpx;
+  border: solid #808080 3rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  color: #865c00;
+  /* border: solid #808080 3rpx; */
+  position: absolute;
+  margin: 150rpx 20rpx;
+  width: 150rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  /* background-color: #e0e3da; */
+  text-align: center;
+}
+
+.con2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  font-size: 38rpx;
+  /* border: solid #808080 3rpx; */
+  width: 250rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  /* background-color: #e0e3da; */
+  //margin-top: 2%;
+  /* text-align: center; */
+  margin: 15% 23%;
+}
+/* 
+.fee {
+  font-size: 38rpx;
+  border: solid #808080 3rpx;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  background-color: #e0e3da;
+  text-align: center;
+  margin: 0rpx 40rpx;
+} */
+.time {
+  font-size: 32rpx;
+  /* border: solid #808080 3rpx; */
+  width: 200rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  /* background-color: #e0e3da; */
+  /* background-color: #eef0ea;  */
+  text-align: center;
+  margin:80% 28%; 
+}
+/* .next{
+  margin-top: 80rpx;
+  margin-left:20rpx; 
+  width:40rpx;
+  height:60rpx;
+} */

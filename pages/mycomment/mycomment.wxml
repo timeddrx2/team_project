@@ -1,0 +1,73 @@
+<view id="zong">
+  <view class="page">
+
+    <!--顶部导航栏-->
+    <view class="swiper-tab">
+      <!-- 定义了两个类名，越后面优先级越高 -->
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">我评价的</view>
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我收到的</view>
+
+    </view>
+
+    <!--内容主体-->
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+      <swiper-item>
+        <view>
+          <!-- 详情框 -->
+          <view wx:for="{{list2}}" wx:key="{{index}}" bindtap="toXiangQing">
+            <view class="diandan" bindtap="toXiangQing">
+
+              <view class="con2">
+                <!-- 头像 -->
+                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <!-- 用户名称 -->
+                <text class="name" >{{item.n}}</text>
+                </view>
+
+              <view class="con2">
+                <!-- 评价 -->
+                <text class="comment">{{item.com}}                      </text>
+              </view>
+
+              <!-- 时间 -->
+              <view class="con2">
+                <text class="time" >{{item.time}}</text>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view>
+          <!-- 详情框 -->
+          <view wx:for="{{list3}}" wx:key="{{index}}" bindtap="toXiangQing">
+            <view class="diandan" bindtap="toXiangQing">
+
+              <view class="con2">
+                <!-- 头像 -->
+                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <!-- 用户名称 -->
+                <text class="name" >{{item.n}}</text>
+                </view>
+
+              <view class="con2">
+                <!-- 评价 -->
+                <text class="comment">{{item.com}}</text>
+                </view>
+
+              <!-- 时间 -->
+              <view class="con2">
+                <text class="time" >{{item.time}}</text>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>

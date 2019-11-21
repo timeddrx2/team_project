@@ -1,0 +1,63 @@
+/* pages/xinxitianxie/xinxitianxie.wxss */
+.image { 
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+}  
+.point-out {
+  display: flex;
+  justify-content: center;
+  color: #c9cac5;
+  font-size: 38rpx;
+}
+/* 分割线 */
+.line {
+  width: 100%;
+  border: solid #e0e3da 2rpx;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* 按钮 */
+.btn::after {
+  border: 0;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFD700;
+  color: black;
+  height: 25px;
+  width: 100px;
+  font-size: 38rpx;
+}
+.btn_hover {
+  background-color: #f0ca00;
+}
+
+.page-xinxi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 输入 */
+.xinxi-input {
+  margin-bottom: 50rpx;
+  margin-top: 20rpx;
+  border-style: solid;
+  border-color: #808080;
+  border-width: 3rpx;
+  border-radius: 5px;
+  height: 25px;
+  width: 200px;
+  font-size: 38rpx;
+  padding-left: 10rpx;
+}
+
+
+
+

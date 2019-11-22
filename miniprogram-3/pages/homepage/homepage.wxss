@@ -1,12 +1,5 @@
 /* pages/myInformation/myInformation.wxss */
-/* .information{
-  //border: solid #FDD51E 3rpx; 
-  display: flex;
-  flex-direction: column;
-  font-size:40rpx; 
-  width: 56%;
-  margin-left:22%; 
-  } */
+
   .whole{
     display: flex;
 
@@ -15,8 +8,8 @@
   /* border: solid #FDD51E 3rpx; */
   /* position: absolute; */
   font-size:38rpx; 
-  width: 56%;
-  margin-left:-100%; 
+  width: 85%;
+  margin-left:-110%; 
   margin-top: 40%;
   }
 /* 用户名称 */
@@ -24,15 +17,18 @@
   font-size: 42rpx;
   font-weight: bold;
   color: #865c00;
+  margin-left: 100rpx;
 }
 /* 头像 */
 .head{
-  margin-left: -287%;
+  margin-left: -227%;
   margin-top: -3%;
-  width: 150rpx;
-  height: 150rpx;
+  width: 200rpx;
+  height: 200rpx;
   border:solid 3rpx;
   border-radius: 200rpx;
+  
+
 }
 /* 横着的分割View样式 #E0E3DA; */
 /*分割线样式*/

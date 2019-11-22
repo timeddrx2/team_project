@@ -1,9 +1,28 @@
 {
   "pages": [
-   "pages/order/order",
-    "pages/orderMain/orderMain",
+    
+    "pages/denglu/denglu",
+    "pages/home/home",
+    "pages/xiugai-peisong/xiugai-peisong",
+    "pages/xiugai-diandan/xiugai-diandan",
+    "pages/fabu-diandan/fabu-diandan",
+    
+    
+    "pages/zhuce/zhuce",
+    "pages/orderD/orderD",
+    "pages/orderP/orderP",
+    "pages/w_comment/w_comment",
     
     "pages/myInformation/myInformation",
+    "pages/noInformation/noInformation",
+    "pages/mycomment/mycomment",
+    "pages/homepage/homepage",
+    "pages/order_detail_ing/order_detail_ing",
+    "pages/myorder/myorder",
+    
+    "pages/xinxitianxie/xinxitianxie",
+    
+    "pages/order_detail/order_detail",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -19,19 +38,19 @@
     "selectedColor": "#fee160",
     "list": [
       {
-        "pagePath": "pages/orderMain/orderMain",
+        "pagePath": "pages/home/home",
         "iconPath": "img/icon/square.png",
         "selectedIconPath": "img/icon/squareL.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/order/order",
+        "pagePath": "pages/fabu-diandan/fabu-diandan",
         "iconPath": "img/icon/submit.png",
         "selectedIconPath": "img/icon/submitL.png",
         "text": "发布"
       },
       {
-        "pagePath": "pages/myInformation/myInformation",
+        "pagePath": "pages/homepage/homepage",
         "iconPath": "img/icon/my.png",
         "selectedIconPath": "img/icon/myL.png",
         "text": "我的"

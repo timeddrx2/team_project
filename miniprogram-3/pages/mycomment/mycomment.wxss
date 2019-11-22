@@ -1,13 +1,16 @@
 /* pages/orderMain/orderMain.wxss */
-.zong{
+
+.zong {
   display: flex;
 }
+
 /* 滑块导航 */
+
 .page {
   margin-left: 10rpx;
   margin-right: 10rpx;
 }
-  
+
 .swiper-tab {
   display: flex;
   flex-direction: row;
@@ -16,7 +19,7 @@
   border-bottom-style: none;
   justify-content: center;
 }
-  
+
 .tab-item {
   /* margin-top: 60rpx; */
   width: 35%;
@@ -24,30 +27,29 @@
   font-size: 18px;
   color: #777;
 }
-  
+
 .swiper {
-  height: 1200rpx; 
+  height: 1200rpx;
   background: #fff;
 }
 
-  
 .on {
-  color: #FBD300;
-  border-bottom: 8rpx solid #FBD300;
-  
+  color: #fbd300;
+  border-bottom: 8rpx solid #fbd300;
 }
+
 /* 点单框 */
 
 .diandan {
   display: flex;
   flex-direction: row;
   margin-left: 5%;
-  margin-top:20rpx; 
+  margin-top: 20rpx;
   width: 90%;
   height: 220rpx;
   border-radius: 40rpx;
-   border: solid #CCC8BD 1rpx;
-   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+  border: solid #ccc8bd 1rpx;
+  box-shadow: 1px 1px 1px 1px rgb(231, 231, 231);
 }
 
 .touxiang {
@@ -56,7 +58,8 @@
   height: 120rpx;
   margin-left: 20%;
   border-radius: 200rpx;
-  border: solid #808080 3rpx;
+  border: solid #ccc8bd 3rpx;
+  box-shadow: 1px 1px 1px 1px rgb(231, 231, 231);
 }
 
 .name {
@@ -88,6 +91,7 @@
   /* text-align: center; */
   margin: 15% 23%;
 }
+
 /* 
 .fee {
   font-size: 38rpx;
@@ -99,17 +103,18 @@
   text-align: center;
   margin: 0rpx 40rpx;
 } */
+
 .time {
   font-size: 32rpx;
   /* border: solid #808080 3rpx; */
   width: 200rpx;
   height: 40rpx;
   border-radius: 10rpx;
-  /* background-color: #e0e3da; */
-  /* background-color: #eef0ea;  */
+  /* background-color: #e0e3da; *//* background-color: #eef0ea;  */
   text-align: center;
-  margin:80% 28%; 
+  margin: 80% 28%;
 }
+
 /* .next{
   margin-top: 80rpx;
   margin-left:20rpx; 

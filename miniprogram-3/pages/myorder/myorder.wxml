@@ -1,48 +1,143 @@
 <!--内容主体-->
 <view class="swiper-tab">
-      <!-- 定义了两个类名，越后面优先级越高 -->
-      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">配送</view>
-      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">点单</view>
+  <!-- 定义了两个类名，越后面优先级越高 -->
+  <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">配送</view>
+  <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">点单</view>
 
-    </view>
-<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+</view>
+<swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{aheight}}rpx">
   <swiper-item>
     <view>
       <!-- 详情框 -->
-      <view wx:for="{{list1}}" wx:key="{{index}}">
-        <view class="dingdan1" >
-          <view class="con1" bindtap="detail1">
-            <text class="status1">{{item.status}}</text>
-          </view>
-          <view class="con1" bindtap="detail1">
-            <text class="hall_name1">{{item.hall_name}}</text>
-            <text class="time1">{{item.time}}</text>
+      <view wx:for="{{list2}}" wx:key="{{index}}">
+        <view class="dingdan1" bindtap="detail1">
+
+          <view class="con3">
+            <view class="hall_name1">
+              <text>{{item.hall_name}}</text>
+            </view>
+            <view class="status1">
+              <view wx:if="{{item.status == '0'}}">
+                <text>等待接单中...</text>
+              </view>
+              <view wx:elif="{{item.status == '1'}}">
+                <text>配送中...</text>
+              </view>
+              <view wx:elif="{{item.status == '2'}}">
+                <text>已完成</text>
+              </view>
+              <view wx:else="{{item.status == '3'}}">
+                <text>已取消</text>
+              </view>
+            </view>
+            <view>
+              <text class="price1">￥{{item.price}}</text>
+            </view>
           </view>
 
-          <view class="con1">
-            <text class="price1">￥{{item.price}}</text>
-            <text class="button_evalute1" bindtap="comment">评价</text>
+
+          <view class="con">
+            <view>
+              <text class="time1">{{item.time}}</text>
+            </view>
+            <view>
+              <view wx:if="{{item.status == '0'}}">
+                <text class="timetext">自动取消时间</text>
+              </view>
+              <view wx:elif="{{item.status == '1'}}">
+                <text class="timetext">预计送达时间</text>
+              </view>
+              <view wx:elif="{{item.status == '2'}}">
+              </view>
+              <view wx:else="{{item.status == '3'}}">
+              </view>
+            </view>
           </view>
+
+          <view class="con">
+            <view wx:if="{{item.status == '0'}}">
+              <text class="button_evalute2">修改订单</text>
+              <text class="button_evalute1">取消订单</text>
+
+            </view>
+            <view wx:elif="{{item.status == '1'}}">
+              <text class="button_evalute1">确认送达</text>
+            </view>
+            <view wx:elif="{{item.status == '2'}}">
+              <text class="button_evalute1">评价</text>
+            </view>
+            <view wx:else="{{item.status == '3'}}">
+            </view>
+          </view>
+
         </view>
       </view>
     </view>
   </swiper-item>
   <swiper-item>
     <view>
-      <view wx:for="{{list2}}" wx:key="{{index}}">
-        <view class="dingdan" >
-          <view class="con2">
-            <text class="status" bindtap="detail2">{{item.status}}</text>
+      <!-- 详情框 -->
+      <view wx:for="{{list3}}" wx:key="{{index}}">
+        <view class="dingdan1" bindtap="detail2">
 
-            <view class="con1" bindtap="detail2">
-              <text class="hall_name">{{item.hall_name}}</text>
-              <text class="foodname">{{item.foodname}}</text>
+          <view class="con3">
+            <view class="hall_name1">
+              <text>{{item.hall_name}}</text>
             </view>
-            <view class="con1">
-              <text class="price">￥{{item.price}}</text>
-              <text class="button_evalute"  bindtap="comment">评价</text>
+            <view class="status1">
+              <view wx:if="{{item.status == '0'}}">
+                <text>等待接单中...</text>
+              </view>
+              <view wx:elif="{{item.status == '1'}}">
+                <text>配送中...</text>
+              </view>
+              <view wx:elif="{{item.status == '2'}}">
+                <text>已完成</text>
+              </view>
+              <view wx:else="{{item.status == '3'}}">
+                <text>已取消</text>
+              </view>
+            </view>
+            <view>
+              <text class="price1">￥{{item.price}}</text>
             </view>
           </view>
+
+
+          <view class="con">
+            <view>
+              <text class="time1">{{item.time}}</text>
+            </view>
+            <view>
+              <view wx:if="{{item.status == '0'}}">
+                <text class="timetext">自动取消时间</text>
+              </view>
+              <view wx:elif="{{item.status == '1'}}">
+                <text class="timetext">预计送达时间</text>
+              </view>
+              <view wx:elif="{{item.status == '2'}}">
+              </view>
+              <view wx:else="{{item.status == '3'}}">
+              </view>
+            </view>
+          </view>
+
+          <view class="con">
+            <view wx:if="{{item.status == '0'}}">
+              <text class="button_evalute2">修改订单</text>
+              <text class="button_evalute1">取消订单</text>
+
+            </view>
+            <view wx:elif="{{item.status == '1'}}">
+              <text class="button_evalute1">确认送达</text>
+            </view>
+            <view wx:elif="{{item.status == '2'}}">
+              <text class="button_evalute1">评价</text>
+            </view>
+            <view wx:else="{{item.status == '3'}}">
+            </view>
+          </view>
+
         </view>
       </view>
     </view>

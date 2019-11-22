@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    order_number:0,
     dialogShow: false,
     buttons: [{
       text: '取消'
@@ -30,7 +31,6 @@ Page({
   tapDialogButton(e) {
     this.setData({
       dialogShow: false,
-      showOneButtonDialog: false
     }) 
     wx.navigateTo({
       url: '/pages/denglu/denglu',
@@ -40,7 +40,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // this.setData({
+    //   order_number: options.data.order_number,
+    // })
+    console.log(options)
+    this.setData({
+      order_number: "1",
+    })
+    console.log(this.data.order_number)
+    var that = this;
+    // wx.request({
+    //   url: 'https://www.sssxfd.top:8080/show_order_detail',
+    //   method: "POST",
+    //   data: {
+    //     error_code: 0,
+    //     data: {
+    //       order_number: that.data.order_number,
+    //     },
+    //   },
+    //   success(res) {
+    //     console.log(res)
 
+    //   }
+
+    // })
+    this.setData({
+      order_number:options.data.order_number,
+    })
+    wx.request({
+      url: '',
+      header:{},
+      method:"POST",
+      data:{},
+      success(res){
+        
+      }
+    })
   },
 
   /**

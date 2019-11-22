@@ -1,22 +1,49 @@
 Page({
   data: {
-    // tab切换 
-    list: [1, 2, 3, 4, 5],
     currentTab: 0,
+    canteenP: "",
+    feeP: "",
+    dormP: "",
+    touxiangP: "",
+    timeP: "",
+    canteenD: "",
+    feeD: "",
+    dormD: "",
+    touxiangD: "",
+    timeD: "",
+    // tab切换 
+    aheight: 0,
+    list: [1, 2, 3, 4, 5],
+
     // 标签内容
-    list2: [{ lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#", add: "玫瑰一楼", fee: "2$", time: "10:00" },],
-    list3: [{ lou: "35#3F", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#6F", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#2F", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#1F", add: "玫瑰一楼", fee: "2$", time: "10:00" }, { lou: "35#5F", add: "玫瑰一楼", fee: "2$", time: "10:00" },]
+    list2: [],
+    list3: []
+
 
   },
-  toDXiangQing: function () {
-wx.navigateTo({
-  url: '../orderD/orderD',
-})
+  toPXiangQing: function(e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.id;
+    console.log(index)
+    console.log(this.data.list3[index].order_number)
+    // wx.navigateTo({
+    //  url: '/pages/orderP/orderP?order_number=' + this.data.list3[index].order_number,
+    // })
+    wx.navigateTo({
+      url: '/pages/orderP/orderP',
+    })
   },
-  toPXiangQing: function () {
-wx.navigateTo({
-  url: '../orderP/orderP',
-})
+  toDXiangQing: function (e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.id;
+    console.log(index)
+    console.log(this.data.list2[index].order_number)
+    // wx.navigateTo({
+    //  url: '/pages/orderP/orderP?order_number=' + this.data.list3[index].order_number,
+    // })
+    wx.navigateTo({
+      url: '/pages/orderD/orderD',
+    })
   },
   swichNav: function(e) {
     console.log(e);
@@ -28,30 +55,110 @@ wx.navigateTo({
         currentTab: e.target.dataset.current,
       })
     }
+    var line;
+    if (that.data.currentTab == 0) {
+      line = that.data.list2.length;
+    } else if (that.data.currentTab == 1) {
+      console.log(1)
+      line = that.data.list3.length;
+    }
+    this.setData({
+      aheight: 83 + 230 * line
+    });
+    console.log(line)
   },
   swiperChange: function(e) {
     console.log(e);
     this.setData({
       currentTab: e.detail.current,
     })
+    var line;
+    if (this.data.currentTab == 0) {
+      line = this.data.list2.length;
+    } else if (this.data.currentTab == 1) {
+      console.log(1)
+      line = this.data.list3.length;
+    }
+    this.setData({
+      aheight: 83 + 230 * line
+    });
 
   },
-  
+
   onLoad: function(options) {
-    // 生命周期函数--监听页面加载
-    
+    wx.showLoading({
+      title: '加载中....',
+    })
+    var that = this
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/refresh_business',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "GET",
+      success(res) {
+        console.log(res)
+        that.setData({
+          list3: res.data.data
+        })
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+        var line;
+        if (that.data.currentTab == 0) {
+          line = that.data.list2.length;
+        } else if (that.data.currentTab == 1) {
+          line = that.data.list3.length;
+        }
+        that.setData({
+          aheight: 83 + 230 * line
+        });
+      }
+    })
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/refresh_customer',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "GET",
+      success(res) {
+        console.log(res)
+        that.setData({
+          list2: res.data.data
+        })
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+        var line;
+        if (that.data.currentTab == 0) {
+          line = that.data.list2.length;
+        } else if (that.data.currentTab == 1) {
+          line = that.data.list3.length;
+        }
+        that.setData({
+          aheight: 83 + 230 * line
+        });
+      }
+    })
+
+    //生命周期函数--监听页面加载
+
+
   },
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.showNavigationBarLoading()
     this.onLoad()
-    setTimeout(() => {
-      wx.hideNavigationBarLoading()
-      wx.stopPullDownRefresh()
-    }, 2000);
+    // setTimeout(() => {
+    //   wx.hideNavigationBarLoading()
+    //   wx.stopPullDownRefresh()
+    // }, 2000);
+    
   },
 
   onReady: function() {
+
     // 生命周期函数--监听页面初次渲染完成
+
   },
   onShow: function() {
     // 生命周期函数--监听页面显示

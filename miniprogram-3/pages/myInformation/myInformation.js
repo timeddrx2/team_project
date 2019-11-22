@@ -1,23 +1,28 @@
 // pages/myInformation/myInformation.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-  toorderMain: function () {
-    console.log("返回主页")
-    wx.navigateTo({
-      url: "../orderMain/orderMain"
-    })
+    name:"",
+    sex:"",
+    academy:"",
+    student_id:"",
+    tel:"",
+    nickName:"",
+    head_link:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      telephone: app.globalData.telephone
+    })
     var that = this
     wx.request({
       url: 'https://www.sssxfd.top:8080/show_personal_information',
@@ -26,17 +31,22 @@ Page({
         'content-type':' application/json'
       },
       data: {
-        "error_code": 0,
-        "data": {
-          "telephone": "13252142852",
+        error_code: 0,
+        data: {
+          telephone: that.data.telephone,
         }
       },
       success(res) {
-        var name = res.data.name
-        var sex = res.data.sex
-        var academy = res.data.academy
-        var student_id = res.data.student_id
-        var tel = res.data.telephone
+        console.log(res)
+        that.setData({
+          name:res.data.data[0].name,
+          sex: res.data.data[0].sex,
+          academy: res.data.data[0].academy,
+          student_id: res.data.data[0].student_id,
+          tel: res.data.data[0].telephone,
+          nickName: res.data.data[0].wechat_name,
+          head_link: res.data.data[0].head_link
+        })
       }
     })
   },

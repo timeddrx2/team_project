@@ -4,7 +4,7 @@
 import MySQLdb
 
 # 打开数据库连接
-db = MySQLdb.connect("47.101.217.136","phd","11111111", "software", charset='utf8' )
+db = MySQLdb.connect
 
 # 使用cursor()方法获取操作游标
 cursor = db.cursor()

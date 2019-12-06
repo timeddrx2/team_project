@@ -48,7 +48,7 @@ def issue_order():
     telephone_customer = json_data["data"]["telephone_customer"]
     print (scheduled_delivery_time)
     print (result_time)
-    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    db = MySQLdb.connect("88888", "888", "88888", "software", charset='utf8')
     cursor = db.cursor()
     sql = """INSERT INTO order2 (order_number, order_type, order_status, canteen,s_dormitory_1, 
             s_dormitory_2, money, requirement_customer, requirement_delivery, 
@@ -113,7 +113,7 @@ def get_order():
     telephone_delivery = json_data["data"]["telephone_delivery"]
     telephone_customer = json_data["data"]["telephone_customer"]
 
-    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    db = MySQLdb.connect("88888", "888", "88888", "software", charset='utf8')
     cursor = db.cursor()
     sql = """update order2 
                 set order_type= %s, order_status= %s, canteen= %s,s_dormitory_1= %s, 
@@ -156,7 +156,7 @@ def show_historical_business_orders():
     }
     telephone = json_data["data"]["telephone"]
     time_now = time.strftime('%H:%M', time.localtime(time.time()))
-    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    db = MySQLdb.connect("88888", "888", "88888", "software", charset='utf8')
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
     sql = """update order2
             set order_status='3'
@@ -196,7 +196,7 @@ def show_historical_customer_orders():
     }
     telephone = json_data["data"]["telephone"]
     time_now = time.strftime('%H:%M', time.localtime(time.time()))
-    db = MySQLdb.connect("47.101.217.136", "phd", "11111111", "software", charset='utf8')
+    db = MySQLdb.connect("88888", "888", "88888", "software", charset='utf8')
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
     sql = """update order2
                 set order_status='3'

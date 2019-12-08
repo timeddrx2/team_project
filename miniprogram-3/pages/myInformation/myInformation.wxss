@@ -1,4 +1,7 @@
 /* pages/myInformation/myInformation.wxss */
+page{
+  backgound-image:url("http://");
+}
 .information{
   /* border: solid #FDD51E 3rpx; */
   display: flex;

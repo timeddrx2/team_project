@@ -6,22 +6,13 @@
 }
 .user-register {
   position: relative;
-  margin-top: 200rpx;
+  margin-top: 100rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 40rpx;
 }
-.telephone {
-  position: relative;
-  margin-top: 50rpx;
-  border: solid black 3rpx;
-  border-radius: 30rpx;
-  height: 70rpx;
-  width: 600rpx;
-  padding-left: 20rpx;
-}
-.password {
+.name {
   position: relative;
   margin-top: 50rpx;
   border: solid black 3rpx;
@@ -46,13 +37,12 @@
 .register_hover {
   background-color: #f0ca00;
 }
-.entry_hover {
-  color: #FFD700;
-}
-.entry {
+
+
+/* .entry {
   position: relative;
   margin-right: 30rpx;
-  margin-left: 30rpx;
+  margin-left: 60rpx;
   font-size: 32rpx;
 }
 .forget-password {
@@ -63,4 +53,20 @@
   position: relative;
   margin-right: 30rpx;
   font-size: 32rpx;
+} */
+.bottom {
+  display: flex;
+  margin-left: 160rpx;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.blank{
+  height: 60rpx;
+}
+
+/* 弹窗文字颜色 */
+.textColor{
+  color: #fde073
 }

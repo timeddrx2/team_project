@@ -48,8 +48,7 @@
   width: 30%;
   margin-left: 10rpx;
   position: relative;
-  margin-top: 10rpx;
-  font-size: 38rpx;
+  margin-top: 20rpx;
   text-align: center;
 }
 #add-hao {
@@ -59,7 +58,6 @@
   width: 30%;
   position: relative;
   margin-top: 20rpx;
-  font-size: 38rpx;
   margin-left: 10rpx;
   text-align: center;
 }
@@ -71,7 +69,6 @@
   position: relative;
   margin-top: 10rpx;
   left: 25%;
-  font-size: 38rpx;
   text-align: center;
 }
 #remarks {
@@ -79,10 +76,10 @@
   border-radius: 5px;
   position: relative;
   margin-top: 10rpx;
-  height: 125rpx;
+  height: 235rpx;
   width: 50%;
   left: 25%;
-  font-size: 38rpx;
+  padding-left: 10rpx;
 }
 
 .btn {
@@ -135,4 +132,21 @@
   left: 20%;
   margin-top: 50rpx;
   margin-bottom: 50rpx;
+}
+.picker {
+  position: relative;
+  margin-top: 10rpx;
+  color: #fde073;
+  left: 200rpx;
+  font-size: 38rpx;
+}
+.time {
+  display: flex;
+  flex-direction: row;
+}
+.minute{
+  position: relative;
+  left: 30rpx;
+  font-size: 38rpx;
+  color: black;
 }

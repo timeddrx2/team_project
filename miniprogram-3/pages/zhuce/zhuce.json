@@ -3,5 +3,8 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "注册",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light"
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-dialog": "../components/dialog/dialog"
+  }
 }

@@ -75,18 +75,19 @@
 
     </swiper-item>
     <swiper-item>
-      <form bindsubmit="formSubmit">
+      <form bindsubmit="formSubmit1">
         <view>
           <!-- 详情框 -->
           <view class="name-top">设置配送费：</view>
           <view class="input">
-            <input class="fee" name="fee" placeholder=" " />
+          <!--  -->
+            <input class="fee" name="fee_" placeholder=" " />
           </view>
           <view class="line"></view>
 
           <view class="name">预计送达时间：</view>
           <view class="time">
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="time1">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="time1_">
               <view class="picker">
                 {{array[index]}}
                 <text class="minute">分钟</text>
@@ -97,13 +98,13 @@
 
           <view class="name">取消订单时间：</view>
           <view class="input">
-            <input class="time" name="time2" placeholder=" " />
+            <input class="time" name="time2_" placeholder=" " />
           </view>
           <view class="line"></view>
 
           <view class="name">食堂：</view>
           <view class="input">
-            <input class="shitang" name="restaurant" placeholder=" " />
+            <input class="shitang" name="restaurant_" placeholder=" " />
           </view>
           <view class="line"></view>
 
@@ -111,7 +112,7 @@
             <text space="emsp" id="peisong-address">配送范围：</text>
             <view class="address">
               <text space="emsp" class="lou-men"> 楼号：</text>
-              <input id="add-lou" type="text" name="lou" />
+              <input id="add-lou" type="text" name="lou_" />
             </view>
             <!-- <view class="address">
               <text space="emsp" class="lou-men"> 门号：</text>
@@ -122,7 +123,7 @@
 
           <view class="name">备注：</view>
           <view class="beizhu">
-            <textarea id="remarks" name="remarks" placeholder="" />
+            <textarea id="remarks" name="remarks_" placeholder="" />
           </view>
 
           <view>

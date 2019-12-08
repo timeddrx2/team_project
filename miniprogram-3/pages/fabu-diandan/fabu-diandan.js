@@ -94,6 +94,7 @@ Page({
     })
 
   },
+  // 发布点单
   formSubmit: function (e) {
     console.log(e)
     var that = this;
@@ -122,6 +123,46 @@ Page({
       success(res){
         console.log(res)
         if(res.data.data.result == 1){
+          that.setData({
+            dialogShow: true
+          })
+          // wx.switchTab({
+          //   url: '/pages/home/home',
+          // })
+        }
+      }
+    })
+
+  },
+  //发布配送单
+  formSubmit1: function (e) {
+    console.log(e)
+    var that = this;
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/issue_order',
+      method: "POST",
+      data: {
+        error_code: 0,
+        data: {
+          order_number: null,
+          order_type: "1",
+          order_status: "0",
+          canteen: e.detail.value.restaurant_,
+          s_dormitory_1: e.detail.value.lou_,
+          s_dormitory_2: "",
+          money: e.detail.value.fee_,
+          requirement_customer: null,
+          requirement_delivery: e.detail.value.remarks_,
+          order_delivery_time: "null",
+          scheduled_delivery_countdown: that.data.array[e.detail.value.time1_],
+          result_countdown: e.detail.value.time2_,
+          telephone_delivery: null,
+          telephone_customer: that.data.telephone,
+        }
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.data.result == 1) {
           that.setData({
             dialogShow: true
           })

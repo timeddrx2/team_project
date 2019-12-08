@@ -147,7 +147,58 @@ Page({
   },
   onPullDownRefresh: function() {
     wx.showNavigationBarLoading()
-    this.onLoad()
+    var that = this
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/refresh_business',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "GET",
+      success(res) {
+        console.log(res)
+        that.setData({
+          list3: res.data.data
+        })
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+        var line;
+        if (that.data.currentTab == 0) {
+          line = that.data.list2.length;
+        } else if (that.data.currentTab == 1) {
+          line = that.data.list3.length;
+        }
+        that.setData({
+          aheight: 83 + 230 * line
+        });
+      }
+    })
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/refresh_customer',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "GET",
+      success(res) {
+        console.log(res)
+        that.setData({
+          list2: res.data.data
+        })
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+        var line;
+        if (that.data.currentTab == 0) {
+          line = that.data.list2.length;
+        } else if (that.data.currentTab == 1) {
+          line = that.data.list3.length;
+        }
+        that.setData({
+          aheight: 83 + 230 * line
+        });
+      }
+    })
+    // this.onLoad()
     // setTimeout(() => {
     //   wx.hideNavigationBarLoading()
     //   wx.stopPullDownRefresh()

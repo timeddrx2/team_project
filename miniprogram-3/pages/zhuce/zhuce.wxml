@@ -1,14 +1,28 @@
 <!--pages/zhuce/zhuce.wxml-->
 <view class="zhuce">
-  <view>
-    <text class="user-register">用户注册</text>
-    <view class="input">
-      <input class="telephone" type="number" placeholder="请输入手机号码" />
-      <input class="password" password="ture" placeholder="请输入您的密码" />
+  <form bindsubmit="formSubmit">
+    <view>
+      <text class="user-register">用户注册</text>
+      <view class="input">
+        <input class="name" name="name" type="text" placeholder="请输入您的真实姓名" />
+        <input class="name" name="sex" type="text" placeholder="请输入您的性别" />
+        <input class="name" name="academy" type="text" placeholder="请输入您的学院" />
+        <input class="name" name="student_id" type="number" placeholder="请输入您的学号" />
+        <input class="name" name="telephone" type="number" placeholder="请输入手机号码" />
+        <input class="name" name="password" password type="text" placeholder="请输入您的密码" />
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      </view>
+      <!-- <button class="register" bindtap="toEntry" hover-class="register_hover">注册</button> -->
+      <button class="register" form-type="submit" hover-class="register_hover">注册</button>
+      <view class="bottom">
+        <text class="entry" bindtap="toEntry">立即登录</text>
+        <text class="separate">|</text>
+        <text class="forget-password">忘记密码</text>
+
+      </view>
+       <mp-dialog title="注册成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}"></mp-dialog>
+      <view class="blank"></view>
+
     </view>
-    <button class="register" bindtap="toEntry" hover-class="register_hover">注册</button>
-    <text class="entry" bindtap="toEntry" hover-class="entry_hover">已有账号，立即登录</text>
-    <text class="separate">|</text>
-    <text class="forget-password">忘记密码</text>
-  </view>
+  </form>
 </view>

@@ -30,6 +30,10 @@
   width: 600rpx;
   padding-left: 20rpx;
 }
+
+.entry_hover {
+  color: #FFD700;
+}
 .entry {
   display: flex;
   position: relative;
@@ -57,4 +61,7 @@
   position: relative;
   left: 125rpx;
   font-size: 40rpx;
+}
+.textColor{
+  color: #fde073
 }

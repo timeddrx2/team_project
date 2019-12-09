@@ -1,11 +1,15 @@
 // page/comment.js
-Page({
+const app = getApp()
 
+Page({
   /**
    * 页面的初始数据
    */
-  data: {
 
+  data: {
+    telephone:"",
+    nickName:"",
+    head_link:"",
   },
 toDingDan:function(){
   wx.navigateTo({
@@ -26,7 +30,29 @@ toMyComment:function(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      telephone: app.globalData.telephone
+    })
+    console.log(this.data.telephone)
+    console.log(this.data.telephone)
+    var that = this
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/show_personal_information',
+      method:"POST",
+      data:{
+        error_code: 0,
+        data: {
+          telephone: that.data.telephone,
+        }
+      },
+      success(res){
+        console.log(res)
+        that.setData({
+          nickName:res.data.data[0].wechat_name,
+          head_link:res.data.data[0].head_link
+        })
+      }
+    })
   },
 
   /**

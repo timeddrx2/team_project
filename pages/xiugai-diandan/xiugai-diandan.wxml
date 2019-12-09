@@ -1,50 +1,63 @@
 <!--pages/xiugai-diandan/xiugai-diandan.wxml-->
 <!-- <image class="image" mode="aspectFit" src="../../img/chicken/fenge.png"></image> -->
 <view class="xiugai-diandan">
-  <view class="name-top">设置配送费：</view>
-  <view class="input">
-    <input class="fee" placeholder=" " />
-  </view>
-  <view class="line"></view>
-  
-  <view class="name">预计送达时间：</view>
-  <view class="input">
-    <input class="time" placeholder=" " />
-  </view>
-  <view class="line"></view>
-  
-  <view class="name">取消订单时间：</view>
-  <view class="input">
-    <input class="time" placeholder=" " />
-  </view>
-  <view class="line"></view>
+  <form bindsubmit="formSubmit">
+    <view>
+      <view class="name-top">设置配送费：</view>
+      <view class="input">
+        <input class="fee" name="fee" placeholder=" " />
+      </view>
+      <view class="line"></view>
 
-  <view class="name">食堂：</view>
-  <view class="input">
-    <input class="shitang"  placeholder=" " />
-  </view>
-  <view class="line"></view>
+      <view class="name">设置预计送达时间：</view>
+      <view class="name">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker" name="time1">
+            {{array[index]}}
+            <text class="minute">分钟</text>
+          </view>
+        </picker>
+      </view>
+      <view class="line"></view>
 
-  <view>
-    <text space="emsp" id="peisong-address">配送地址：</text>
-    <view class="address">
-      <text space="emsp" class="lou-men"> 楼号：</text>
-      <input id="add-lou" type="text" name="lou" />
+      <view class="name">取消订单时间：</view>
+      <view class="input">
+        <input class="time" name="time2" placeholder=" " />
+      </view>
+      <view class="line"></view>
+
+      <view class="name">食堂：</view>
+      <view class="name">
+        <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+          <view class="picker" name="restaurant">
+            {{array1[index1]}}
+          </view>
+        </picker>
+      </view>
+      <view class="line"></view>
+
+      <view>
+        <text space="emsp" id="peisong-address">配送地址：</text>
+        <view class="address">
+          <text space="emsp" class="lou-men"> 楼号：</text>
+          <input id="add-lou" type="text" name="lou" />
+        </view>
+        <view class="address">
+          <text space="emsp" class="lou-men"> 门号：</text>
+          <input id="add-hao" type="text" name="men" />
+        </view>
+      </view>
+      <view class="line"></view>
+
+      <view class="name">要求：</view>
+      <view class="ask">
+        <textarea id="require" name="require" placeholder=" " />
+      </view>
+
+      <view>
+        <button class="btn" form-type="submit" hover-class="btn_hover">确认订单</button>
+        <text>\n\n</text>
+      </view>
     </view>
-    <view class="address">
-      <text space="emsp" class="lou-men"> 门号：</text>
-      <input id="add-hao" type="text" nam="men" />
-    </view>
-  </view>
-  <view class="line"></view>
-
-  <view class="name">要求：</view>
-  <view class="ask">
-    <textarea id="require" placeholder=" " />
-  </view>
-
-  <view>
-    <button class="btn" bindtap="submit" hover-class="btn_hover">确认订单</button>
-    <text>\n\n</text>
-  </view>
+  </form>
 </view>

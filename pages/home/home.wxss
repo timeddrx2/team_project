@@ -68,7 +68,7 @@
 }
   
 .swiper {
-  height: 1200rpx; 
+  /* height: 1122rpx;  */
   background: #fff;
 }
 
@@ -83,15 +83,14 @@
 /* 点单框 */
 
 .diandan {
-  font-size: 38rpx;
   display: flex;
   flex-direction: row;
   margin-left: 5%;
    margin-top: 10rpx; 
   width: 90%;
   height: 220rpx;
- border-radius: 40rpx;
-   border: solid #CCC8BD 1rpx;
+  border-radius: 40rpx;
+  border: solid #CCC8BD 1rpx;
    box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
 }
 
@@ -105,11 +104,12 @@
   height: 120rpx;
   border-radius: 200rpx;
   border: solid #CCC8BD 3rpx;
+   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
 }
 
 .dorm {
 
- margin-left:  40rpx ;
+ margin-left:  43rpx ;
   margin-top:  10rpx;
   
   width: 120rpx;
@@ -118,7 +118,9 @@
   /* background-color: #e0e3da; */
   color: #8C8282;
   text-align: center;
+  
 }
+
 
 .con2 {
   display: flex;
@@ -126,25 +128,28 @@
 }
 
 .add {
-
-  width: 160rpx;
+ box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+  width: 180rpx;
   height: 50rpx;
   border-radius: 40rpx;
   background-color: #CCC8BD;
   text-align: center;
-  margin: 50rpx 70rpx;
+  margin-top:60rpx ;
+  margin-left:  60rpx; 
 }
 
 .fee {
-
+ box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   width: 160rpx;
   height: 50rpx;
   border-radius: 40rpx;
   background-color: #CCC8BD;
   text-align: center;
-  margin: 0rpx 70rpx;
+  margin-top:30rpx ;
+  margin-left:  60rpx; 
 }
 .time {
+   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   color: #8C8282;
   width: 60rpx;
   height: 60rpx;
@@ -153,12 +158,27 @@
   text-align: center;
   line-height: 60rpx;
   font-size: 17rpx;
-  margin-top:90rpx ;
-  margin-left:  10rpx; 
+  margin-top:80rpx ;
+  margin-left:  100rpx; 
+}
+ .tw1{
+  margin-top:-39rpx ;
+  margin-left:  55rpx; 
+  width: 60rpx;
+  color: rgb(117, 115, 115);
+  font-size: 17rpx;
+}
+.tw2{
+  margin-top:-23rpx ;
+  margin-left:  175rpx; 
+  width: 60rpx;
+  color: rgb(117, 115, 115);
+  font-size: 17rpx;
 }
 .next{
-  margin-top: 90rpx;
-  margin-left:50rpx; 
-  width:50rpx;
-  height:50rpx;
+  
+  margin-top: 100rpx;
+  margin-left:-10rpx; 
+  width:30rpx;
+  height:30rpx;
 }

@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    order_number:0,
     dialogShow: false,
+    canteen:"",
+    s_dormitory_1:"",
+    money:"",
+    scheduled_delivery_time:"",
+    requirement_customer:"",
+    s_dormitory_2:"",
+
     buttons: [{
       text: '取消'
     }, {
@@ -21,16 +29,11 @@ Page({
     })
     
     console.log("接单成功！")
-    // wx.navigateTo({
-    //   url: '../index/index',
-    // })
-    // console.log("111")
 
   },
   tapDialogButton(e) {
     this.setData({
       dialogShow: false,
-      showOneButtonDialog: false
     }) 
     wx.navigateTo({
       url: '/pages/denglu/denglu',
@@ -40,7 +43,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("options.order_number:"+options.order_number)
+    console.log("options:" + options)
 
+    this.setData({
+      order_number: options.order_number,
+    })
+    
+    var that = this;
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/show_order_detail',
+      method: "POST",
+      data: {
+        error_code: 0,
+        data: {
+          order_number: that.data.order_number,
+        },
+      },
+      success(res) {
+        console.log(res)
+
+        that.setData({
+          canteen:res.data.data.canteen,
+          s_dormitory_1: res.data.data.s_dormitory_1,
+          scheduled_delivery_time: res.data.data.scheduled_delivery_time,
+          money: res.data.data.money,
+          scheduled_delivery_time: res.data.data.scheduled_delivery_time,
+          requirement_customer: res.data.data.requirement_customer,
+          s_dormitory_2: res.data.data.s_dormitory_2,
+        })
+      }
+    })
   },
 
   /**

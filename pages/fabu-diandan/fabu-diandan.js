@@ -12,7 +12,7 @@ Page({
     ],
     telephone:"",
     // tab切换 
-    list: [1, 2, 3, 4, 5],
+    // list: [1, 2, 3, 4, 5],
     currentTab: 0,
     //设置初始值
     array: ['10',

@@ -2,19 +2,20 @@
 <view class="background">
   <view class="view_detail">
     <view class="view_detail_text">
-      <text>地点：\n</text>
-      <text>配送费：\n</text>
-      <text>配送地址：\n</text>
-      <text>预计配送时间：\n</text>
-      <text>接单时间：\n</text>
-      <text>\n\n</text>
+      <text>日期：{{order_date}}\n</text>
+      <text>食堂：{{canteen}}\n</text>
+      <text>配送费：{{money}}￥\n</text>
+      <text>配送地址：{{s_dormitory_1}}#{{s_dormitory_2}}\n</text>
+      <text>预计送达时间：{{scheduled_delivery_time}}\n</text>
+      <text>接单时间：{{order_delivery_time}}\n</text>
+      <text>\n\n\n</text>
     </view>
   </view>
   <view class="view_remarks">
     <view class=" view_remarks_text ">
-      <text>用户备注：\n</text>
+      <text>用户备注：{{requirement_customer}}\n</text>
       <text>\n</text>
-      <text>配送员备注：\n</text>
+      <text>配送员备注：{{requirement_delivery}}\n</text>
       <text>\n</text>
     </view>
   </view>

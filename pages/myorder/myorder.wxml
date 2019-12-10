@@ -14,7 +14,7 @@
         <view wx:for="{{list2}}" wx:key="{{index}}">
           <view class="dingdan1">
 
-            <view class="con3" bindtap="detail1">
+            <view class="con3" bindtap="detail1" data-id="{{index}}">
               <view class="hall_name1">
                 <text>{{item.canteen}}</text>
               </view>
@@ -32,22 +32,22 @@
                   <text>已取消</text>
                 </view>
               </view>
-              <view>
-                <text class="price1">￥{{item.money}}</text>
+              <view class="price1">
+                <text>￥{{item.money}}</text>
               </view>
             </view>
 
 
-            <view class="con" bindtap="detail1">
-              <view>
-                <text class="time1">{{item.scheduled_delivery_time}}</text>
+            <view class="con" bindtap="detail1" data-id="{{index}}">
+              <view class="time1">
+                <text >{{item.scheduled_delivery_time}}</text>
               </view>
-              <view>
+                <view class="timetext">
                 <view wx:if="{{item.order_status == '0'}}">
-                  <text class="timetext">自动取消时间</text>
+                  <text >自动取消时间</text>
                 </view>
-                <view wx:elif="{{item.order_status == '1'}}">
-                  <text class="timetext">预计送达时间</text>
+                <view wx:elif="{{item.order_status == '1'}}" >
+                  <text >预计送达时间</text>
                 </view>
                 <view wx:elif="{{item.order_status == '2'}}">
                 </view>
@@ -58,7 +58,7 @@
 
             <view class="con">
               <view wx:if="{{item.order_status == '0'}}">
-                <text class="button_evalute2" bindtap="changeOrderD">修改订单</text>
+                <text class="button_evalute2" bindtap="changeOrderD" data-id="{{index}}">修改订单</text>
                 <text class="button_evalute1" bindtap="cancelOrder1" data-id="{{index}}">取消订单</text>
 
               </view>
@@ -82,7 +82,7 @@
         <view wx:for="{{list3}}" wx:key="{{index}}">
           <view class="dingdan1">
 
-            <view class="con3" bindtap="detail2">
+            <view class="con3" bindtap="detail2" data-id="{{index}}">
               <view class="hall_name1">
                 <text>{{item.canteen}}</text>
               </view>
@@ -100,33 +100,34 @@
                   <text>已取消</text>
                 </view>
               </view>
-              <view>
-                <text class="price1">￥{{item.money}}</text>
+              <view class="price1" >
+                <text>￥{{item.money}}</text>
               </view>
             </view>
 
 
-            <view class="con" bindtap="detail2">
-              <view>
-                <text class="time1">{{item.scheduled_delivery_time}}</text>
+            <view class="con" bindtap="detail2" data-id="{{index}}">
+              <view class="time1">
+                <text >{{item.scheduled_delivery_time}}</text>
               </view>
-              <view>
-                <view wx:if="{{item.order_status == '0'}}">
-                  <text class="timetext">自动取消时间</text>
+               <view >
+                <view wx:if="{{item.order_status == '0'}}"  class="timetext">
+                  <text>自动取消时间</text>
                 </view>
-                <view wx:elif="{{item.order_status == '1'}}">
-                  <text class="timetext">预计送达时间</text>
+                <view wx:elif="{{item.order_status == '1'}}" class="timetext">
+                  <text >预计送达时间</text>
                 </view>
                 <view wx:elif="{{item.order_status == '2'}}">
                 </view>
                 <view wx:else="{{item.order_status == '3'}}">
                 </view>
               </view>
+             
             </view>
 
             <view class="con">
               <view wx:if="{{item.order_status == '0'}}">
-                <text class="button_evalute2" bindtap="changeOrderP">修改订单</text>
+                <text class="button_evalute2" bindtap="changeOrderP" data-id="{{index}}">修改订单</text>
                 <text class="button_evalute1" bindtap="cancelOrder2" data-id="{{index}}">取消订单</text>
 
               </view>

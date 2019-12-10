@@ -1,7 +1,9 @@
 const app = getApp()
 Page({
   data: {
-    list: [1, 2, 3, 4, 5],// list2:点单 list3:配送
+    // list2:点单 list3:配送
+    list2:[],
+    list3:[],
     currentTab: 0,
     telephone: "",
     order_number: 0,
@@ -52,16 +54,23 @@ Page({
   },
   //点单
   detail1: function (e) {
+    console.log("尝试进入订单详情")
     console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("点单号：" + this.data.list2[index].order_number)
     wx.navigateTo({
-      url: '/pages/order_detail/order_detail?order_number' + this.data.list2[index].order_number,
+      url: '/pages/order_detail/order_detail?order_number=' + this.data.list2[index].order_number,
     })
   },
   //配送
   detail2: function (e) {
+    console.log("尝试进入配送单详情")
     console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("配送单号：" + this.data.list2[index].order_number)
+    
     wx.navigateTo({
-      url: '/pages/order_detail_ing/order_detail_ing?order_number' + this.data.list3[index].order_number,
+      url: '/pages/order_detail_ing/order_detail_ing?order_number=' + this.data.list3[index].order_number,
     })
   },
   //控制弹窗显示
@@ -72,34 +81,36 @@ Page({
     })
   },
   //修改配送单
-  changeOrderP: function () {
+  changeOrderP: function (e) {
+    console.log("尝试修改配送单")
+    console.log(e)
+    console.log("e" + e.currentTarget.dataset)
+    var index = e.currentTarget.dataset.id
+    console.log("id:")
     wx.navigateTo({
-      url: '/pages/xiugai-peisong/xiugai-peisong',
+      url: '/pages/xiugai-peisong/xiugai-peisong?order_number=' + this.data.list3[index].order_number,
     })
   },
   //修改点单
-  changeOrderD: function () {
+  changeOrderD: function (e) {
+    console.log("尝试修改点单")
+    console.log("e" + e)
     wx.navigateTo({
-      url: '/pages/xiugai-diandan/xiugai-diandan',
+      url: '/pages/xiugai-diandan/xiugai-diandan?order_number=' + this.data.list2[index].order_number,
     })
   },
   //取消点单
   cancelOrder1: function (e) {
     console.log(e),
-      console.log("id:" + e.currentTarget.dataset.id)
+    console.log("id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
     console.log("list2_order_number:" + this.data.list2[index].order_number)
-    console.log("是这里出错了吗")
-    
+  
     var that = this;
     that.setData({
-      order_number: data.list2[index].order_number,
+      order_number: that.data.list2[index].order_number,
     })
 
-    console.log("这里有没有出错呢")
-    console.log("order_number:" + order_number)
-
-   
     wx.request({
       url: 'https://www.sssxfd.top:8080/delete_order',
       header: {
@@ -109,22 +120,26 @@ Page({
       data: {
         error_code: 0,
         data: {
-          order_number: thta.data.list2[index].order_number,
+          order_number: that.data.list2[index].order_number,
         }
       },
       success(res) {
         console.log(res)
-        that.setData({
-          dialogShow2: true
-        })
+        console.log("取消点单成功")
+        if(res.data.data.result=="1"){
+          that.setData({
+            dialogShow1: true
+          })
+        }
+       //console.log("show1:"+dialogShow1)
         
       }
     })
   },
   //取消配送单
   cancelOrder2: function (e) {
-    console.log(e),
-      console.log("id:" + e.currentTarget.dataset.id)
+    console.log(e)
+    console.log("id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
     console.log("list3_order_number:" + this.data.list3[index].order_number)
     this.setData({
@@ -147,10 +162,12 @@ Page({
       success(res) {
         console.log(res)
         console.log("取消成功！")
-        that.setData({
-          dialogShow2: true
-        })
-        console.log("show2"+that.data.dialogShow2)
+        if (res.data.data.result == "1") {
+          that.setData({
+            dialogShow1: true
+          })
+        }
+        console.log("show2:"+that.data.dialogShow2)
       }
     })
   },

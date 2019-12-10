@@ -20,7 +20,7 @@ line-height:60rpx;
 font-size: 38rpx;
 margin: 5% auto;
 width: 80%;
-height: 355rpx;
+height:400rpx;
 border-top: 10rpx dotted rgba(248, 248, 106, 0.664);
 }
 .view_detail_text{

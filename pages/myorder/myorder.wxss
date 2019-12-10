@@ -129,3 +129,7 @@
   font-style: normal;
   font-size: 35rpx;
 }
+/* 弹窗文字颜色 */
+.textColor{
+  color: #fde073
+}

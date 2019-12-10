@@ -13,7 +13,8 @@ Page({
     scheduled_delivery_time:"",
     requirement_customer:"",
     s_dormitory_2:"",
-
+    neutral_appraise: 0,
+    good_appraise: 0,
     buttons: [{
       text: '取消'
     }, {

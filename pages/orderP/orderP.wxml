@@ -8,9 +8,9 @@
     </view>
     <view class="line2"></view>
     <view>
-      <text space="emsp">\n  配送费：<text >{{money}}\n\n</text></text>
+      <text space="emsp">\n  配送费：<text >{{money}}¥\n\n</text></text>
       <text space="emsp">  配送时间：<text >{{scheduled_delivery_time}}\n\n</text></text>
-      <text space="emsp">  配送楼号：<text >{{s_dormitory_1}}\n\n</text></text>
+      <text space="emsp">  配送楼号：<text >{{s_dormitory_1}}#\n\n</text></text>
       <text space="emsp">  配送门号：<text >{{s_dormitory_2}}\n\n</text></text>
     </view>
     <view class="line2"></view>

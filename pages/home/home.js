@@ -19,26 +19,6 @@ Page({
     list2: [],
     list3: []
   },
-  //配送详情
-  toPXiangQing: function(e) {
-    console.log(e)
-    var index = e.currentTarget.dataset.id;
-    console.log(index)
-    console.log(this.data.list3[index].order_number)
-    wx.navigateTo({
-     url: '/pages/orderP/orderP?order_number=' + this.data.list3[index].order_number,
-    })
-  },
-  //点单详情
-  toDXiangQing: function (e) {
-    console.log(e)
-    var index = e.currentTarget.dataset.id;
-    console.log(index)
-    console.log(this.data.list2[index].order_number)
-    wx.navigateTo({
-     url: '/pages/orderD/orderD?order_number=' + this.data.list2[index].order_number,
-    })
-  },
   swichNav: function(e) {
     console.log(e);
     var that = this;
@@ -78,14 +58,42 @@ Page({
     });
 
   },
-
-  onLoad: function(options) {
-    console.log(options)
-    wx.showLoading({
-      title: '加载中....',
+  //点单详情
+  toDXiangQing: function (e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.id;
+    console.log("D:" + index)
+    console.log(this.data.list2[index].order_number)
+    wx.navigateTo({
+      url: '/pages/orderD/orderD?order_number=' + this.data.list2[index].order_number,
     })
-    
-    var that = this
+  },
+  //配送详情
+  toPXiangQing: function (e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.id;
+    console.log("P:" + index)
+    console.log(this.data.list3[index].order_number)
+    wx.navigateTo({
+      url: '/pages/orderP/orderP?order_number=' + this.data.list3[index].order_number,
+    })
+  },
+  load:function(){
+    console.log("调用load函数")
+
+    // ===========================simulation =====================
+    // var testlist = [
+    //   { index: 0, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    //   { index: 1, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    //   { index: 2, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    //   { index: 3, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    //   { index: 4, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    //   { index: 5, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
+    // ]
+    // this.setData({
+    //   list2: testlist
+    // })
+var that = this
     wx.request({
       url: 'https://www.sssxfd.top:8080/refresh_business',
       header: {
@@ -135,72 +143,49 @@ Page({
           aheight: 83 + 230 * line
         });
       }
+     })
+    // var line;
+    // if (this.data.currentTab == 0) {
+    //   line = this.data.list2.length;
+    // } else if (that.data.currentTab == 1) {
+    //   line = this.data.list3.length;
+    // }
+    // this.setData({
+    //   aheight: 83 + 230 * line
+    // });
+    wx.hideLoading()
+    wx.hideNavigationBarLoading()
+   // ================================simulation ==========================
+
+    
+  },
+  onLoad: function(options) {
+    wx.showLoading({
+      title: '加载中....',
     })
-
+    this.load()
     //生命周期函数--监听页面加载
-
-
   },
   onPullDownRefresh: function() {
+    wx.showToast({
+      title: '下拉刷新',
+      duration : 1500
+    })
     wx.showNavigationBarLoading()
-    this.onLoad(options)
-    setTimeout(() => {
+    
+    this.load();
+
+    setTimeout(function () {
+      // complete
       wx.hideNavigationBarLoading()
       wx.stopPullDownRefresh()
-    }, 2000);
-    // var that = this
-    // wx.request({
-    //   url: 'https://www.sssxfd.top:8080/refresh_business',
-    //   header: {
-    //     'content-type': ' application/json'
-    //   },
-    //   method: "GET",
-    //   success(res) {
-    //     console.log(res)
-    //     that.setData({
-    //       list3: res.data.data
-    //     })
-    //     wx.hideLoading()
-    //     wx.hideNavigationBarLoading()
-    //     wx.stopPullDownRefresh()
-    //     var line;
-    //     if (that.data.currentTab == 0) {
-    //       line = that.data.list2.length;
-    //     } else if (that.data.currentTab == 1) {
-    //       line = that.data.list3.length;
-    //     }
-    //     that.setData({
-    //       aheight: 83 + 230 * line
-    //     });
-    //   }
-    // })
-    // wx.request({
-    //   url: 'https://www.sssxfd.top:8080/refresh_customer',
-    //   header: {
-    //     'content-type': ' application/json'
-    //   },
-    //   method: "GET",
-    //   success(res) {
-    //     console.log(res)
-    //     that.setData({
-    //       list2: res.data.data
-    //     })
-    //     wx.hideLoading()
-    //     wx.hideNavigationBarLoading()
-    //     wx.stopPullDownRefresh()
-    //     var line;
-    //     if (that.data.currentTab == 0) {
-    //       line = that.data.list2.length;
-    //     } else if (that.data.currentTab == 1) {
-    //       line = that.data.list3.length;
-    //     }
-    //     that.setData({
-    //       aheight: 83 + 230 * line
-    //     });
-    //   }
-    // })
+    }, 1500);
   },
-
+  onReachBottom: function (event) {
+    console.log("上拉刷新")
+    // 暂时用不上了
+  //  this.load()
+  },
   onReady: function() {
 
     // 生命周期函数--监听页面初次渲染完成
@@ -214,12 +199,6 @@ Page({
   },
   onUnload: function() {
     // 生命周期函数--监听页面卸载
-  },
-  onPullDownRefresh: function() {
-    // 页面相关事件处理函数--监听用户下拉动作
-  },
-  onReachBottom: function() {
-    // 页面上拉触底事件的处理函数
   },
   onShareAppMessage: function() {
     // 用户点击右上角分享

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_number:"",
+    order_number:0,
     canteen: "",
     money: "",
     scheduled_delivery_time: "",
@@ -14,7 +14,9 @@ Page({
     requirement_customer: "",
     requirement_delivery: "",
     telephone_delivery:"",
-    telephone_customer:""
+    telephone_customer:"",
+    neutral_appraise: 0,
+    good_appraise: 0,
   },
 
   /**
@@ -37,6 +39,7 @@ Page({
         error_code: 0,
         data: {
           order_number: options.order_number,
+         // order_number: "",
         },
       },
       success(res) {

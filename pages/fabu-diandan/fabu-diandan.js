@@ -162,9 +162,7 @@ Page({
           that.setData({
             dialogShow: true
           })
-          // wx.switchTab({
-          //   url: '/pages/home/home',
-          // })
+         
         }
       }
     })

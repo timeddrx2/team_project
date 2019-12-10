@@ -7,19 +7,16 @@
         <input class="telephone" name="telephone" placeholder="请输入手机号码" />
         <input class="password" name="password" password type="text" placeholder="请输入您的密码" />
       </view>
-      
+
       <button class="entry" form-type="submit" hover-class="entry_hover">登录</button>
-      <text class="register" bindtap="toRegister" >我要注册</text>
+      <text class="register" bindtap="toRegister">我要注册</text>
       <text class="separate">|</text>
-      <text class="forget-password">忘记密码</text> 
+      <text class="forget-password">忘记密码</text>
     </view>
   </form>
   <mp-dialog title="密码错误！" show="{{dialogShow1}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-      </mp-dialog>
-<mp-dialog title="手机号不存在" show="{{dialogShow2}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-<text>快去注册吧！</text>
-      </mp-dialog>
-
-
-
+  </mp-dialog>
+  <mp-dialog title="手机号不存在" show="{{dialogShow2}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <text>快去注册吧！</text>
+  </mp-dialog>
 </view>

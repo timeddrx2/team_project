@@ -18,42 +18,15 @@
   margin-right:60rpx; 
   margin-left: 60rpx;
 }
-
-/* .line1 {
-  background: #e0e3da;
-  width: 550rpx;
-  height: 7rpx;
-  margin-top: -950rpx;
-  margin-left: 100rpx;
-  margin-right: 100rpx;
+.beizhu{
+  width: 400rpx;
+  height: 100rpx;
+  border: solid #e0e3da 1rpx;
+  border-radius: 15rpx;
+  margin-left:60rpx; 
+  margin-right:40rpx; 
+  font-size: 30rpx;
 }
-
-.line2 {
-  background: #e0e3da;
-  width: 430rpx;
-  height: 2rpx;
-  margin-top: 140rpx;
-  margin-left: 160rpx;
-  margin-right: 160rpx;
-}
-
-.line3 {
-  background: #e0e3da;
-  width: 430rpx;
-  height: 2rpx;
-  margin-top: 270rpx;
-  margin-left: 160rpx;
-  margin-right: 160rpx;
-}
-
-.line4 {
-  background: #e0e3da;
-  width: 550rpx;
-  height: 7rpx;
-  margin-top: 330rpx;
-  margin-left: 100rpx;
-  margin-right: 100rpx;
-} */
 
 .order {
   font-size: 38rpx;

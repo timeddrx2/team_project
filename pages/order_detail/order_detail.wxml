@@ -12,18 +12,18 @@
   </view>
   <view class="view_remarks">
     <view class=" view_remarks_text ">
-      <text>我的备注：\n</text>
-      <text></text>
+      <text>用户备注：\n</text>
+      <text>\n</text>
+      <text>配送员备注：\n</text>
+      <text>\n</text>
     </view>
   </view>
   <view class="view_number ">
     <view class="view_number_text ">
-      <text>联系电话：\n</text>
-      <text></text>
-      <view class="dad3 ">
-        <text>\n</text>
-        <text class="button_copy ">复制</text>
-      </view>
+      <text>用户联系电话：\n</text>
+      <text>\n</text>
+      <text>配送员联系电话：\n</text>
+      <text>\n</text>
     </view>
   </view>
 

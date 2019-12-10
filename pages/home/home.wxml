@@ -27,30 +27,32 @@
     </view>
 
     <!--内容主体-->
-    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{aheight}}rpx">
       <swiper-item>
         <view>
           <!-- 详情框 -->
-          <view wx:for="{{list2}}" wx:key="{{index}}" bindtap="toXiangQing">
-            <view class="diandan" bindtap="toDXiangQing">
-
+          <view wx:for="{{list2}}" wx:key="{{index}}">
+            <view class="diandan" bindtap="toDXiangQing" data-id="{{index}}">
               <view class="con2">
                 <!-- 头像 -->
-                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <image class="touxiang" src="../../img/chicken/happy.png"></image>
+                <!-- <image class="touxiang" src="{{head_link}}"></image> -->
                 <!-- 宿舍楼号 -->
-                <text class="dorm">{{item.lou}}</text>
+                <text class="dorm">{{item.s_dormitory_1}}#</text>
               </view>
 
               <view class="con2">
                 <!-- 食堂地址 -->
-                <text class="add">{{item.add}}</text>
+                <text class="add">{{item.canteen}}</text>
                 <!-- 配送费 -->
-                <text class="fee ">{{item.fee}}</text>
+                <text class="fee ">{{item.money}}¥</text>
               </view>
 
               <!-- 倒计时 -->
               <view class="con2">
-                <text class="time">{{item.time}}</text>
+                <text class="time">{{item.result_time}}</text>
+                <text class="tw1">预计</text>
+                <text class="tw2">取消</text>
               </view>
 
               <view class="con2">
@@ -65,26 +67,29 @@
       <swiper-item>
         <view>
           <!-- 详情框 -->
-          <view wx:for="{{list3}}" wx:key="{{index}}" bindtap="toPXiangQing">
-            <view class="diandan" bindtap="toXiangQing">
+          <view wx:for="{{list3}}" wx:key="{{index}}">
+            <view class="diandan" bindtap="toPXiangQing" data-id="{{index}}">
 
               <view class="con2">
                 <!-- 头像 -->
-                <image class="touxiang" src="/img/chicken/happy.png"></image>
+                <image class="touxiang"  src="../../img/chicken/puzzel.png"></image>
                 <!-- 宿舍楼号楼层 -->
-                <text class="dorm">{{item.lou}}</text>
+                <text class="dorm">{{item.s_dormitory_1}}#{{item.s_dormitory_2[0]}}F</text>
+
               </view>
 
               <view class="con2">
                 <!-- 食堂地址 -->
-                <text class="add">{{item.add}}</text>
+                <text class="add">{{item.canteen}}</text>
                 <!-- 配送费 -->
-                <text class="fee ">{{item.fee}}</text>
+                <text class="fee ">{{item.money}}¥</text>
               </view>
 
               <!-- 倒计时 -->
               <view class="con2">
-                <text class="time">{{item.time}}</text>
+                <text class="time">{{item.result_time}}</text>
+                <text class="tw1">预计</text>
+                <text class="tw2">取消</text>
               </view>
 
               <view class="con2">
@@ -98,5 +103,4 @@
       </swiper-item>
     </swiper>
   </view>
-
 </view>

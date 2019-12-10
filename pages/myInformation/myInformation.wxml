@@ -4,7 +4,7 @@
 <!-- 头像 -->
 <view>
   <text>\n</text>
-  <image id="touxiang" src="/img/chicken/happy.png" class="head"></image>
+  <image id="touxiang" src="{{head_link}}" class="head"></image>
 </view>
 <!-- 边框 -->
 <image src="/img/fenge3.png"  class="fenge" style=" height:30rpx;"></image>

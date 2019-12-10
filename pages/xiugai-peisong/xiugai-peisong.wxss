@@ -11,29 +11,25 @@
 .name-top {
   position: relative;
   margin-top: 10rpx;
-  margin-bottom: 50rpx;
+  margin-bottom: 60rpx;
   left: 20%;
   top: 50rpx;
-  color: black;
   font-size: 38rpx;
 }
 .name {
   position: relative;
   left: 20%;
-  color: black;
   font-size: 38rpx;
 }
 #peisong-address {
   position: relative;
   left: 20%;
-  color: black;
   font-size: 38rpx;
 }
 .lou-men {
   position: relative;
   margin-top: 20rpx;
   margin-left: 25%;
-  color: black;
   font-size: 38rpx;
 }
 .address{
@@ -42,47 +38,48 @@
 
 }
 #add-lou {
-  border: solid black 3rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   height: 25px;
   width: 30%;
   margin-left: 10rpx;
   position: relative;
-  margin-top: 10rpx;
-  font-size: 38rpx;
+  margin-top: 20rpx;
   text-align: center;
 }
 #add-hao {
-  border: solid black 3rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   height: 25px;
   width: 30%;
   position: relative;
   margin-top: 20rpx;
-  font-size: 38rpx;
   margin-left: 10rpx;
   text-align: center;
 }
 .input {
-  border: solid black 3rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   height: 25px;
   width: 50%;
   position: relative;
   margin-top: 10rpx;
   left: 25%;
-  font-size: 38rpx;
   text-align: center;
 }
 #remarks {
-  border: solid black 3rpx;
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   position: relative;
   margin-top: 10rpx;
-  height: 125rpx;
+  height: 235rpx;
   width: 50%;
   left: 25%;
-  font-size: 38rpx;
+  padding-left: 10rpx;
 }
 
 .btn {
@@ -135,4 +132,21 @@
   left: 20%;
   margin-top: 50rpx;
   margin-bottom: 50rpx;
+}
+.picker {
+  position: relative;
+  margin-top: 10rpx;
+  color: #fde073;
+  left: 200rpx;
+  font-size: 38rpx;
+}
+.time {
+  display: flex;
+  flex-direction: row;
+}
+.minute{
+  position: relative;
+  left: 30rpx;
+  font-size: 38rpx;
+  color: #fde073;
 }

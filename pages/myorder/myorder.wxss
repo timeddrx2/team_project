@@ -48,7 +48,7 @@
   display: inline-flex;
   flex-direction: row-reverse;
   height: 73rpx;
-  margin-top: 12rpx;
+  margin-top: 10rpx;
 }
 
 .con3 {
@@ -112,17 +112,18 @@
 
 .button_evalute1 {
   border-radius: 15rpx;
-  border-width: 0px;
-  margin-right: 40rpx;
-  width: 46px;
-  height: 18px;
+  width: 20%;
+  margin-right: 5%;
+  margin-bottom: 10rpx;
+  height: 50rpx;
   background-color: #fde073;
   text-align: center;
   font-weight: 400;
   font-style: normal;
   font-size: 35rpx;
+  /* border: solid #ccc8bd 1rpx; */
 }
-
+/* 
 .button_evalute2 {
   border-radius: 15rpx;
   border-width: 0px;
@@ -134,7 +135,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 35rpx;
-}
+} */
 
 /* 弹窗文字颜色 */
 

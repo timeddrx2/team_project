@@ -3,6 +3,7 @@ const app = getApp()
 Page({
   data: {
     text: "这是一个页面",
+    head_link: "",
     order_number: 0,
     canteen: "",
     //bad_appraise: 0,
@@ -57,7 +58,8 @@ Page({
           scheduled_delivery_time: res.data.data.scheduled_delivery_time,//预计送达时间
           telephone_customer: res.data.data.telephone_customer,//点单人电话
           telephone_delivery: res.data.data.telephone_delivery,//配送员电话
-          order_delivery_time: res.data.data.order_delivery_time//订单配对时间
+          order_delivery_time: res.data.data.order_delivery_time,//订单配对时间
+          head_link: res.data.data.head_link,
         })
       }
     })

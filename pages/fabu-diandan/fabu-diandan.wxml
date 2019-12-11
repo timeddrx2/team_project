@@ -73,9 +73,6 @@
           </view>
         </view>
       </form>
-      <mp-dialog title="发布成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-      </mp-dialog>
-
 
     </swiper-item>
     <swiper-item>
@@ -140,8 +137,6 @@
           </view>
         </view>
       </form>
-      <mp-dialog title="发布成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-      </mp-dialog>
     </swiper-item>
   </swiper>
 </view>

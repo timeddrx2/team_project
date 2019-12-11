@@ -1,43 +1,46 @@
 <!-- 点单详情 -->
-<view class="order">
-  <view class="line1"></view>
-  <view>
-    <text space="emsp">\n 食堂名：<text>{{canteen}}\n\n</text></text>
-    <view class="line"></view>
-  </view>
-  <view class="line2"></view>
-  <view>
-    <text space="emsp">\n 配送楼号：<text >{{s_dormitory_1}}#\n\n</text></text>
-    <text space="emsp"> 配送费：<text >{{money}}¥\n\n</text></text>
-    <text space="emsp"> 预计送达时间：<text >{{scheduled_delivery_time}}\n\n</text></text>
-    <view class="line"></view>
-    <view class="line2"></view>
-  </view>
-
-  <view>
-    <text space="emsp">\n 接单人备注：\n<text space="emsp">\n{{requirement_customer}}\n\n</text></text>
-  </view>
-
-  <view>
-    <view class="con1">
-      <text space="emsp"> 配送门号:{{s_dormitory_2}}</text>
-      <input class="addmen" name="men" type="text" />
+<form bindsubmit="formSubmit">
+  <view class="order">
+    <view class="line1"></view>
+    <view>
+      <text space="emsp"> 用户好评率：{{good_appraise/(good_appraise+bad_appraise+neutral_appraise)}}</text>
     </view>
-    <text>\n</text>
-  </view>
-  <view>
-    <text space="emsp"> 点单人备注：\n\n</text>
-    <input class="beizhu" name="men" type="text" />
+    <view>
+      <text space="emsp">\n 食堂名：<text>{{canteen}}\n\n</text></text>
+      <view class="line"></view>
+    </view>
+    <view class="line2"></view>
+    <view>
+      <text space="emsp">\n 配送楼号：<text >{{s_dormitory_1}}#\n\n</text></text>
+      <text space="emsp"> 配送费：<text >{{money}}¥\n\n</text></text>
+      <text space="emsp"> 预计送达时间：<text >{{scheduled_delivery_time}}\n\n</text></text>
+      <view class="line"></view>
+      <view class="line2"></view>
+    </view>
+
+    <view>
+      <text space="emsp">\n 接单人备注：\n<text space="emsp">\n{{requirement_customer}}\n\n</text></text>
+    </view>
+    <view>
+      <view class="con1">
+        <text space="emsp"> 配送门号:{{}}</text>
+        <input class="addmen" name="men" type="text" />
+      </view>
+      <text>\n</text>
+    </view>
+    <view>
+      <text space="emsp"> 点单人备注：\n\n</text>
+      <input class="beizhu" name="remark" type="text" />
+    </view>
+    <text>\n\n</text>
+    <view class="line1"></view>
   </view>
   <text>\n\n</text>
-  <view class="line1"></view>
-</view>
-<text>\n\n</text>
 
 
-<button class="btn" bindtap="submit" hover-class="btn_hover">\n确定点单\n</button>
- <text>\n\n</text>
-
+  <button class="btn"  form-type="submit" hover-class="btn_hover">\n确定点单\n</button>
+  <text>\n\n</text>
+</form>
 
 <mp-dialog title="Sorry" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
   <view>你还没有填写信息！</view>

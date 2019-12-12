@@ -27,23 +27,6 @@ Page({
       ],
     
   },
-
-  // submit: function() {
-  //   this.setData({
-  //     dialogShow: true
-  //   })
-    
-  //   console.log("接单成功！")
-
-  // },
-  // tapDialogButton(e) {
-  //   this.setData({
-  //     dialogShow: false,
-  //   }) 
-  //   wx.navigateTo({
-  //     url: '/pages/denglu/denglu',
-  //   })
-  // },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -121,7 +104,7 @@ Page({
           money: res.data.data.money,
           scheduled_delivery_time: res.data.data.scheduled_delivery_time,
           requirement_customer: res.data.data.requirement_customer,
-          requirement_delivery: res.data.data.requirement_customer,
+          requirement_delivery: res.data.data.requirement_delivery,
           s_dormitory_2: res.data.data.s_dormitory_2,
           neutral_appraise: res.data.data.neutral_appraise,
           good_appraise: res.data.data.good_appraise,

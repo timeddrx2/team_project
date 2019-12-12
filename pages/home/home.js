@@ -36,7 +36,7 @@ Page({
       line = that.data.list3.length;
     }
     this.setData({
-      aheight: 83 + 230 * line
+      aheight: 83 + 230 * line+10
     });
     console.log(line)
   },
@@ -53,7 +53,7 @@ Page({
       line = this.data.list3.length;
     }
     this.setData({
-      aheight: 83 + 230 * line
+      aheight: 83 + 230 * line+10
     });
 
   },
@@ -126,7 +126,7 @@ Page({
           line = that.data.list3.length;
         }
         that.setData({
-          aheight: 83 + 230 * line
+          aheight: 83 + 230 * line+10
         });
       }
     })

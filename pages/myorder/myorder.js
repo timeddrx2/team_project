@@ -2,8 +2,8 @@ const app = getApp()
 Page({
   data: {
     // list2:点单 list3:配送
-    list2:[],
-    list3:[],
+    list2: [],
+    list3: [],
     currentTab: 0,
     telephone: "",
     order_number: 0,
@@ -27,7 +27,7 @@ Page({
       line = that.data.list3.length;
     }
     this.setData({
-      aheight: 230 * line
+      aheight: 230 * line+83
     });
   },
   swiperChange: function (e) {
@@ -43,7 +43,7 @@ Page({
       line = this.data.list3.length;
     }
     this.setData({
-      aheight: 230 * line
+      aheight: 230 * line+83
     });
 
   },
@@ -63,7 +63,7 @@ Page({
     console.log(e)
     var index = e.currentTarget.dataset.id
     console.log("配送单号：" + this.data.list2[index].order_number)
-    
+
     wx.navigateTo({
       url: '/pages/order_detail_ing/order_detail_ing?order_number=' + this.data.list3[index].order_number,
     })
@@ -90,10 +90,10 @@ Page({
   //取消点单
   cancelOrder1: function (e) {
     console.log(e),
-    console.log("id:" + e.currentTarget.dataset.id)
+      console.log("id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
     console.log("list2_order_number:" + this.data.list2[index].order_number)
-  
+
     var that = this;
     that.setData({
       order_number: that.data.list2[index].order_number,
@@ -114,8 +114,8 @@ Page({
       success(res) {
         console.log(res)
         console.log("取消点单成功")
-        if(res.data.data.result=="1"){
-        
+        if (res.data.data.result == "1") {
+
         }
         wx.showModal({
           title: '取消发布成功！',
@@ -191,7 +191,7 @@ Page({
     })
   },
   //确认送达-点单
-  confirm1:function(e){
+  confirm1: function (e) {
     console.log(e)
     console.log("确认送达：id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
@@ -229,8 +229,8 @@ Page({
                 url: '/pages/home/home',
               })
             }
-            else{
-              this.load()
+            else {
+              //this.load()
             }
           },
           fail: function (res) { },//接口调用失败的回调函数
@@ -279,7 +279,7 @@ Page({
               })
             }
             else {
-              this.load()
+              //this.load()
             }
           },
           fail: function (res) { },//接口调用失败的回调函数
@@ -289,11 +289,26 @@ Page({
     })
   },
   //评价-点单
-  comment:function(){
-
+  comment1: function (e) {
+    console.log("尝试进入评价点单")
+    console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("单号：" + this.data.list2[index].order_number)
+    wx.navigateTo({
+      url: '/pages/w_comment/w_comment?order_number=' + this.data.list2[index].order_number,
+    })
   },
   //评价-配送
-  load:function(){
+  comment2: function (e) {
+    console.log("尝试进入评价配送单")
+    console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("配送单号：" + this.data.list3[index].order_number)
+    wx.navigateTo({
+      url: '/pages/w_comment/w_comment?order_number=' + this.data.list3[index].order_number,
+    })
+  },
+  load: function () {
     console.log("加载订单数据")
     var that = this;
     //点单
@@ -325,7 +340,7 @@ Page({
           line = that.data.list3.length;
         }
         that.setData({
-          aheight: 230 * line
+          aheight: 230 * line + 83
         });
       }
     })
@@ -339,7 +354,7 @@ Page({
       data: {
         error_code: 0,
         data: {
-          telephone:app.globalData.telephone,
+          telephone: app.globalData.telephone,
         }
       },
       success(res) {
@@ -364,7 +379,7 @@ Page({
   },
   onLoad: function (options) {
     console.log("options:" + options)
-   this.load()
+    this.load()
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading()

@@ -14,12 +14,7 @@
       </view>
       <!-- <button class="register" bindtap="toEntry" hover-class="register_hover">注册</button> -->
       <button class="register" form-type="submit" hover-class="register_hover">注册</button>
-      <view class="bottom">
-        <text class="entry" bindtap="toEntry">立即登录</text>
-        <text class="separate">|</text>
-        <text class="forget-password">忘记密码</text>
-
-      </view>
+      <text class="entry" bindtap="toEntry">立即登录</text>
        <mp-dialog title="注册成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}"></mp-dialog>
       <view class="blank"></view>
 

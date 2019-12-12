@@ -21,7 +21,7 @@ Page({
     s_dormitory_2: "",//门号
     scheduled_delivery_time: "",//预计送达时间
     telephone_customer: "",//点单人电话
-    telephone_delivery: null//配送员电话
+    telephone_delivery: ""//配送员电话
   },
   onLoad: function(options) {
     console.log("查看配送单详情")
@@ -58,8 +58,7 @@ Page({
           scheduled_delivery_time: res.data.data.scheduled_delivery_time,//预计送达时间
           telephone_customer: res.data.data.telephone_customer,//点单人电话
           telephone_delivery: res.data.data.telephone_delivery,//配送员电话
-          order_delivery_time: res.data.data.order_delivery_time,//订单配对时间
-          head_link: res.data.data.head_link,
+          order_delivery_time: res.data.data.order_delivery_time//订单配对时间
         })
       }
     })

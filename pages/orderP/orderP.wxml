@@ -1,34 +1,44 @@
 <!--pages/order/order.wxml-->
 <!-- 点单详情 -->
 <form bindsubmit="formsubmit">
-  <view id="box">
-    <view class="order">
-      <view class="line1"></view>
-      <view>
-        <text space="emsp"> 用户好评率：{{good_appraise/(good_appraise+bad_appraise+neutral_appraise)}}</text>
-      </view>
-      <view>
-        <text space="emsp">\n  食堂名：<text>{{canteen}}\n\n</text></text>
-      </view>
-      <view class="line2"></view>
-      <view>
-        <text space="emsp">\n  配送费：<text >{{money}}¥\n\n</text></text>
-        <text space="emsp">  配送时间：<text >{{scheduled_delivery_time}}\n\n</text></text>
-        <text space="emsp">  配送楼号：<text >{{s_dormitory_1}}#\n\n</text></text>
-        <text space="emsp">  配送门号：<text >{{s_dormitory_2}}\n\n</text></text>
-      </view>
-      <view class="line2"></view>
-      <view>
-        <text space="emsp">\n  点单人要求：\n\n<text space="emsp">{{requirement_customer}}\n\n</text></text>
-      </view>
-      <view>
-        <text space="emsp">  配送员备注：\n\n <text>{{}}</text></text>
-        <input class="beizhu" name="remark" type="text" />
-        <text>\n</text>
-        <view class="line1"></view>
-        <button class="btn" form-type="submit" hover-class="btn_hover">确定接单</button>
-      </view>
-      <text>\n\n</text>
+  <view class="order">
+    <view class="line1"></view>
+    <view>
+      <text>\n</text>
     </view>
+
+    <view>
+      <text space="emsp">  用户好/中/差评数：{{good_appraise}}/{{bad_appraise}}/{{neutral_appraise}}</text>
+    </view>
+
+    <view>
+      <text space="emsp">\n  食堂名：<text>{{canteen}}\n\n</text></text>
+    </view>
+
+    <view class="line2"></view>
+
+    <view>
+      <text space="emsp">\n  配送费：<text >{{money}}¥\n\n</text></text>
+      <text space="emsp">  配送时间：<text >{{scheduled_delivery_time}}\n\n</text></text>
+      <text space="emsp">  配送楼号：<text >{{s_dormitory_1}}#\n\n</text></text>
+      <text space="emsp">  配送门号：<text >{{s_dormitory_2}}\n\n</text></text>
+    </view>
+
+    <view class="line2"></view>
+
+    <view>
+      <text space="emsp">\n  点单人要求：\n<text space="emsp">\n  {{requirement_customer}}\n\n</text></text>
+    </view>
+
+    <view>
+      <text space="emsp">  配送员备注：\n\n</text>
+      <input class="beizhu" name="remark" type="text" />
+      <text>\n</text>
+    </view>
+
+    <view class="line1"></view>
   </view>
+  <text>\n\n</text>
+  <button class="btn" form-type="submit" hover-class="btn_hover">\n确定点单\n</button>
+  <text>\n\n</text>
 </form>

@@ -19,16 +19,18 @@
   margin-left: 60rpx;
 }
 .beizhu{
-  width: 400rpx;
-  height: 100rpx;
+  width: 450rpx;
+  height: 130rpx;
   border: solid #e0e3da 1rpx;
   border-radius: 15rpx;
-  margin-left:60rpx; 
+  margin-left:40rpx; 
   margin-right:40rpx; 
-  font-size: 30rpx;
+   font-size: 30rpx;
 }
 
 .order {
+  display: flex;
+  flex-direction: column;
   font-size: 38rpx;
   margin-top: 60rpx;
   margin-left: 100rpx;
@@ -42,12 +44,10 @@
 }
 
 .btn {
-  margin-top: 330rpx;
-  width: 300rpx;
+  left: 10rpx;
   border-radius: 30px;
   background: #fdd51e;
   color: white;
-  padding: 20rpx 100rpx;
 }
 
 .btn_hover {

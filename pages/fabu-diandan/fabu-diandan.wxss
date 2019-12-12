@@ -27,7 +27,7 @@
 }
   
 .swiper {
-  height: 1900rpx; 
+  height: 1300rpx; 
   background: #fff;
 }
 
@@ -40,71 +40,70 @@
   
 .name-top {
   position: relative;
-  margin-bottom: 110rpx;
+  margin-bottom: 80rpx;
   left: 20%;
-  top: 100rpx;
+  top: 40rpx;
   font-size: 38rpx;
 }
 .name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20rpx;
+  left: 10%;
+  font-size: 38rpx;
+}
+.name1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: relative;
   left: 20%;
   font-size: 38rpx;
 }
-.name1 {
-  position: relative;
-  font-size: 38rpx;
-}
-
 #peisong-address {
   position: relative;
   left: 20%;
   font-size: 38rpx;
 }
-.lou-men {
+.ti_shi {
   position: relative;
-  margin-top: 20rpx;
-  margin-left: 25%;
+  margin-top: 5rpx;
+  margin-left: 10rpx;
   font-size: 38rpx;
-
 }
-.address {
+.input{
   display: flex;
   flex-direction: row;
-
+  align-items: center;
+  position: relative;
 }
-#add-lou {
+.add-kuang {
   border: solid #CCC8BD 1rpx;
   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   height: 25px;
-  width: 30%;
-  margin-left: 10rpx;
+  width: 20%;
+  top: 5rpx;
   position: relative;
-  margin-top: 20rpx;
-  text-align: center;
-
-}
-#add-hao {
-  border: solid #CCC8BD 1rpx;
-  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
-  border-radius: 5px;
-  height: 25px;
-  width: 30%;
-  position: relative;
-  margin-top: 20rpx;
-  margin-left: 10rpx;
+  margin-left: 130rpx;
   text-align: center;
 }
-
-.input {
+.ti_shi1 {
+  position: relative;
+  margin-left: 10rpx;
+  font-size: 38rpx;
+}
+.add-kuang1 {
   border: solid #CCC8BD 1rpx;
   box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
   border-radius: 5px;
   height: 25px;
-  width: 50%;
+  width: 20%;
+  margin-left: 40%;
   position: relative;
   margin-top: 10rpx;
-  left: 25%;
   text-align: center;
 }
 #require {
@@ -114,20 +113,8 @@
   position: relative;
   margin-top: 10rpx;
   height: 235rpx;
-  width: 50%;
-  left: 25%;
-  padding-left: 10rpx;
-}
-
-#remarks {
-  border: solid #CCC8BD 1rpx;
-  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
-  border-radius: 5px;
-  position: relative;
-  margin-top: 10rpx;
-  height: 235rpx;
-  width: 50%;
-  left: 25%;
+  width: 60%;
+  left: 20%;
   padding-left: 10rpx;
 }
 
@@ -138,8 +125,8 @@
   margin-top: 60rpx;
   background: #FFD700;
   color: black;
-  height: 25px;
-  width: 50%;
+  height: 30px;
+  width: 60%;
   font-size: 38rpx;
 }
 .btn::after {
@@ -148,39 +135,42 @@
 .btn_hover {
   background-color: #f0ca00;
 }
-.button_jump {
-  position: absolute;
-  margin-top: 60rpx;
-  width: 30%;
-  height: 60rpx;
-  left: 21%;
-  font-size: 38rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-.button_self {
-  position: absolute;
-  margin-top: 60rpx;
-  width: 30%;
-  height: 60rpx;
-  left: 48%;
-  background-color: #FFCC00;
-  font-size: 38rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
 
 .line {
-  width: 60%;
+  width: 70%;
   border: solid #e0e3da 2rpx;
   position: relative;
+  left: 15%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.picker {
+  position: relative;
+  margin-bottom: 20rpx;
+  color: #fde073;
+  margin-left:70rpx;
+  font-size: 38rpx;
+}
+.time {
+  display: flex;
+  flex-direction: row;
+}
+.minute{
+  position: relative;
+  left: 10rpx;
+  font-size: 38rpx;
+  color: black;
+}
+#remarks {
+  border: solid #CCC8BD 1rpx;
+  box-shadow:1px 1px 1px 1px rgb(231, 231, 231);
+  border-radius: 5px;
+  position: relative;
+  margin-top: 10rpx;
+  height: 235rpx;
+  width: 60%;
   left: 20%;
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
+  padding-left: 10rpx;
 }
 
 .section {
@@ -190,23 +180,6 @@
   color: #000;
 }
 
-.picker {
-  position: relative;
-  margin-top: 10rpx;
-  color: #fde073;
-  left: 300rpx;
-  font-size: 38rpx;
-}
-.time {
-  display: flex;
-  flex-direction: row;
-}
-.minute{
-  position: relative;
-  left: 50rpx;
-  color: #fde073;
-  font-size: 38rpx;
-}
 /* 弹窗文字颜色 */
 .textColor{
   color: #fde073

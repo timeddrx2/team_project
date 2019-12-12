@@ -21,52 +21,106 @@ Page({
       '55', '60'
     ],
     objectArray: [{
-        id: 10,
-        name: '10'
-      },
-      {
-        id: 15,
-        name: '15'
-      },
-      {
-        id: 20,
-        name: '20'
-      },
-      {
-        id: 25,
-        name: '25'
-      },
-      {
-        id: 30,
-        name: '30'
-      },
-      {
-        id: 35,
-        name: '35'
-      },
-      {
-        id: 40,
-        name: '40'
-      },
-      {
-        id: 45,
-        name: '45'
-      },
-      {
-        id: 50,
-        name: '50'
-      },
-      {
-        id: 55,
-        name: '55'
-      },
-      {
-        id: 60,
-        name: '60'
-      },
+      id: 10,
+      name: '10'
+    },
+    {
+      id: 15,
+      name: '15'
+    },
+    {
+      id: 20,
+      name: '20'
+    },
+    {
+      id: 25,
+      name: '25'
+    },
+    {
+      id: 30,
+      name: '30'
+    },
+    {
+      id: 35,
+      name: '35'
+    },
+    {
+      id: 40,
+      name: '40'
+    },
+    {
+      id: 45,
+      name: '45'
+    },
+    {
+      id: 50,
+      name: '50'
+    },
+    {
+      id: 55,
+      name: '55'
+    },
+    {
+      id: 60,
+      name: '60'
+    },
     ],
     index: 0,
-    //设置食堂初始值
+    //设置取消订单时长初始值
+    array2: ['10',
+      '15', '20',
+      '25', '30',
+      '35', '40',
+      '45', '50',
+      '55', '60'
+    ],
+    objectArray2: [{
+      id: 10,
+      name: '10'
+    },
+    {
+      id: 15,
+      name: '15'
+    },
+    {
+      id: 20,
+      name: '20'
+    },
+    {
+      id: 25,
+      name: '25'
+    },
+    {
+      id: 30,
+      name: '30'
+    },
+    {
+      id: 35,
+      name: '35'
+    },
+    {
+      id: 40,
+      name: '40'
+    },
+    {
+      id: 45,
+      name: '45'
+    },
+    {
+      id: 50,
+      name: '50'
+    },
+    {
+      id: 55,
+      name: '55'
+    },
+    {
+      id: 60,
+      name: '60'
+    },
+    ],
+    index2: 0,
+    ///////////////
     array1: ['玫瑰一楼', '玫瑰二楼', '紫荆一楼', '紫荆二楼', '丁香一楼', '丁香二楼', '京元', '朝阳'],
     objectArray1: [{
         id: 0,
@@ -110,6 +164,13 @@ Page({
       index1: e.detail.value
     })
   },
+  bindPickerChange2: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index2: e.detail.value
+    })
+  },
+
   swichNav: function(e) {
     console.log(e);
     var that = this;
@@ -147,8 +208,8 @@ Page({
           requirement_customer: e.detail.value.require,
           requirement_delivery: null, //配送员
           order_delivery_time: "null", //订单配对时间
-          scheduled_delivery_countdown: that.data.array[e.detail.value.time1],
-          result_countdown: e.detail.value.time2,
+          scheduled_delivery_countdown: that.data.array2[e.detail.value.time2] ,
+          result_countdown:that.data.array[e.detail.value.time1] ,
           telephone_delivery: null,
           telephone_customer: that.data.telephone,
         }
@@ -194,10 +255,10 @@ Page({
           s_dormitory_2: "",
           money: e.detail.value.fee_,
           requirement_customer: null,
-          requirement_delivery: e.detail.value.remarks_,
+          requirement_delivery: e.detail.value.require_,
           order_delivery_time: "null",
-          scheduled_delivery_countdown: that.data.array[e.detail.value.time1_],
-          result_countdown: e.detail.value.time2_,
+          scheduled_delivery_countdown: that.data.array2[e.detail.value.time2_],
+          result_countdown: that.data.array[e.detail.value.time1_],
           telephone_delivery: that.data.telephone,
           telephone_customer: null,
         }

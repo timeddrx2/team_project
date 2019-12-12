@@ -1,0 +1,144 @@
+/* pages/myInformation/myInformation.wxss */
+.information{
+  /* border: solid #FDD51E 3rpx; */
+  display: flex;
+  flex-direction: column;
+  font-size:40rpx; 
+  width: 56%;
+  margin-left:22%; 
+  }
+
+  .con2 {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 头像 */
+.head{
+  position: absolute;
+  left: 300rpx;
+  top: 8%;
+  width: 150rpx;
+  height: 150rpx;
+  border:solid 3rpx;
+  border-radius: 200rpx;
+}
+
+.good{
+  position: absolute;
+  border: solid #ccc8bd 3rpx;
+  left: 100rpx;
+  top: 40%;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 200rpx;
+  box-shadow: 1px 1px 1px 1px rgb(231, 231, 231);
+}
+.soso{
+  position: absolute;
+  border: solid #ccc8bd 3rpx;
+  left: 300rpx;
+  top: 40%;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 200rpx;
+  box-shadow: 1px 1px 1px 1px rgb(231, 231, 231);
+}
+.bad{
+  position: absolute;
+  left: 500rpx;
+  top: 40%;
+  width: 150rpx;
+  height: 150rpx;
+  border: solid #ccc8bd 3rpx;
+  box-shadow: 1px 1px 1px 1px rgb(231, 231, 231);
+  border-radius: 200rpx;
+}
+.word1{
+  position: absolute;
+  left: 132rpx;
+  top: 60%; 
+  color: #865c00;
+}
+.word2{
+  position: absolute;
+  left: 337rpx;
+  top: 60%; 
+  color: #865c00;
+}
+.word3{
+  position: absolute;
+  left: 535rpx;
+  top: 60%; 
+  color: #865c00;
+}
+.rate1{
+  position: absolute;
+  left: 132rpx;
+  top: 65%; 
+  color: #865c00;
+}
+.rate2{
+  position: absolute;
+  left: 340rpx;
+  top: 65%; 
+  color: #865c00;
+}
+.rate3{
+  position: absolute;
+  left: 540rpx;
+  top: 65%; 
+  color: #865c00;
+}
+.comment{
+  font-size: 38rpx;
+  /* border: solid #808080 3rpx; */
+  width: 25rpx;
+  height: 5rpx;
+  /* border-radius: 40rpx; */
+  /* background-color: #e0e3da; */
+  //margin-top: 2%;
+  /* text-align: center; */
+  margin: 15% 23%;
+}
+/* 横着的分割View样式 #E0E3DA; */
+/*分割线样式*/
+.fenge{
+width: 80%;
+height: 60rpx;
+margin-left: 10%;
+}
+/*输入评价多行框*/
+.text{
+  width: 480rpx;
+  height: 300rpx;
+  margin-left: 19%;
+  margin-top: 10%;
+}
+/* 黄色头部 */
+.yellowhead{
+ background:#fde073;
+ width: 100%;
+ height: 300rpx;
+ border-bottom-left-radius:100rpx;
+ border-bottom-right-radius:100rpx;
+}
+
+/* 按钮 */
+.bottom::after {
+  border: 0;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 300rpx;
+  background: #fde073;
+  color: black;
+  height: 25px;
+  width: 100px;
+  font-size: 38rpx;
+}
+.bottom_hover {
+  background-color: #f3cf00;
+}

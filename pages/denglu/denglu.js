@@ -3,12 +3,6 @@ const app = getApp()
 
 Page({
   data: {
-    dialogShow1: false,
-    dialogShow2: false,
-    buttons: [{
-      text: '确定'
-    }],
-    // telephone: "",
   },
   formSubmit: function(e) {
     var that=this
@@ -42,25 +36,44 @@ Page({
         }
         // 密码错误
         if (res.data.data.result == 0){
-          that.setData({
-            dialogShow1: true
+          wx.showModal({
+            title: '密码错误',
+            content: '请重新确认密码',
+            showCancel: false, //是否显示取消按
+            confirmText: "确定",//默认是“确定”
+            confirmColor: '#fde073',//确定文字的颜色
+            success: function (res) {
+              if (res.confirm) {
+                //点击确定,默认隐藏弹框
+              }
+            },
+            fail: function (res) { }, //接口调用失败的回调函数
+            complete: function (res) { }, //接口调用结束的回调函数（调用成功、失败都会执行）
           })
         }
         //手机号不存在
           if (res.data.data.result == 2){
-            that.setData({
-              dialogShow2: true
+            wx.showModal({
+              title: '手机号码不存在',
+              content: '快去注册吧',
+              showCancel: true, //是否显示取消按
+              confirmText: "确定",//默认是“确定”
+              confirmColor: '#fde073',//确定文字的颜色
+              cancelText: "取消",//默认是“确定”
+              cancelColor: '#fde073',
+              success: function (res) {
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: '/pages/zhuce/zhuce',
+                  })
+                  //点击确定,默认隐藏弹框
+                }
+              },
+              fail: function (res) { }, //接口调用失败的回调函数
+              complete: function (res) { }, //接口调用结束的回调函数（调用成功、失败都会执行）
             })
           }
       }
-    })
-  },
-// 显示弹窗
-  tapDialogButton(e) {
-    this.setData({
-      dialogShow1: false,
-      dialogShow2: false,
-      showOneButtonDialog: false
     })
   },
   /**

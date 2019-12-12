@@ -23,7 +23,6 @@
       <!-- 定义了两个类名，越后面优先级越高 -->
       <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">点单</view>
       <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">配送</view>
-
     </view>
 
     <!--内容主体-->
@@ -35,8 +34,8 @@
             <view class="diandan" bindtap="toDXiangQing" data-id="{{index}}">
               <view class="con2">
                 <!-- 头像 -->
-                <image class="touxiang" src="../../img/chicken/happy.png"></image>
-                <!-- <image class="touxiang" src="{{head_link}}"></image> -->
+                <!-- <image class="touxiang" src="../../img/chicken/happy.png"></image> -->
+                <image class="touxiang" src="{{item.head_link}}"></image>
                 <!-- 宿舍楼号 -->
                 <text class="dorm">{{item.s_dormitory_1}}#</text>
               </view>
@@ -72,7 +71,7 @@
 
               <view class="con2">
                 <!-- 头像 -->
-                <image class="touxiang"  src="../../img/chicken/puzzel.png"></image>
+                <image class="touxiang"  src="{{item.head_link}}"></image>
                 <!-- 宿舍楼号楼层 -->
                 <text class="dorm">{{item.s_dormitory_1}}#{{item.s_dormitory_2[0]}}F</text>
 

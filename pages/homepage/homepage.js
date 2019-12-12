@@ -23,7 +23,7 @@ toInformation:function(){
 },
 toMyComment:function(){
   wx.navigateTo({
-    url: '/pages/mycomment/mycomment',
+    url: '/pages/mycom/mycom',
   })
 },
   /**

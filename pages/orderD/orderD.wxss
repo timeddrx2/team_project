@@ -65,8 +65,3 @@
 .btn_hover {
   background-color: #f0ca00;
 }
-
-/* 弹窗内部组件 */
-.textColor{
-  color: #fde073
-}

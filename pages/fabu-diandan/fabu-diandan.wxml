@@ -15,82 +15,104 @@
     <swiper-item>
       <form bindsubmit="formSubmit">
         <view>
-          <view class="name-top">设置配送费：</view>
-          <view class="input">
-            <input class="fee" name="fee" placeholder=" " />
+          <view>
+            <text>\n</text>
           </view>
-          <view class="line"></view>
+          <view>
+            <view class="input">
+              <text space="emsp" class="name-top">设置配送费：</text>
+              <input class="add-kuang" type="text" name="fee" />
+              <text space="emsp" class="ti_shi">元</text>
+            </view>
+            <view>
+              <text>\n</text>
+            </view>
+          </view>
 
-          <view class="name">设置预计送达时长</view>
-          <view class="time">
+          <view class="name">
+            <text space="emsp" class="name">预计配送时长：</text>
             <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="time1">
               <view class="picker">
                 {{array[index]}}
                 <text class="minute">分钟</text>
               </view>
             </picker>
+
           </view>
-
-          <view class="line"></view>
-
-          <view class="name">取消订单时间：</view>
-          <view class="input">
-            <input class="time" name="time2" placeholder=" " />
+          <view>
+            <text>\n</text>
           </view>
-          <view class="line"></view>
-
-          <view class="name">食堂：</view>
-          <view class="name1">
+          <view class="name">
+            <text space="emsp" class="name">取消订单时长：</text>
+            <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}" name="time2">
+              <view class="picker">
+                {{array2[index2]}}
+                <text class="minute">分钟</text>
+              </view>
+            </picker>
+          </view>
+          <view>
+            <text>\n</text>
+          </view>
+          <view class="name">
+            <text space="emsp" class="name">食堂：</text>
             <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}" name="restaurant">
-              <view class="picker" >
+              <view class="picker">
                 {{array1[index1]}}
               </view>
             </picker>
           </view>
-          <view class="line"></view>
-
+          <view>
+            <text>\n</text>
+          </view>
           <view>
             <text space="emsp" id="peisong-address">配送地址：</text>
-            <view class="address">
-              <text space="emsp" class="lou-men"> 楼号：</text>
-              <input id="add-lou" type="text" name="lou" />
+            <view class="input">
+              <input class="add-kuang1" type="text" name="lou" />
+              <text space="emsp" class="ti_shi1">号楼</text>
             </view>
-            <view class="address">
-              <text space="emsp" class="lou-men"> 门号：</text>
-              <input id="add-hao" type="text" name="men" />
+            <view class="input">
+              <input class="add-kuang1" type="text" name="men" />
+              <text space="emsp" class="ti_shi1">宿舍</text>
             </view>
           </view>
-          <view class="line"></view>
-
-          <view class="name">要求：</view>
+          <view>
+            <text>\n</text>
+          </view>
+          <view class="name1">要求：</view>
           <view class="ask">
-            <textarea id="require" name="require" placeholder=" " />
+            <input id="require" name="require" placeholder=" " />
           </view>
 
           <view>
             <button class="btn" form-type="submit" hover-class="btn_hover">确认订单</button>
-            <text>\n\n</text>
+
+          </view>
+          <view>
+            <text>\n</text>
           </view>
         </view>
       </form>
-      <mp-dialog title="发布成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-      </mp-dialog>
-
-
     </swiper-item>
+    
     <swiper-item>
       <form bindsubmit="formSubmit1">
         <view>
-          <!-- 详情框 -->
-          <view class="name-top">设置配送费：</view>
-          <view class="input">
-            <!--  -->
-            <input class="fee" name="fee_" placeholder=" " />
+          <view>
+            <text>\n</text>
           </view>
-          <view class="line"></view>
-
-          <view class="name">预计送达时长：</view>
-          <view class="time">
+          <view>
+            <view class="input">
+              <text space="emsp" class="name-top">设置配送费：</text>
+              <input class="add-kuang" type="text" name="fee_" />
+              <text space="emsp" class="ti_shi">元</text>
+            </view>
+          </view>
+          <view>
+            <text>\n</text>
+          </view>
+          <view class="name">
+            <text space="emsp" class="name">预计配送时长：</text>
             <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="time1_">
               <view class="picker">
                 {{array[index]}}
@@ -98,40 +120,49 @@
               </view>
             </picker>
           </view>
-          <view class="line"></view>
-
-          <view class="name">取消订单时间：</view>
-          <view class="input">
-            <input class="time" name="time2_" placeholder=" " />
+          <view>
+            <text>\n</text>
           </view>
-          <view class="line"></view>
-
-          <view class="name">食堂：</view>
-          <view class="name1">
-            <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}"  name="restaurant_">
+          <view class="name">
+            <text space="emsp" class="name">取消订单时长：</text>
+            <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}" name="time2_">
+              <view class="picker">
+                {{array2[index2]}}
+                <text class="minute">分钟</text>
+              </view>
+            </picker>
+          </view>
+          <view>
+            <text>\n</text>
+          </view>
+          <view class="name">
+            <text space="emsp" class="name">食堂：</text>
+            <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}" name="restaurant_">
               <view class="picker">
                 {{array1[index1]}}
               </view>
             </picker>
           </view>
-          <view class="line"></view>
-
           <view>
-            <text space="emsp" id="peisong-address">配送范围：</text>
-            <view class="address">
-              <text space="emsp" class="lou-men"> 楼号：</text>
-              <input id="add-lou" type="text" name="lou_" />
+            <text>\n</text>
+          </view>
+          <view>
+            <text space="emsp" id="peisong-address">配送地址：</text>
+            <view class="input">
+              <input class="add-kuang1" type="text" name="lou_" />
+              <text space="emsp" class="ti_shi1">号楼</text>
             </view>
-            <!-- <view class="address">
-              <text space="emsp" class="lou-men"> 门号：</text>
-              <input id="add-hao" type="text" name="men" />
+            <!-- <view class="input">
+              <input class="add-kuang1" type="text" name="men_" />
+              <text space="emsp" class="ti_shi1">宿舍</text>
             </view> -->
           </view>
-          <view class="line"></view>
-
-          <view class="name">备注：</view>
-          <view class="beizhu">
-            <textarea id="remarks" name="remarks_" placeholder="" />
+          <view>
+            <text>\n</text>
+          </view>
+          <view class="name1">备注：</view>
+          <view class="ask">
+            <input id="require" name="require_" placeholder=" " />
           </view>
 
           <view>
@@ -140,8 +171,6 @@
           </view>
         </view>
       </form>
-      <mp-dialog title="发布成功！" show="{{dialogShow}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-      </mp-dialog>
     </swiper-item>
   </swiper>
 </view>

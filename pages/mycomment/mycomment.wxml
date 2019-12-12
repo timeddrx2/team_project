@@ -10,7 +10,7 @@
     </view>
 
     <!--内容主体-->
-    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:{{aheight}}rpx">
       <swiper-item>
         <view>
           <!-- 详情框 -->

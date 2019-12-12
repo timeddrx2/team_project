@@ -1,67 +1,93 @@
 // pages/zhuce/zhuce.js
+// pages/zhuce/zhuce.js
 var app = getApp()
 
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    dialogShow: false,
-    buttons: [{
-      text: '确定'
-    }
-    ],
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  formSubmit: function(e) {
-    console.log(e)
-    console.log(this.data.userInfo)
-    var that = this;
-    wx.request({
-      url: 'https://www.sssxfd.top:8080/sign_up',
-      header: {
-        'content-type': 'application/json'
-      },
-      data: {
-        error_code: 0,
+    /**
+     * 页面的初始数据
+     */
+    data: {
+      telephone: "",
+      password: "",
+      userInfo: {},
+      hasUserInfo: false,
+      canIUse: wx.canIUse('button.open-type.getUserInfo')
+    },
+    formSubmit: function(e) {
+      console.log(e)
+      console.log(this.data.userInfo)
+      var that = this;
+      wx.request({
+        url: 'https://www.sssxfd.top:8080/sign_up',
+        header: {
+          'content-type': 'application/json'
+        },
         data: {
-          telephone: e.detail.value.telephone,
-          password: e.detail.value.password,
-          name: e.detail.value.name,
-          sex: e.detail.value.sex,
-          academy: e.detail.value.academy,
-          student_id: e.detail.value.student_id,
-          wechat_name: that.data.userInfo.nickName,
-          head_link: that.data.userInfo.avatarUrl,
-        }
-      },
-      method: "POST",
-      success(res) {
-        console.log(res.data.data)
-        if(res.data.data.result == 1){
+          error_code: 0,
+          data: {
+            telephone: e.detail.value.telephone,
+            password: e.detail.value.password,
+            name: e.detail.value.name,
+            sex: e.detail.value.sex,
+            academy: e.detail.value.academy,
+            student_id: e.detail.value.student_id,
+            wechat_name: that.data.userInfo.nickName,
+            head_link: that.data.userInfo.avatarUrl,
+          }
+        },
+        method: "POST",
+        success(res) {
+          console.log(res.data.data)
+          if (res.data.data.result == 1) {
+            wx.showModal({
+              title: '注册成功',
+              content: '快去登录吧！',
+              showCancel: false, //是否显示取消按
+              confirmText: "确定", //默认是“确定”
+              confirmColor: '#fde073', //确定文字的颜色
+              success: function(res) {
+                if (res.confirm) {
+                  //点击确定,默认隐藏弹框
+                }
+              },
+              fail: function(res) {}, //接口调用失败的回调函数
+              complete: function(res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
+            })
           that.setData({
-            dialogShow: true,
-          }) 
-          // wx.navigateTo({
-          //   url: '/pages/denglu/denglu',
-          // })
+            telephone: e.detail.value.telephone,
+            password: e.detail.value.password,
+          })
+          console.log(that.data.telephone)
+          }
         }
-      }
-    })
-  },
-// 显示弹窗
-  tapDialogButton(e) {
-    this.setData({
-      dialogShow: false,
-    })
-    wx.navigateTo({
-      url: '/pages/dengu/denglu',
-    })
-  },
+      })
+    },
+    toEntry: function() {
+      var that=this
+      wx.request({
+        url: 'https://www.sssxfd.top:8080/sign_in',
+        header: {
+          'content-type': 'application/json'
+        },
+        data: {
+          error_code: 0,
+          data: {
+            telephone:that.data.telephone,
+            password: that.data.password,
+          }
+        },
+        method: "POST",
+        success(res){
+          console.log(res)
+          wx.switchTab({
+            url: '/pages/home/home',
+          })
+        }
+      })
+    },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -146,9 +172,4 @@ Page({
   onShareAppMessage: function() {
 
   },
-  toEntry: function() {
-    wx.navigateTo({
-      url: '/pages/denglu/denglu',
-    })
-  }
 })

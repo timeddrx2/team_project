@@ -13,8 +13,7 @@ Page({
     timeD: "",
     // tab切换 
     aheight: 0,
-    list: [1, 2, 3, 4, 5],
-//list2:点单 list3:配送
+    //list2:点单 list3:配送
     // 标签内容
     list2: [],
     list3: []
@@ -37,7 +36,7 @@ Page({
       line = that.data.list3.length;
     }
     this.setData({
-      aheight: 83 + 230 * line
+      aheight: 83 + 230 * line+10
     });
     console.log(line)
   },
@@ -54,12 +53,12 @@ Page({
       line = this.data.list3.length;
     }
     this.setData({
-      aheight: 83 + 230 * line
+      aheight: 83 + 230 * line+10
     });
 
   },
   //点单详情
-  toDXiangQing: function (e) {
+  toDXiangQing: function(e) {
     console.log(e)
     var index = e.currentTarget.dataset.id;
     console.log("D:" + index)
@@ -69,7 +68,7 @@ Page({
     })
   },
   //配送详情
-  toPXiangQing: function (e) {
+  toPXiangQing: function(e) {
     console.log(e)
     var index = e.currentTarget.dataset.id;
     console.log("P:" + index)
@@ -78,22 +77,9 @@ Page({
       url: '/pages/orderP/orderP?order_number=' + this.data.list3[index].order_number,
     })
   },
-  load:function(){
+  load: function() {
     console.log("调用load函数")
-
-    // ===========================simulation =====================
-    // var testlist = [
-    //   { index: 0, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    //   { index: 1, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    //   { index: 2, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    //   { index: 3, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    //   { index: 4, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    //   { index: 5, s_dormitory_1: "100", canteen: "100", money: "1000", result_time: "120" },
-    // ]
-    // this.setData({
-    //   list2: testlist
-    // })
-var that = this
+    var that = this
     wx.request({
       url: 'https://www.sssxfd.top:8080/refresh_business',
       header: {
@@ -140,24 +126,13 @@ var that = this
           line = that.data.list3.length;
         }
         that.setData({
-          aheight: 83 + 230 * line
+          aheight: 83 + 230 * line+10
         });
       }
-     })
-    // var line;
-    // if (this.data.currentTab == 0) {
-    //   line = this.data.list2.length;
-    // } else if (that.data.currentTab == 1) {
-    //   line = this.data.list3.length;
-    // }
-    // this.setData({
-    //   aheight: 83 + 230 * line
-    // });
+    })
     wx.hideLoading()
     wx.hideNavigationBarLoading()
-   // ================================simulation ==========================
 
-    
   },
   onLoad: function(options) {
     wx.showLoading({
@@ -169,22 +144,22 @@ var that = this
   onPullDownRefresh: function() {
     wx.showToast({
       title: '下拉刷新',
-      duration : 1500
+      duration: 1500
     })
     wx.showNavigationBarLoading()
-    
+
     this.load();
 
-    setTimeout(function () {
+    setTimeout(function() {
       // complete
       wx.hideNavigationBarLoading()
       wx.stopPullDownRefresh()
     }, 1500);
   },
-  onReachBottom: function (event) {
+  onReachBottom: function(event) {
     console.log("上拉刷新")
     // 暂时用不上了
-  //  this.load()
+    //  this.load()
   },
   onReady: function() {
 

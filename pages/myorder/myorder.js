@@ -1,15 +1,12 @@
 const app = getApp()
 Page({
   data: {
-    list: [1, 2, 3, 4, 5],// list2:点单 list3:配送
+    // list2:点单 list3:配送
+    list2: [],
+    list3: [],
     currentTab: 0,
     telephone: "",
     order_number: 0,
-    dialogShow1: false,//控制取消点单弹窗显示
-    dialogShow2: false,//控制取消配送弹窗显示
-    buttons: [{
-      text: '确定'
-    }],
   },
   //swiper
   swichNav: function (e) {
@@ -30,7 +27,7 @@ Page({
       line = that.data.list3.length;
     }
     this.setData({
-      aheight: 230 * line
+      aheight: 230 * line+83
     });
   },
   swiperChange: function (e) {
@@ -46,60 +43,62 @@ Page({
       line = this.data.list3.length;
     }
     this.setData({
-      aheight: 230 * line
+      aheight: 230 * line+83
     });
 
   },
-  //点单
+  //点单详情
   detail1: function (e) {
+    console.log("尝试进入订单详情")
     console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("点单号：" + this.data.list2[index].order_number)
     wx.navigateTo({
-      url: '/pages/order_detail/order_detail?order_number' + this.data.list2[index].order_number,
+      url: '/pages/order_detail/order_detail?order_number=' + this.data.list2[index].order_number,
     })
   },
-  //配送
+  //配送详情
   detail2: function (e) {
+    console.log("尝试进入配送单详情")
     console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("配送单号：" + this.data.list2[index].order_number)
+
     wx.navigateTo({
-      url: '/pages/order_detail_ing/order_detail_ing?order_number' + this.data.list3[index].order_number,
+      url: '/pages/order_detail_ing/order_detail_ing?order_number=' + this.data.list3[index].order_number,
     })
   },
-  //控制弹窗显示
-  tapDialogButton(e) {
-    this.setData({
-      dialogShow1: false,
-      dialogShow2: false,
-    })
-  },
-  //修改配送单
-  changeOrderP: function () {
-    wx.navigateTo({
-      url: '/pages/xiugai-peisong/xiugai-peisong',
-    })
-  },
-  //修改点单
-  changeOrderD: function () {
-    wx.navigateTo({
-      url: '/pages/xiugai-diandan/xiugai-diandan',
-    })
-  },
+  // //修改配送单
+  // changeOrderP: function (e) {
+  //   console.log("尝试修改配送单")
+  //   console.log(e)
+  //   console.log("e" + e.currentTarget.dataset)
+  //   var index = e.currentTarget.dataset.id
+  //   console.log("id:")
+  //   wx.navigateTo({
+  //     url: '/pages/xiugai-peisong/xiugai-peisong?order_number=' + this.data.list3[index].order_number,
+  //   })
+  // },
+  // //修改点单
+  // changeOrderD: function (e) {
+  //   console.log("尝试修改点单")
+  //   console.log("e" + e)
+  //   wx.navigateTo({
+  //     url: '/pages/xiugai-diandan/xiugai-diandan?order_number=' + this.data.list2[index].order_number,
+  //   })
+  // },
   //取消点单
   cancelOrder1: function (e) {
     console.log(e),
       console.log("id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
     console.log("list2_order_number:" + this.data.list2[index].order_number)
-    console.log("是这里出错了吗")
-    
+
     var that = this;
     that.setData({
-      order_number: data.list2[index].order_number,
+      order_number: that.data.list2[index].order_number,
     })
 
-    console.log("这里有没有出错呢")
-    console.log("order_number:" + order_number)
-
-   
     wx.request({
       url: 'https://www.sssxfd.top:8080/delete_order',
       header: {
@@ -109,28 +108,48 @@ Page({
       data: {
         error_code: 0,
         data: {
-          order_number: thta.data.list2[index].order_number,
+          order_number: that.data.list2[index].order_number,
         }
       },
       success(res) {
         console.log(res)
-        that.setData({
-          dialogShow2: true
+        console.log("取消点单成功")
+        if (res.data.data.result == "1") {
+
+        }
+        wx.showModal({
+          title: '取消发布成功！',
+          content: '',
+          showCancel: true,//是否显示取消按钮
+          cancelText: "确定",//默认是“取消”
+          cancelColor: '#fde073',//取消文字的颜色
+          confirmText: "发布新单",//默认是“确定”
+          confirmColor: '#fde073',//确定文字的颜色
+          success: function (res) {
+            if (res.cancel) {
+              //点击取消,默认隐藏弹框
+            } else {
+              //点击确定
+              wx.switchTab({
+                url: '/pages/fabu-diandan/fabu-diandan',
+              })
+            }
+          },
+          fail: function (res) { },//接口调用失败的回调函数
+          complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
         })
-        
       }
     })
   },
   //取消配送单
   cancelOrder2: function (e) {
-    console.log(e),
-      console.log("id:" + e.currentTarget.dataset.id)
+    console.log(e)
+    console.log("id:" + e.currentTarget.dataset.id)
     var index = e.currentTarget.dataset.id;
     console.log("list3_order_number:" + this.data.list3[index].order_number)
     this.setData({
       order_number: this.data.list3[index].order_number
     })
-    // console.log("order_number:" + order_number)
     var that = this;
     wx.request({
       url: 'https://www.sssxfd.top:8080/delete_order',
@@ -147,14 +166,149 @@ Page({
       success(res) {
         console.log(res)
         console.log("取消成功！")
-        that.setData({
-          dialogShow2: true
+        wx.showModal({
+          title: '取消发布成功!',
+          content: '',
+          showCancel: true,//是否显示取消按钮
+          cancelText: "确定",//默认是“取消”
+          cancelColor: '#fde073',//取消文字的颜色
+          confirmText: "发布新单",//默认是“确定”
+          confirmColor: '#fde073',//确定文字的颜色
+          success: function (res) {
+            if (res.cancel) {
+              //点击取消,默认隐藏弹框
+            } else {
+              //点击确定
+              wx.switchTab({
+                url: '/pages/fabu-diandan/fabu-diandan',
+              })
+            }
+          },
+          fail: function (res) { },//接口调用失败的回调函数
+          complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
         })
-        console.log("show2"+that.data.dialogShow2)
       }
     })
   },
-  load:function(){
+  //确认送达-点单
+  confirm1: function (e) {
+    console.log(e)
+    console.log("确认送达：id:" + e.currentTarget.dataset.id)
+    var index = e.currentTarget.dataset.id;
+    console.log("list2_order_number:" + this.data.list2[index].order_number)
+    this.setData({
+      order_number: this.data.list2[index].order_number
+    })
+    var that = this;
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/confirm_order',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "POST",
+      data: {
+        error_code: 0,
+        data: {
+          order_number: that.data.order_number,
+        }
+      },
+      success(res) {
+        console.log(res)
+        console.log("确认成功！")
+        wx.showModal({
+          title: '确认成功',
+          content: '快去评价吧!',
+          showCancel: true,//是否显示取消按钮
+          cancelText: "不评价",//默认是“取消”
+          cancelColor: '#fde073',//取消文字的颜色
+          confirmText: "好的",//默认是“确定”
+          confirmColor: '#fde073',//确定文字的颜色
+          success: function (res) {
+            if (res.cancel) {
+              wx.switchTab({
+                url: '/pages/home/home',
+              })
+            }
+            else {
+              //this.load()
+            }
+          },
+          fail: function (res) { },//接口调用失败的回调函数
+          complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
+        })
+      }
+    })
+  },
+  //确认送达-配送
+  confirm2: function (e) {
+    console.log(e)
+    console.log("确认送达：id:" + e.currentTarget.dataset.id)
+    var index = e.currentTarget.dataset.id;
+    console.log("list3_order_number:" + this.data.list3[index].order_number)
+    this.setData({
+      order_number: this.data.list3[index].order_number
+    })
+    var that = this;
+    wx.request({
+      url: 'https://www.sssxfd.top:8080/confirm_order',
+      header: {
+        'content-type': ' application/json'
+      },
+      method: "POST",
+      data: {
+        error_code: 0,
+        data: {
+          order_number: that.data.order_number,
+        }
+      },
+      success(res) {
+        console.log(res)
+        console.log("确认成功！")
+        wx.showModal({
+          title: '确认成功',
+          content: '快去评价吧!',
+          showCancel: true,//是否显示取消按钮
+          cancelText: "不评价",//默认是“取消”
+          cancelColor: '#fde073',//取消文字的颜色
+          confirmText: "好的",//默认是“确定”
+          confirmColor: '#fde073',//确定文字的颜色
+          success: function (res) {
+            if (res.cancel) {
+              wx.switchTab({
+                url: '/pages/home/home',
+              })
+            }
+            else {
+              //this.load()
+            }
+          },
+          fail: function (res) { },//接口调用失败的回调函数
+          complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
+        })
+      }
+    })
+  },
+  //评价-点单
+  comment1: function (e) {
+    console.log("尝试进入评价点单")
+    console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("单号：" + this.data.list2[index].order_number)
+    wx.navigateTo({
+      url: '/pages/w_comment/w_comment?order_number=' + this.data.list2[index].order_number,
+    })
+  },
+  //评价-配送
+  comment2: function (e) {
+    console.log("尝试进入评价配送单")
+    console.log(e)
+    var index = e.currentTarget.dataset.id
+    console.log("配送单号：" + this.data.list3[index].order_number)
+    wx.navigateTo({
+      url: '/pages/w_comment/w_comment?order_number=' + this.data.list3[index].order_number,
+    })
+  },
+  load: function () {
     console.log("加载订单数据")
     var that = this;
     //点单
@@ -186,7 +340,7 @@ Page({
           line = that.data.list3.length;
         }
         that.setData({
-          aheight: 230 * line
+          aheight: 230 * line + 83
         });
       }
     })
@@ -200,7 +354,7 @@ Page({
       data: {
         error_code: 0,
         data: {
-          telephone:app.globalData.telephone,
+          telephone: app.globalData.telephone,
         }
       },
       success(res) {
@@ -225,7 +379,7 @@ Page({
   },
   onLoad: function (options) {
     console.log("options:" + options)
-   this.load()
+    this.load()
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading()

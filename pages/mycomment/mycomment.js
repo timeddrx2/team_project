@@ -5,7 +5,7 @@ Page({
     list: [1, 2, 3, 4, 5],
     currentTab: 0,
     // 标签内容
-    list2: [{ n: "吃饱喝足", com: "能顺路赚钱很开心！", fee: "2$", time: "2019-10-22" }, { n: "身体好", com: "谢谢你对我选的菜的喜欢", fee: "2$", time: "2019-10-22" }, { n: "小鸡带饭", com: "小姐姐很爽快", fee: "2$", time: "2019-10-22" }, { n: "少不了", com: "谢谢你对我的信任❤️", fee: "2$", time: "2019-10-22" }, { n: "nice!", com: "3q~", fee: "2$", time: "2019-10-22" },],
+    list2: [{ n: "吃饱喝足", com: "能顺路赚钱很开心！", fee: "2$", time: "2019-10-22" }, { n: "身体好", com: "谢谢你对我选的菜的喜欢", fee: "2$", time: "2019-10-22" }, { n: "小鸡带饭", com: "小姐姐很爽快", fee: "2$", time: "2019-10-22" }, { n: "少不了", com: "谢谢你对我的信任❤️", fee: "2$", time: "2019-10-22" }, { n: "nice!", com: "3q~", fee: "2$", time: "2019-10-22" }, { n: "吃饱喝足", com: "能顺路赚钱很开心！", fee: "2$", time: "2019-10-22" }, { n: "身体好", com: "谢谢你对我选的菜的喜欢", fee: "2$", time: "2019-10-22" }, { n: "小鸡带饭", com: "小姐姐很爽快", fee: "2$", time: "2019-10-22" }, { n: "少不了", com: "谢谢你对我的信任❤️", fee: "2$", time: "2019-10-22" }, { n: "nice!", com: "3q~", fee: "2$", time: "2019-10-22" },],
     list3: [{ n: "吃饱喝足", com: "很好！很准时！", fee: "2$", time: "2019-10-22" }, {
       n: "身体好", com: "这个同学选的菜很合我胃口👍", fee: "2$", time: "2019-10-22"
     }, { n: "小鸡带饭", com: "不用排队就可以吃食堂，太赞了！", fee: "2$", time: "2019-10-22" }, { n: "少不了", com: "谢谢，菜还是热的", fee: "2$", time: "2019-10-22" }, { n: "nice!", com: "good！", fee: "2$", time: "2019-10-22" },]
@@ -27,24 +27,53 @@ wx.navigateTo({
         currentTab: e.target.dataset.current,
       })
     }
+    var line;
+    if (that.data.currentTab == 0) {
+      line = that.data.list2.length;
+    } else if (that.data.currentTab == 1) {
+      console.log(1)
+      line = that.data.list3.length;
+    }
+    this.setData({
+      aheight: 83 + 240 * line
+    });
+
   },
   swiperChange: function (e) {
     console.log(e);
     this.setData({
       currentTab: e.detail.current,
     })
+    var line;
+    if (this.data.currentTab == 0) {
+      line = this.data.list2.length;
+    } else if (this.data.currentTab == 1) {
+      console.log(1)
+      line = this.data.list3.length;
+    }
+    this.setData({
+      aheight: 83 + 240 * line
+    });
 
   },
-change:function(){
-  wx.navigateTo({
-    url: '../xiugai-peisong/xiugai-peisong',
-  })
-},
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var line;
+    if (this.data.currentTab == 0) {
+      line = this.data.list2.length;
+    } else if (this.data.currentTab == 1) {
+      console.log(1)
+      line = this.data.list3.length;
+    }
+    this.setData({
+      aheight: 83 + 240 * line
+    });
+  wx.request({
+    url: '',
+  })
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading()

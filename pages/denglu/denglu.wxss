@@ -48,20 +48,9 @@
   justify-content: center;
 }
 .register {
-  position: relative;
-  left: 50rpx;
+  display: flex;
+  justify-content: center;
+  color: #FFD700;
   font-size: 40rpx;
 }
-.forget-password {
-  position: relative;
-  left: 200rpx;
-  font-size: 40rpx;
-}
-.separate {
-  position: relative;
-  left: 125rpx;
-  font-size: 40rpx;
-}
-.textColor{
-  color: #fde073
-}
+

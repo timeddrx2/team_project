@@ -1,18 +1,45 @@
 <!--pages/myInformation/myInformation.wxml-->
 <!-- 黄色头部 -->
 <view class="yellowhead"></view>
+<view class="con2">
+  <view class="con1">
+    <view class="con2">
+      <view>
+        <text>\n</text>
+        <image id="good" class="good" bindtap="click1" src="{{src1}}"></image>
+        <!-- <image id="good" src="/img/chicken/yummy.png" class="good"></image> -->
+      </view>
+      <view>
+        <text class="word1">好评</text>
+      </view>
+    </view>
+    <view class="con2">
+      <view>
+        <text>\n</text>
+        <image id="soso" bindtap="click2" src="{{src2}}" class="soso"></image>
+      </view>
+      <view>
+        <text class="word2">中评</text>
+      </view>
+    </view>
+    <view class="con2">
+      <view>
+        <text>\n</text>
+        <image id="bad" bindtap="click3" src="{{src3}}" class="bad"></image>
+      </view>
+      <view>
+        <text class="word3">差评</text>
+      </view>
+    </view>
+
+  </view>
+  <view>
+    <button class="bottom" bindtap="submit" hover-class="bottom_hover">提交评价</button>
+    <text>\n</text>
+  </view>
+</view>
 <!-- 头像 -->
 <view>
   <text>\n</text>
-  <image id="touxiang" src="/img/chicken/renzhen.png" class="head"></image>
-</view>
-<!-- 边框 -->
-<!-- <image src="/img/fenge3.png"  class="fenge" style=" height:30rpx;"></image> -->
-<textarea class="text" placeholder=""></textarea>
-<text>\n\n</text>
-<image src="/img/fenge2.png"  class="fenge" style="height:50rpx;"></image>
-<view>
-    <text>\n</text>
-    <button class="bottom" bindtap="submit" hover-class="bottom_hover">提交评价</button>
-    <text>\n</text>
+  <image id="touxiang" src="{{head_link}}" class="head"></image>
 </view>

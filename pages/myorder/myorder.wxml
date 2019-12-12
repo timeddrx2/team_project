@@ -14,7 +14,7 @@
         <view wx:for="{{list2}}" wx:key="{{index}}">
           <view class="dingdan1">
 
-            <view class="con3" bindtap="detail1">
+            <view class="con3" bindtap="detail1" data-id="{{index}}">
               <view class="hall_name1">
                 <text>{{item.canteen}}</text>
               </view>
@@ -28,123 +28,131 @@
                 <view wx:elif="{{item.order_status == '2'}}">
                   <text>已完成</text>
                 </view>
-                <view wx:else="{{item.order_status == '3'}}">
+                <view wx:elif="{{item.order_status == '3'}}">
                   <text>已取消</text>
                 </view>
-              </view>
-              <view>
-                <text class="price1">￥{{item.money}}</text>
-              </view>
-            </view>
-
-
-            <view class="con" bindtap="detail1">
-              <view>
-                <text class="time1">{{item.scheduled_delivery_time}}</text>
-              </view>
-              <view>
-                <view wx:if="{{item.order_status == '0'}}">
-                  <text class="timetext">自动取消时间</text>
-                </view>
-                <view wx:elif="{{item.order_status == '1'}}">
-                  <text class="timetext">预计送达时间</text>
-                </view>
-                <view wx:elif="{{item.order_status == '2'}}">
-                </view>
-                <view wx:else="{{item.order_status == '3'}}">
-                </view>
-              </view>
-            </view>
-
-            <view class="con">
-              <view wx:if="{{item.order_status == '0'}}">
-                <text class="button_evalute2" bindtap="changeOrderD">修改订单</text>
-                <text class="button_evalute1" bindtap="cancelOrder1" data-id="{{index}}">取消订单</text>
-
-              </view>
-              <view wx:elif="{{item.order_status == '1'}}">
-                <text class="button_evalute1">确认送达</text>
-              </view>
-              <view wx:elif="{{item.order_status == '2'}}">
-                <text class="button_evalute1">评价</text>
-              </view>
-              <view wx:else="{{item.order_status == '3'}}">
-              </view>
-            </view>
-
-          </view>
-        </view>
-      </view>
-    </swiper-item>
-    <swiper-item>
-      <view>
-        <!-- 详情框 配送-->
-        <view wx:for="{{list3}}" wx:key="{{index}}">
-          <view class="dingdan1">
-
-            <view class="con3" bindtap="detail2">
-              <view class="hall_name1">
-                <text>{{item.canteen}}</text>
-              </view>
-              <view class="status1">
-                <view wx:if="{{item.order_status == '0'}}">
-                  <text>等待接单中...</text>
-                </view>
-                <view wx:elif="{{item.order_status == '1'}}">
-                  <text>配送中...</text>
-                </view>
-                <view wx:elif="{{item.order_status == '2'}}">
+                <view wx:else="{{item.order_status == '4'}}">
                   <text>已完成</text>
                 </view>
-                <view wx:else="{{item.order_status == '3'}}">
-                  <text>已取消</text>
-                </view>
               </view>
-              <view>
-                <text class="price1">￥{{item.money}}</text>
+              <view class="price1">
+                <text>￥{{item.money}}</text>
               </view>
             </view>
 
 
-            <view class="con" bindtap="detail2">
-              <view>
-                <text class="time1">{{item.scheduled_delivery_time}}</text>
+            <view class="con" bindtap="detail1" data-id="{{index}}">
+              <view class="time1">
+                <text>{{item.scheduled_delivery_time}}</text>
               </view>
-              <view>
+              <view class="timetext">
                 <view wx:if="{{item.order_status == '0'}}">
-                  <text class="timetext">自动取消时间</text>
+                  <text>自动取消时间</text>
                 </view>
                 <view wx:elif="{{item.order_status == '1'}}">
-                  <text class="timetext">预计送达时间</text>
+                  <text>预计送达时间</text>
                 </view>
                 <view wx:elif="{{item.order_status == '2'}}">
                 </view>
+                <view wx:elif="{{item.order_status == '4'}}">
+                </view>
                 <view wx:else="{{item.order_status == '3'}}">
                 </view>
               </view>
-            </view>
-
-            <view class="con">
-              <view wx:if="{{item.order_status == '0'}}">
-                <text class="button_evalute2" bindtap="changeOrderP">修改订单</text>
-                <text class="button_evalute1" bindtap="cancelOrder2" data-id="{{index}}">取消订单</text>
-
-              </view>
-              <view wx:elif="{{item.order_status == '1'}}">
-                <text class="button_evalute1">确认送达</text>
-              </view>
-              <view wx:elif="{{item.order_status == '2'}}">
-                <text class="button_evalute1">评价</text>
-              </view>
-              <view wx:else="{{item.order_status == '3'}}">
-              </view>
-            </view>
-
           </view>
+
+          <view class="con">
+            <view wx:if="{{item.order_status == '0'}}" class="button_evalute1">
+              <text bindtap="cancelOrder1" data-id="{{index}}">取消发布</text>
+            </view>
+            <view wx:elif="{{item.order_status == '1'}}" class="button_evalute1">
+              <text data-id="{{index}}" bindtap="confirm1">确认送达</text>
+            </view>
+            <view wx:elif="{{item.order_status == '2'}}" class="button_evalute1">
+              <text data-id="{{index}}" bindtap="comment1">评价</text>
+            </view>
+            <view wx:elif="{{item.order_status == '3'}}">
+            </view>
+            <view wx:elif="{{item.order_status == '4'}}" class="button_evalute1">
+              <text data-id="{{index}}">已评价</text>
+            </view>
+          </view>
+
         </view>
       </view>
-    </swiper-item>
-  </swiper>
-  <mp-dialog title="取消成功！" show="{{dialogShow2}}" ext-class="textColor" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-  </mp-dialog>
+</view>
+</swiper-item>
+<swiper-item>
+  <view>
+    <!-- 详情框 配送-->
+    <view wx:for="{{list3}}" wx:key="{{index}}">
+      <view class="dingdan1">
+        <view class="con3" bindtap="detail2" data-id="{{index}}">
+          <view class="hall_name1">
+            <text>{{item.canteen}}</text>
+          </view>
+          <view class="status1">
+            <view wx:if="{{item.order_status == '0'}}">
+              <text>等待接单中...</text>
+            </view>
+            <view wx:elif="{{item.order_status == '1'}}">
+              <text>配送中...</text>
+            </view>
+            <view wx:elif="{{item.order_status == '2'}}">
+              <text>已完成</text>
+            </view>
+            <view wx:elif="{{item.order_status == '3'}}">
+              <text>已取消</text>
+            </view>
+            <view wx:elif="{{item.order_status == '4'}}">
+              <text>已完成</text>
+            </view>
+          </view>
+          <view class="price1">
+            <text>￥{{item.money}}</text>
+          </view>
+        </view>
+
+
+        <view class="con" bindtap="detail2" data-id="{{index}}">
+          <view class="time1">
+            <text>{{item.scheduled_delivery_time}}</text>
+          </view>
+          <view class="timetext">
+            <view wx:if="{{item.order_status == '0'}}">
+              <text>自动取消时间</text>
+            </view>
+            <view wx:elif="{{item.order_status == '1'}}">
+              <text>预计送达时间</text>
+            </view>
+            <view wx:elif="{{item.order_status == '2'}}">
+            </view>
+            <view wx:elif="{{item.order_status == '3'}}">
+            </view>
+          </view>
+        </view>
+
+        <view class="con">
+          <view wx:if="{{item.order_status == '0'}}" class="button_evalute1">
+            <!-- <text class="button_evalute2" bindtap="changeOrderP" data-id="{{index}}">修改订单</text> -->
+            <text bindtap="cancelOrder2" data-id="{{index}}">取消发布</text>
+          </view>
+          <view wx:elif="{{item.order_status == '1'}}" class="button_evalute1">
+            <text data-id="{{index}}" bindtap="confirm2">确认送达</text>
+          </view>
+          <view wx:elif="{{item.order_status == '2'}}" class="button_evalute1">
+            <text data-id="{{index}}" bindtap="comment2">评价</text>
+          </view>
+          <view wx:elif="{{item.order_status == '3'}}">
+          </view>
+          <view wx:elif="{{item.order_status == '4'}}" class="button_evalute1">
+            <text data-id="{{index}}">已评价</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</swiper-item>
+</swiper>
 </view>

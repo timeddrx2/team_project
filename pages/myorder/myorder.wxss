@@ -48,7 +48,7 @@
   display: inline-flex;
   flex-direction: row-reverse;
   height: 73rpx;
-  margin-top: 12rpx;
+  margin-top: 10rpx;
 }
 
 .con3 {
@@ -67,56 +67,63 @@
   font-size: 38rpx;
   width: 25%;
   text-align: center;
-  margin: auto 30rpx;
+  margin-left: 5%;
+  /* border: solid #ccc8bd 1rpx; */
 }
 
 .status1 {
   width: 30%;
-  /* height: 50rpx; */
+  font-weight: 400;
   text-align: center;
   font-size: 30rpx;
-  margin: auto 40rpx;
+  /* margin: auto 60rpx; */
+  margin-left: 7%;
+  /* border: solid #ccc8bd 1rpx; */
 }
 
 .price1 {
-  border-width: 0px;
-  width: 180rpx;
-  height: 50rpx;
+  font-weight: 400;
   font-size: 38rpx;
-  margin: auto 60rpx;
+  font-style: normal;
+  width: 20%;
+  height: 50rpx;
+  /* margin: auto 60rpx; */
+  margin-left: 7%;
+  text-align: left;
+  /* border: solid #ccc8bd 1rpx; */
 }
 
 .timetext {
+  width: 30%;
   font-size: 30rpx;
-  margin: auto 100rpx;
-  /* border:solid black; */
+  margin-right: 6%;
+  /* border: solid #ccc8bd 1rpx; */
 }
 
 .time1 {
   font-family: 'PingFangSC-Regular', 'PingFang SC';
-  /* font-weight: 400; */
   font-style: normal;
   font-size: 38rpx;
-  /* width: 130rpx; */
   height: 50rpx;
   text-align: center;
-  margin-right: 70rpx;
-  /* border:solid black; */
+  margin-right: 11%;
+  /* border: solid #ccc8bd 1rpx; */
 }
 
 .button_evalute1 {
   border-radius: 15rpx;
-  border-width: 0px;
-  margin-right: 40rpx;
-  width: 46px;
-  height: 18px;
+  width: 25%;
+  margin-right: 5%;
+  margin-bottom: 10rpx;
+  height: 50rpx;
   background-color: #fde073;
   text-align: center;
   font-weight: 400;
   font-style: normal;
   font-size: 35rpx;
+  /* border: solid #ccc8bd 1rpx; */
 }
-
+/* 
 .button_evalute2 {
   border-radius: 15rpx;
   border-width: 0px;
@@ -128,8 +135,10 @@
   font-weight: 400;
   font-style: normal;
   font-size: 35rpx;
-}
+} */
+
 /* 弹窗文字颜色 */
-.textColor{
-  color: #fde073
+
+.textColor {
+  color: #fde073;
 }
